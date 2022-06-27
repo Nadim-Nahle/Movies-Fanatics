@@ -1,6 +1,8 @@
-const { addUser } = require("../services/UserService");
+const { addUser, getByEmail } = require("../services/UserService");
 require("dotenv").config();
 const bcrypt = require(`bcryptjs`);
+const jwt = require('jsonwebtoken');
+const TOKEN_SECRET = process.env.TOKEN_SECRET;
 
 //REGISTER CONTROLLER
 async function register(req, res) {
@@ -19,6 +21,31 @@ async function register(req, res) {
   }
 }
 
+
+//LOGIN CONTROLLER
+async function login(req, res) {
+    try {
+      const user = await getByEmail(req.body.email);
+      if (!user) return res.status(400).send('invalid credentials');
+  
+      const validPassword = await bcrypt.compare(req.body.password, user.password);
+      if (!validPassword) return res.status(400).send('invalid credentials');
+  
+      const token = jwt.sign(
+        {_id: user._id, name: user.name, email: user.email},
+        TOKEN_SECRET
+      );
+
+      return res.send({ id: user._id,
+                        secret_token : token });
+      //return res.header('auth-token', token).send(token);
+      
+    } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
+    }
+  }
+
 module.exports = {
-  register,
+  register,login
 };
