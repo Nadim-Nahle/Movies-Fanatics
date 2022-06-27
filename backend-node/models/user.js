@@ -26,6 +26,12 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  Role:{
+    type: Number,
+    default: 0,
+    required: true,
+  }
   
 
 });

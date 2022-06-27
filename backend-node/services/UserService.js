@@ -16,3 +16,7 @@ async function addUser(body, hashPassword){
     return await user.save();
 }
 
+module.exports = {
+    addUser,
+}
+
