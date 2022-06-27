@@ -3,6 +3,7 @@ const app= express();
 const mongoose = require('mongoose');
 require('dotenv/config');
 const bodyParser = require('body-parser');
+const userRouter = require('./app/routes');
 
 const DB_CONNECTION = process.env.DB_CONNECTION;
 
