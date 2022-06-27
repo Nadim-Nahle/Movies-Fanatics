@@ -18,6 +18,8 @@ mongoose.connect(DB_CONNECTION, () => {
     }
 })
 
+//route
+app.use('/api', userRouter);
 
 app.use(express.json());
 app.listen(5000);
