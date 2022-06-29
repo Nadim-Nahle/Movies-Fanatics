@@ -39,10 +39,10 @@ async function login(req, res) {
     try {
 
         const user = await getByEmail(req.body.email);
-        if (!user) return res.status(400).send('invalid credentials');
+        if (!user) return res.status(401).send('invalid email');
   
         const validPassword = await bcrypt.compare(req.body.password, user.password);
-        if (!validPassword) return res.status(400).send('invalid credentials');
+        if (!validPassword) return res.status(400).send('invalid password');
         
         //CRETAE USER AND JWT TOKEN
         const token = jwt.sign(
