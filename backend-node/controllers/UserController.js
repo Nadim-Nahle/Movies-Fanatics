@@ -6,11 +6,10 @@ const TOKEN_SECRET = process.env.TOKEN_SECRET;
 const { validationResult } = require("express-validator/check");
 
 //REGISTER CONTROLLER
-//REGISTER CONTROLLER
 async function register(req, res) {
     try {
+        //VALIDATING NAME,EMAIL,PASSWORD
         const errors = validationResult(req);
-        //console.log(req.body);
 
         if (!errors.isEmpty()) {
 
@@ -18,12 +17,15 @@ async function register(req, res) {
 
       } else {
 
+        //ENCRYPT THE PASSWORD
         const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(req.body.password, salt);
-        const addUserResult = await addUser(req.body, hashPassword);
 
+        //STORE THE NEW USER
+        const addUserResult = await addUser(req.body, hashPassword);
         return res.send({ userId: addUserResult._id });
       }
+      //CATCHING ERRORS
     } catch (error) {
 
       res.status(409).send(error);
@@ -36,21 +38,23 @@ async function register(req, res) {
 async function login(req, res) {
     try {
 
-      const user = await getByEmail(req.body.email);
-      if (!user) return res.status(400).send('invalid credentials');
+        const user = await getByEmail(req.body.email);
+        if (!user) return res.status(400).send('invalid credentials');
   
-      const validPassword = await bcrypt.compare(req.body.password, user.password);
-      if (!validPassword) return res.status(400).send('invalid credentials');
-  
-      const token = jwt.sign(
+        const validPassword = await bcrypt.compare(req.body.password, user.password);
+        if (!validPassword) return res.status(400).send('invalid credentials');
+        
+        //CRETAE USER AND JWT TOKEN
+        const token = jwt.sign(
         {_id: user._id, name: user.name, email: user.email},
         TOKEN_SECRET
 
-      );
+        );
 
-      return res.send({ id: user._id,
+        return res.send({ id: user._id,
                         secret_token : token });
-      
+        
+        //CATCHING ERRORS
        } catch (error) {
 
       //console.log(error);
