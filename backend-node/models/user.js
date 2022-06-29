@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    min: 6,
+    min: [6, 'please choose a stronger password'],
     max: 1024,
   },
   date: {
@@ -37,5 +37,5 @@ const userSchema = new mongoose.Schema({
 });
 
 
-
+//EXPORTING SCHEMA
 module.exports = mongoose.model('user', userSchema);

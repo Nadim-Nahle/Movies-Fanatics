@@ -13,6 +13,7 @@ async function addUser(body, hashPassword){
         email,
         password: hashPassword
     })
+    
     return await user.save();
 }
 
