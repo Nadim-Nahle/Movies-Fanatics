@@ -51,8 +51,7 @@ async function login(req, res) {
 
         );
 
-        return res.send({ id: user._id,
-                        secret_token : token });
+        return res.send({ id: user._id, secret_token: token, role: user.roles });
         
         //CATCHING ERRORS
        } catch (error) {
