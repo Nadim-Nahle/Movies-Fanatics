@@ -34,6 +34,11 @@ const userSchema = new mongoose.Schema({
     }],
     default: ['user']
 },
+
+Premium:{
+  type: Boolean,
+  default: false
+}
   
 
 });
