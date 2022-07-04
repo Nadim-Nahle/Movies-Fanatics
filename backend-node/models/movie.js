@@ -1,8 +1,8 @@
 
 const mongoose = require('mongoose');
 
-//USER SCHEMA
-const userSchema = new mongoose.Schema({
+//MOVIE SCHEMA
+const movieSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -53,4 +53,4 @@ const userSchema = new mongoose.Schema({
 
 
 //EXPORTING SCHEMA
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('movie', movieSchema);
