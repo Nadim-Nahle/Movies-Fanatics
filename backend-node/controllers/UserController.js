@@ -1,4 +1,5 @@
 const { addUser, getByEmail } = require("../services/UserService");
+const User = require("../models/user")
 require("dotenv").config();
 const bcrypt = require(`bcryptjs`);
 const jwt = require('jsonwebtoken');
@@ -63,7 +64,25 @@ async function login(req, res) {
   }
 
 
+//UPDATE USER CONTROLLER
+async function updateUser(req, res) {
+  try{
+      const user = await User.findById(req.params.id)
+      if(!user){
+          return res.status(404).send()
+      }
+      Object.assign(user, req.body);
+      user.save();
+      res.send({data:user})
+  }
+  catch(error){
+      res.status(400).send(error.message);
+  }
+          
+}
+
+
 //EXPORTING MODULES
 module.exports = {
-  register,login
+  register,login, updateUser
 };

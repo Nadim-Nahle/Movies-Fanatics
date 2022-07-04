@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login } = require('../controllers/UserController');
+const { register, login, updateUser } = require('../controllers/UserController');
 const { registerErrors } = require('../middlewares/ErrorsMiddleware')
 const router =  express.Router();
 const auth = require('../middlewares/AuthMiddleware')
@@ -15,7 +15,10 @@ router.post('/v1/auth/login', login);
 router.post('/v1/auth/admin/addmovie', auth, addMovie);
 router.get('/v1/auth/movies', getMovie);
 router.delete('/v1/auth/delete/:id', auth, deleteMovies);
-router.patch('/v1/auth/update/:id', auth, updateMovie);
+router.patch('/v1/auth/movie/update/:id', auth, updateMovie);
+
+//USER ROUTES
+router.patch('/v1/auth/user/update/:id', auth, updateUser);
 
 
 
