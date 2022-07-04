@@ -44,12 +44,28 @@ async function deleteMovies(req, res) {
     catch(error){
         res.status(400).send(error.message);
     }
-         
-    
+          
+}
+
+//UPDATE MOVIES CONTROLLER
+async function updateMovie(req, res) {
+    try{
+        const movie = await Movie.findById(req.params.id)
+        if(!movie){
+            return res.status(404).send()
+        }
+        Object.assign(movie, req.body);
+        movie.save();
+        res.send({data:movie})
+    }
+    catch(error){
+        res.status(400).send(error.message);
+    }
+            
 }
 
 
 
 module.exports = {
-    addMovie, getMovie, deleteMovies
+    addMovie, getMovie, deleteMovies, updateMovie
 }
