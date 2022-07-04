@@ -1,9 +1,10 @@
+const { all } = require('../app/routes')
 const Movie = require('../models/movie')
 
 //ADD MOVIE CONTROLLER
 async function addMovie(req, res) {
     
-    const movie = new Movie({...req.body,owner:req.user._id})
+    const movie = new Movie({...req.body})
     try{
 
         await movie.save()
@@ -15,8 +16,24 @@ async function addMovie(req, res) {
     
 }
 
+//GET Movie CONTROLLER
+async function getMovie(req, res) {
+    try{
+        const movie = await Movie.find(all)
+        if(!movie){
+            return res.status(404).send()
+        }
+        res.status(200).send(movie)
+    }
+    catch(error){
+        res.status(400).send(error.message);
+    }
+         
+    
+}
+
 
 
 module.exports = {
-    addMovie, 
+    addMovie, getMovie,
 }

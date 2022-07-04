@@ -3,7 +3,7 @@ const { register, login } = require('../controllers/UserController');
 const { registerErrors } = require('../middlewares/ErrorsMiddleware')
 const router =  express.Router();
 const auth = require('../middlewares/AuthMiddleware')
-const { addMovie } = require('../controllers/MovieController');
+const { addMovie, getMovie } = require('../controllers/MovieController');
 
 //V1 ROUTES
 
@@ -13,6 +13,7 @@ router.post('/v1/auth/login', login);
 
 //MOVIES ROUTES
 router.post('/v1/auth/admin/addmovie', auth, addMovie);
+router.get('/v1/auth/movies', getMovie);
 
 
 
