@@ -29,11 +29,27 @@ async function getMovie(req, res) {
         res.status(400).send(error.message);
     }
          
+}
+
+//DELETE MOVIE CONTROLLER
+async function deleteMovies(req, res) {
+    try{
+        const movie = await Movie.findById(req.params.id);
+        if(!movie){
+            return res.status(404).send()
+        }
+        await movie.remove();
+        res.status(200).send({data: true })
+    }
+    catch(error){
+        res.status(400).send(error.message);
+    }
+         
     
 }
 
 
 
 module.exports = {
-    addMovie, getMovie,
+    addMovie, getMovie, deleteMovies
 }
