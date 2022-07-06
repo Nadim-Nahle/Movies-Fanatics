@@ -12,8 +12,8 @@ router.post('/v1/auth/register', registerErrors, register);
 router.post('/v1/auth/login', login);
 
 //MOVIES ROUTES
-router.post('/v1/auth/admin/addmovie', auth, addMovie);
-router.get('/v1/auth/movies', getMovie);
+router.post('/v1/auth/addmovie', auth, addMovie);
+router.get('/v1/auth/movies', auth, getMovie);
 router.delete('/v1/auth/delete/:id', auth, deleteMovies);
 router.patch('/v1/auth/movie/update/:id', auth, updateMovie);
 

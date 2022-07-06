@@ -45,6 +45,12 @@ const movieSchema = new mongoose.Schema({
     default: false,
   },
   
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
+  }
+  
 
   
   
@@ -53,4 +59,4 @@ const movieSchema = new mongoose.Schema({
 
 
 //EXPORTING SCHEMA
-module.exports = mongoose.model('movie', movieSchema);
+module.exports = mongoose.model('Movie', movieSchema);

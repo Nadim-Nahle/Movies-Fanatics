@@ -4,7 +4,7 @@ const Movie = require('../models/movie')
 //ADD MOVIE CONTROLLER
 async function addMovie(req, res) {
     
-    const movie = new Movie({...req.body})
+    const movie = new Movie({...req.body,owner:req.user._id})
     try{
 
         await movie.save()
@@ -19,7 +19,9 @@ async function addMovie(req, res) {
 //GET Movie CONTROLLER
 async function getMovie(req, res) {
     try{
-        const movie = await Movie.find(all)
+        
+        const movie = await Movie.find({owner:req.user._id})
+        console.log(movie)
         if(!movie){
             return res.status(404).send()
         }
