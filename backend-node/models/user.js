@@ -38,6 +38,10 @@ const userSchema = new mongoose.Schema({
 isPremium:{
   type: Boolean,
   default: false
+},
+
+photo:{
+  type: String,
 }
   
 

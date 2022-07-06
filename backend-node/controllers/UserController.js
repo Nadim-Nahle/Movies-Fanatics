@@ -98,8 +98,24 @@ async function getUsers(req, res) {
 }
 
 
+//GET USER BY ID CONTROLLER
+async function getUser(req, res) {
+  try{
+      const user = await User.findById(req.params.id)
+      if(!user){
+          return res.status(404).send()
+      }
+
+      res.send({name: user.name, email: user.email, photo: user.photo})
+  }
+  catch(error){
+      res.status(400).send(error.message);
+  }
+          
+}
+
 
 //EXPORTING MODULES
 module.exports = {
-  register,login, updateUser, getUsers
+  register,login, updateUser, getUsers, getUser
 };
