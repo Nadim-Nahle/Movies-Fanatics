@@ -5,22 +5,22 @@ const router =  express.Router();
 const auth = require('../middlewares/AuthMiddleware')
 const { addMovie, getMovie, deleteMovies, updateMovie } = require('../controllers/MovieController');
 
-//V1 ROUTES
+// ROUTES
 
 //AUTH ROUTES
-router.post('/v1/auth/register', registerErrors, register);   
-router.post('/v1/auth/login', login);
+router.post('/auth/register', registerErrors, register);   
+router.post('/auth/login', login);
 
 //MOVIES ROUTES
-router.post('/v1/auth/addmovie', auth, addMovie);
-router.get('/v1/auth/movies', auth, getMovie);
-router.delete('/v1/auth/delete/:id', auth, deleteMovies);
-router.patch('/v1/auth/movie/update/:id', auth, updateMovie);
+router.post('/auth/addmovie', auth, addMovie);
+router.get('/auth/movies', auth, getMovie);
+router.delete('/auth/delete/:id', auth, deleteMovies);
+router.patch('/auth/movie/update/:id', auth, updateMovie);
 
 //USER ROUTES
-router.patch('/v1/auth/user/update/:id', auth, updateUser);
-router.get('/v1/auth/users',  getUsers);
-router.get('/v1/auth/user/:id',  getUser);
+router.patch('/auth/user/update/:id', auth, updateUser);
+router.get('/auth/users',  getUsers);
+router.get('/auth/user/:id',  getUser);
 
 
 module.exports = router;
