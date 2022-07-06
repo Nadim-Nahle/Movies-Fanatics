@@ -23,6 +23,4 @@ router.get('/v1/auth/users',  getUsers);
 router.get('/v1/auth/user/:id',  getUser);
 
 
-
-
 module.exports = router;

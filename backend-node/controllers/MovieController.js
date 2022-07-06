@@ -21,7 +21,6 @@ async function getMovie(req, res) {
     try{
         
         const movie = await Movie.find({owner:req.user._id})
-        console.log(movie)
         if(!movie){
             return res.status(404).send()
         }
