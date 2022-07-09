@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login, updateUser, getUsers, getUser } = require('../controllers/UserController');
+const { register, login, updateUser, getUsers, getUser, getConv, getConvs } = require('../controllers/UserController');
 const { registerErrors } = require('../middlewares/ErrorsMiddleware')
 const router =  express.Router();
 const auth = require('../middlewares/AuthMiddleware')
@@ -21,6 +21,11 @@ router.patch('/auth/movie/update/:id', auth, updateMovie);
 router.patch('/auth/user/update/:id', auth, updateUser);
 router.get('/auth/users',  getUsers);
 router.get('/auth/user/:id',  getUser);
+
+//CONV ROUTES
+router.post('/auth/newconv' , newConv);
+router.post('/auth/conv/:userId' , getConv);
+router.post('/auth/convs/:firstUserId/:secondUserId' , getConvs);
 
 
 module.exports = router;
