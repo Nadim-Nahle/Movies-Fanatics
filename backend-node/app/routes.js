@@ -25,8 +25,12 @@ router.get('/auth/user/:id',  getUser);
 
 //CONV ROUTES
 router.post('/auth/newconv' , newConv);
-router.post('/auth/conv/:userId' , getConv);
-router.post('/auth/convs/:firstUserId/:secondUserId' , getConvs);
+router.get('/auth/conv/:userId' , getConv);
+router.get('/auth/convs/:firstUserId/:secondUserId' , getConvs);
+
+//MESSAGES ROUTES
+router.post('/auth/newmsg' , newMsg);
+router.get('/auth/msg/:convId' , getMsg);
 
 
 module.exports = router;
