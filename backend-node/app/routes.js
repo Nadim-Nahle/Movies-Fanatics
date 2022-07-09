@@ -1,5 +1,6 @@
 const express = require('express');
-const { register, login, updateUser, getUsers, getUser, getConv, getConvs } = require('../controllers/UserController');
+const { register, login, updateUser, getUsers, getUser} = require('../controllers/UserController');
+const { getConv, getConvs, newConv} = require('../controllers/ConversationController')
 const { registerErrors } = require('../middlewares/ErrorsMiddleware')
 const router =  express.Router();
 const auth = require('../middlewares/AuthMiddleware')

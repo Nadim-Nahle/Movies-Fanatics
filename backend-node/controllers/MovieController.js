@@ -16,7 +16,7 @@ async function addMovie(req, res) {
     
 }
 
-//GET Movie CONTROLLER
+//GET MOVIE CONTROLLER
 async function getMovie(req, res) {
     try{
         

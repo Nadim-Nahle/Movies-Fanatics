@@ -5,12 +5,14 @@ async function addUser(body, hashPassword){
     const {
         name,
         email,
+        username,
 
     } = body;
 
     const user = new User({
         name,
         email,
+        username,
         password: hashPassword
     })
     
