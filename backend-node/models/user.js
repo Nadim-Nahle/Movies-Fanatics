@@ -9,6 +9,14 @@ const userSchema = new mongoose.Schema({
     min: 6,
     max: 255,
   },
+
+  username: {
+    type: String,
+    required: true,
+    min: 6,
+    max: 255,
+  },
+
   email: {
     type: String,
     required: true,
@@ -16,15 +24,12 @@ const userSchema = new mongoose.Schema({
     max: 255,
     unique: true,
   },
+
   password: {
     type: String,
     required: true,
     min: [6, 'please choose a stronger password'],
     max: 1024,
-  },
-  date: {
-    type: Date,
-    default: Date.now,
   },
 
   roles: {
@@ -40,9 +45,19 @@ isPremium:{
   default: false
 },
 
-photo:{
-  type: String,
-},
+profilePicture: {
+      type: String,
+      default: "",
+    },
+
+    followers: {
+      type: Array,
+      default: [],
+    },
+    followings: {
+      type: Array,
+      default: [],
+    },
 
 movies: [{
   type: mongoose.Schema.Types.ObjectId,
@@ -50,7 +65,9 @@ movies: [{
 }]
   
 
-});
+},
+{ timestamps: true }
+);
 
 
 //EXPORTING SCHEMA
