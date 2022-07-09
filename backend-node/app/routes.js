@@ -1,6 +1,7 @@
 const express = require('express');
 const { register, login, updateUser, getUsers, getUser} = require('../controllers/UserController');
 const { getConv, getConvs, newConv} = require('../controllers/ConversationController')
+const { newMsg, getMsg } = require('../controllers/MessageController')
 const { registerErrors } = require('../middlewares/ErrorsMiddleware')
 const router =  express.Router();
 const auth = require('../middlewares/AuthMiddleware')
@@ -29,8 +30,8 @@ router.get('/auth/conv/:userId' , getConv);
 router.get('/auth/convs/:firstUserId/:secondUserId' , getConvs);
 
 //MESSAGES ROUTES
-router.post('/auth/newmsg' , newMsg);
-router.get('/auth/msg/:convId' , getMsg);
+router.post('/auth/newmsg', newMsg);
+router.get('/auth/msg/:convId', getMsg);
 
 
 module.exports = router;
