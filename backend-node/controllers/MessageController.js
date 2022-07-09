@@ -1,7 +1,6 @@
 const Message = require("../models/Message");
 
-//add
-
+//ADD NEW MSG
 async function newMsg(req, res)  {
   const newMessage = new Message(req.body);
 
@@ -13,8 +12,7 @@ async function newMsg(req, res)  {
   }
 };
 
-//get
-
+//GET MSG
 async function getMsg(req, res)  {
   try {
     const messages = await Message.find({
