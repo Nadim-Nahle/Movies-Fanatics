@@ -13,30 +13,37 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
+    
 
     const userRef = useRef();
     const errRef = useRef();
-    
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
+
+
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
+
+    
     useEffect(() => {
         setErrMsg('');
-    }, [ email, password])
+    }, [email, password])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
         try{
             const response =await axios.post(LOGIN_URL, ({email, password})); 
-            //console.log(response?.data.secret_token);
+            console.log(response?.data);
             const jwt = (response?.data.secret_token);
             localStorage.setItem('token', jwt);
-            //console.log(jwt)
+            console.log(jwt)
 
             setAuth({email, password, jwt})
-            
             navigate(from, { replace: true });
             setEmail('');
             setPassword('');

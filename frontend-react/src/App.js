@@ -1,11 +1,12 @@
 import React from "react";
 import Homepage from "./pages/homepage/Homepage";
-import Navbar from "./components/navbar/Navbar";
 import Movies from "./pages/movies/Movies";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import RequireAuth from "./middlewares/RequireAuth";
+import Missing from "./pages/missing/Missing";
 
 function App() {
   return (
@@ -16,7 +17,17 @@ function App() {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/movies" element={<Movies />}></Route>
+          
+
+          {/*PROTECTED ROUTES*/}
+          <Route element={<RequireAuth />}>
+            <Route path="/movies" element={<Movies />}></Route>
+
+          </Route>
+
+          {/*404 ROUTE*/}
+          <Route path="*" element={<Missing />}></Route>
+
         </Route>
         
       </Routes>
