@@ -17,6 +17,15 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [errMsg, setErrMsg] = useState('');
 
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
+
+    
+    useEffect(() => {
+        setErrMsg('');
+    }, [name, email, password])
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,18 +42,10 @@ const Register = () => {
             
 
         } catch (err){
-            if(!err?.response){
+            
                 setErrMsg('No server response');
-            }
-            else if (err.response?.status === 422){
-                setErrMsg('missing email or pssword')
-            }
-            else if (err.response?.status === 401){
-                setErrMsg('Incorrect email or password')
-            }
-            else{
-                setErrMsg('signup Failed');
-            }
+            
+            
             errRef.current.focus();
         }
    
@@ -58,15 +59,15 @@ const Register = () => {
         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <div className="name">
                 <label className='label-name'>name<h4>*</h4></label>
-                <input className='register-input' type="text" onChange={(e) => setName(e.target.value)} value={name} />
+                <input className='register-input' type="text" ref={userRef} onChange={(e) => setName(e.target.value)} value={name} />
             </div>
             <div className="name">
                 <label className='label-name'>username<h4>*</h4></label>
-                <input className='register-input' type="text" onChange={(e) => setUserame(e.target.value)} value={username} />
+                <input className='register-input' type="text" ref={userRef} onChange={(e) => setUserame(e.target.value)} value={username} />
             </div>
             <div className="name">
                 <label className='label-name'>email<h4>*</h4></label>
-                <input className='register-input' type="text" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                <input className='register-input' type="text" ref={userRef} onChange={(e) => setEmail(e.target.value)} value={email}/>
             </div>
             <div className="name">
                 <label className='label-name'>password<h4>*</h4></label>
