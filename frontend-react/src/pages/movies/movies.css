@@ -1,0 +1,89 @@
+body{
+background-color: rgb(58, 56, 56);
+color: white;
+}
+
+.max-center{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container{
+
+    padding: 15px;
+    display: grid;
+    gap:15px;  
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    background-color: black;
+}
+
+.movie-cover{
+    width: 100%;
+}
+
+.movie-placeholder{
+    min-height: 359px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.hero{
+    position:relative;
+    min-height: 500px;
+    background-position: top center ;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+}
+.hero-title{
+    font-size: 50px;
+    margin: 0;
+}
+.play-btn{
+    background-color: rgb(0, 0, 0) ;
+    color: white;
+
+    padding: 7px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: solid 1px;
+}
+.hero-content{
+    max-width: 70%;
+    padding-bottom: 60px ;
+}
+
+.movie-card{
+    cursor: pointer;
+}
+
+.youtubes{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.close{
+    position: absolute;
+    z-index: 10;
+    margin-top: 1px;
+     margin-right: 2px;
+     top:0;
+     right:0;
+     border: 1;
+     border-radius: 50%;
+     font-size: 20px;
+}
