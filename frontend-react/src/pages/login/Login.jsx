@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Navigate, useLocation, useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import '../register/register.css';
 import axios from 'axios';
+import useAuth from "../../hooks/useAuth";
 
 const LOGIN_URL ='/api/v1/auth/login';
 
 const Login = () => {
+
+    const { setAuth } = useAuth();
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -32,6 +35,8 @@ const Login = () => {
             localStorage.setItem('token', jwt);
             //console.log(jwt)
 
+            setAuth({email, password, jwt})
+            
             navigate(from, { replace: true });
             setEmail('');
             setPassword('');
