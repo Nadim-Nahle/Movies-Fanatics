@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Movies />
+      <Homepage />
     </div>
   );
 }

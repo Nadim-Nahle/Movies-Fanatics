@@ -14,6 +14,7 @@ const Movies = () => {
   const [selectedMovie, setSelectedMovie] = useState({});
   const [playTrailer, setPlayTrailer] = useState(false);
 
+  //FETCH MOVIES
   const fetchMovies = async (searchKey) => {
     const type = searchKey ? "search" : "discover";
     const {
@@ -30,6 +31,7 @@ const Movies = () => {
     setMovies(results);
   };
 
+  //FETCH MOVIE
   const fetchMovie = async (id) => {
     const{data} = await axios.get(`${API_URL}/movie/${id}`,{
         params:{
@@ -40,27 +42,30 @@ const Movies = () => {
     return data;
 }
 
-const selectMovie = async (movie) => {
+  //SELECT MOVIE
+  const selectMovie = async (movie) => {
     setPlayTrailer(false);
     const data = await fetchMovie(movie.id);
     setSelectedMovie(data)
 
-}
+  } 
 
 
   useEffect(() => {
     fetchMovies();
   }, []);
 
+  //RENDER MOVIES
   const renderMovies = () =>
     movies.map((movie) => <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />);
 
+  //SEARCH MOVIES
   const searchMovies = (e) => {
     e.preventDefault();
     fetchMovies(searchKey);
   };
 
-
+  //RENDER TRAILERS
   const renderTrailer = () => {
     const trailer = selectedMovie.videos.results.find(vid => vid.name === 'Official Trailer')
     const key = trailer ? trailer.key : selectedMovie.videos.results[0].key
@@ -84,7 +89,6 @@ const selectMovie = async (movie) => {
     <>
       <header className="header">
         <div className="header-content max-center">
-          <h1> Movie Fanatics </h1>
 
           <form onSubmit={searchMovies}>
             <input typr="text" onChange={(e) => setSearchKey(e.target.value)} />
