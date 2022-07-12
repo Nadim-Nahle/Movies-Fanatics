@@ -21,7 +21,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/premium"
+                to="/profile"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}

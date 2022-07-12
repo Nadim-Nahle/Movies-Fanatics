@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router';
+import useAuth from '../../hooks/useAuth';
 import './profile.css'
 
-const Profile = () => {
 
-const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const [user, setUser] = useState({});
-  const username = useParams().username;
+const Profile = () => {
+    const { auth } = useAuth();
+    const name = (auth?.user?.name)
+    const username = (auth?.user?.username)
+    const email = (auth?.user?.email)
+    const pic = (auth?.user?.pic)
 
   return (
     <>
@@ -14,7 +16,7 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER;
       <div className="wrapper">
     <div className="left">
         <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100"/>
-        <h4>Alex William</h4>
+        <h4>{name}</h4>
     </div>
     <div className="right">
         <div className="info">
@@ -23,11 +25,11 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER;
             <div className="info_data">
                  <div className="data">
                     <h4>Email</h4>
-                    <p>alex@gmail.com</p>
+                    <p>{email}</p>
                  </div>
                  <div className="data">
                    <h4>username</h4>
-                    <p>nadimzz</p>
+                    <p>{username}</p>
               </div>
             </div>
         </div>
