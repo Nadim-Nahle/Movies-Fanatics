@@ -26,7 +26,7 @@
     align-items: center;
     flex-grow: 2;
   }
-  .wrapper {
+  .wrapper-search {
     position: relative;
     display: flex;
     min-width: 100px;
