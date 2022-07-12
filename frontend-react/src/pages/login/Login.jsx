@@ -41,7 +41,6 @@ const Login = () => {
             const response =await axios.post(LOGIN_URL, ({email, password})); 
             const accessToken = response?.data?.secret_token;
             const user = response?.data?.user;
-            console.log('user:',JSON.stringify(user))
             console.log(accessToken)
 
 
