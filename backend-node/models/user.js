@@ -45,7 +45,7 @@ isPremium:{
   default: false
 },
 
-profilePicture: {
+pic: {
       type: String,
       default: "",
     },

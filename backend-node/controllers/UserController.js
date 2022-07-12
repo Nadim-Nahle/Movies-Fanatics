@@ -53,7 +53,7 @@ async function login(req, res) {
 
         );
 
-        return res.send({ id: user._id, secret_token: token, role: user.roles });
+        return res.send({ user: user, secret_token: token});
         
         //CATCHING ERRORS
        } catch (error) {
@@ -177,8 +177,27 @@ async function unfollowUser(req, res)  {
   }
 };
 
+//PROFILE
+async function updateProfile(req, res) {
+const user = await User.findById(req.user._id)
+try{
+  if(user){
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.pic = req.body.pic || user.pic
+  }
+  const updatedUser = await user.save();
+  res.json({
+    id:updateUser._id, name:updateUser.name, pic:updateUser.pic
+  })
+}catch(err){
+    res.status(404).json("user not found");
+}
+
+}
+
 
 //EXPORTING MODULES
 module.exports = {
-  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser
+  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile
 };
