@@ -23,6 +23,7 @@ const Login = () => {
     const [errMsg, setErrMsg] = useState('');
 
 
+    
 
     useEffect(() => {
         userRef.current.focus();
@@ -38,12 +39,13 @@ const Login = () => {
         
         try{
             const response =await axios.post(LOGIN_URL, ({email, password})); 
-            console.log(response?.data);
-            const jwt = (response?.data.secret_token);
-            localStorage.setItem('token', jwt);
-            console.log(jwt)
+            const accessToken = response?.data?.secret_token;
+            const user = response?.data?.user;
+            console.log('user:',JSON.stringify(user))
+            console.log(accessToken)
 
-            setAuth({email, password, jwt})
+
+            setAuth({email,password,accessToken,user})
             navigate(from, { replace: true });
             setEmail('');
             setPassword('');
@@ -66,6 +68,9 @@ const Login = () => {
 
         
     }
+
+    
+    
 
   return (
     <div className='register-container'>
