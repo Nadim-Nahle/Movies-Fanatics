@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router';
 import '../register/register.css';
 import axios from 'axios';
 import useAuth from "../../hooks/useAuth";
-
+import { useCookies } from 'react-cookie';
 const LOGIN_URL ='/api/v1/auth/login';
 
 const Login = () => {
@@ -14,6 +14,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     
+    const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
     const userRef = useRef();
     const errRef = useRef();
@@ -41,8 +42,12 @@ const Login = () => {
             const response =await axios.post(LOGIN_URL, ({email, password})); 
             const accessToken = response?.data?.secret_token;
             const user = response?.data?.user;
-            console.log(accessToken)
 
+            console.log(response.data.user._id)
+
+            setCookie('Email', response.data.user.email);
+            setCookie('userId', response.data.user._id);
+            setCookie('AuthToken', accessToken);
 
             setAuth({email,password,accessToken,user})
             navigate(from, { replace: true });
