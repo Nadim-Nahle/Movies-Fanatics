@@ -7,17 +7,28 @@ import { useCookies } from 'react-cookie';
 
 
 const Swipe = () => {
-    const [users, setUsers] = useState(null)
+    const [users, setUsers] = useState(null);
+    const [user, setUser ] = useState(null);
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const [lastDirection, setLastDirection] = useState();
+    const [id, setId] = useState();
 
     const userId = cookies?.userId;
 
+    const getUser = async () =>{
+        try{
+            const response = await axios.get(`/api/v1/auth/user/${userId}`);
+            setUser(response?.data)
+            console.log(response.data)
+        }catch(err){
+
+        }
+    }
     const getUsers = async () =>{
         try{
             const response = await axios.get(`/api/v1/auth/users`);
             setUsers(response?.data)
-            //console.log(response.data[0].name)
+            //console.log(response.data[0]._id)
         }catch(err){
 
         }
@@ -25,15 +36,27 @@ const Swipe = () => {
 
     useEffect(()=>{
         getUsers()
-    },[users])
+        getUser()
+    },[users,user])
 
     //console.log('user',user)
 
+    const updateMatches = async (matchedUserId) =>{
 
+        try{
+         const response = await axios.put(`/api/v1/auth/user/${matchedUserId}/follow`,({userId}));
+         console.log(response)
+         getUser();
+        }catch(error){
+            console.log(error)
+        }
+    }
+
+    const swiped = (direction, swipedUserId) => {
     
-
-    const swiped = (direction, nameToDelete) => {
-    console.log('removing: ' + nameToDelete)
+        if (direction === 'right'){
+            updateMatches(swipedUserId)
+        }
     setLastDirection(direction)
   }
 
@@ -42,17 +65,36 @@ const Swipe = () => {
   }
 
   return (
+    <>
+
+    
     <div className='dashboard'>
+        <div className="following">
+            <div className="user-name">
+             <h3>{user?.name}</h3>
+         </div>
+            <div className="user-matches">
+                <div className="user-matches-title">
+                    <h3>Followings</h3>
+                </div>
+                <div className="user-matches-content">
+                
+            </div>
+        </div>
+    </div>
         <div className="swipe-container">
             <div className="card-container">
 
-            {users?.map((character) =>
-            <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-                <div style={{ backgroundImage: 'url(' + character.url + ')' }} 
+            {users?.map((user) =>
+            <TinderCard className='swipe' 
+            key={user._id} 
+            onSwipe={(dir) => swiped(dir, user._id)} 
+            onCardLeftScreen={() => outOfFrame(user.name)}>
+            <div style={{ backgroundImage: 'url(' + user.url + ')' }} 
                 className='card'
-                >
-                    <h3>{character.name}</h3>
-                </div>
+            ><h3>{user.name}</h3>
+            
+            </div>
           </TinderCard>
         )}
         <div className='swipe-info'>
@@ -62,6 +104,7 @@ const Swipe = () => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 

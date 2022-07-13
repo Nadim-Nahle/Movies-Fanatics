@@ -1,6 +1,6 @@
 .dashboard{
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
 }
 
@@ -10,7 +10,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
+    padding-top: 3%;
+    padding-right: 15%;
 }
 
 .swipe {
@@ -44,4 +46,31 @@
     bottom: 0;
     padding: 5px;
 
+}
+
+.user-name{
+    background-color: red;
+    width: 13vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 10vh;
+    font-size: 1.5vw;
+}
+.user-matches{
+    background-color: #fff;
+    color: black;
+    width: 13vw;
+    height: 90%;
+    display: flex;
+    text-align: center;
+    justify-content: center;    
+}
+.user-matches-title{
+    text-decoration: underline red 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3vw;
 }
