@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TinderCard from 'react-tinder-card'
 import './swipe.css';
+import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 const db = [
     {
@@ -26,6 +28,27 @@ const db = [
   ]
 
 const Swipe = () => {
+    const [users, setUsers] = useState(null)
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
+
+    const userId = cookies?.userId;
+
+    const getUsers = async () =>{
+        try{
+            const response = await axios.get(`/api/v1/auth/users`);
+            setUsers(response?.data)
+            //console.log(response.data[0].name)
+        }catch(err){
+
+        }
+    }
+
+    useEffect(()=>{
+        getUsers()
+    },[users])
+
+    console.log('users',users)
+
 
     const characters = db
     const [lastDirection, setLastDirection] = useState()
