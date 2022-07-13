@@ -11,6 +11,7 @@ import Profile from "./pages/profile/Profile";
 import Swipe from "./pages/swipe/Swipe";
 import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
+import newlogina from "./pages/login/newlogin";
 
 function App() {
 

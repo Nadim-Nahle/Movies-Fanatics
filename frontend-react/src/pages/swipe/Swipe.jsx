@@ -69,10 +69,12 @@ const Swipe = () => {
   
   return (
     <>
-
+    <div className="dashboard-title">Swipe right to follow a user</div>
     
     <div className='dashboard'>
+        
         <div className="following">
+        
             <div className="user-name">
              <h3>{user?.name}</h3>
          </div>

@@ -82,7 +82,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                sign in
+                Sign in
               </NavLink>
             </li>
           </ul>

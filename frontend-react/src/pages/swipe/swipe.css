@@ -3,7 +3,12 @@
     justify-content: space-between;
     text-align: center;
 }
-
+.dashboard-title{
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    font-size: 2vw;
+}
 .dashboard .swipe-container{
     width:70%;
     display: flex;
@@ -11,7 +16,7 @@
     justify-content: center;
     align-items: center;
     height: 80vh;
-    padding-top: 3%;
+    padding-top: 1%;
     padding-right: 15%;
 }
 
@@ -36,7 +41,9 @@
   }
   
 
-  
+  .following{
+    margin-top: -3%;
+  }
 .card h3{
     color: black;
 }
