@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Homepage from "./pages/homepage/Homepage";
 import Movies from "./pages/movies/Movies";
 import Register from "./pages/register/Register";
@@ -9,8 +9,17 @@ import RequireAuth from "./middlewares/RequireAuth";
 import Missing from "./pages/missing/Missing";
 import Profile from "./pages/profile/Profile";
 import Swipe from "./pages/swipe/Swipe";
+import useAuth from "./hooks/useAuth";
+import { useCookies } from "react-cookie";
 
 function App() {
+
+  const { setAuth } = useAuth();
+  const [cookies ] = useCookies(['user'])
+  const user = cookies?.user;
+  
+  setAuth({user});
+
   return (
     <div>
       <Routes>

@@ -19,7 +19,7 @@ const Swipe = () => {
         try{
             const response = await axios.get(`/api/v1/auth/user/${userId}`);
             setUser(response?.data)
-            console.log(response.data)
+            //console.log(response.data)
         }catch(err){
 
         }
@@ -48,7 +48,7 @@ const Swipe = () => {
          console.log(response)
          getUser();
         }catch(error){
-            console.log(error)
+            //console.log(error)
         }
     }
 
@@ -61,9 +61,12 @@ const Swipe = () => {
   }
 
   const outOfFrame = (name) => {
-    console.log(name + ' left the screen!')
+    //console.log(name + ' left the screen!')
   }
 
+ 
+
+  
   return (
     <>
 
@@ -76,12 +79,13 @@ const Swipe = () => {
             <div className="user-matches">
                 <div className="user-matches-title">
                     <h3>Followings</h3>
+                    
                 </div>
                 <div className="user-matches-content">
-                
+                    <h4></h4>
+                </div>
             </div>
         </div>
-    </div>
         <div className="swipe-container">
             <div className="card-container">
 

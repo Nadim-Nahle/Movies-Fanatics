@@ -45,11 +45,12 @@ const Login = () => {
 
             console.log(response.data.user._id)
 
+            setCookie('user', response.data.user);
             setCookie('Email', response.data.user.email);
             setCookie('userId', response.data.user._id);
             setCookie('AuthToken', accessToken);
 
-            setAuth({email,password,accessToken,user})
+            setAuth({user})
             navigate(from, { replace: true });
             setEmail('');
             setPassword('');
