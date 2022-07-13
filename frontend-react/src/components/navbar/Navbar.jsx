@@ -21,6 +21,28 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
+                to="/messenger"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Messenger
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/swipe"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Connect
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
                 to="/profile"
                 activeClassName="active"
                 className="nav-links"
