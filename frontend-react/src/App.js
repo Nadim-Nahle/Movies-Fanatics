@@ -8,6 +8,7 @@ import Layout from "./components/Layout";
 import RequireAuth from "./middlewares/RequireAuth";
 import Missing from "./pages/missing/Missing";
 import Profile from "./pages/profile/Profile";
+import Swipe from "./pages/swipe/Swipe";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/swipe" element={<Swipe />}></Route>
           
 
           {/*PROTECTED ROUTES*/}
