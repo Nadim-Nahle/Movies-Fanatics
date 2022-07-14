@@ -69,7 +69,7 @@ const Swipe = () => {
   
   return (
     <>
-    <div className="dashboard-title">Swipe right to follow a user</div>
+    <div className="dashboard-title"><h1>Swipe right to follow a user</h1></div>
     
     <div className='dashboard'>
         

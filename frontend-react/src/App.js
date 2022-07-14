@@ -11,7 +11,7 @@ import Profile from "./pages/profile/Profile";
 import Swipe from "./pages/swipe/Swipe";
 import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
-import newlogina from "./pages/login/newlogin";
+import Messenger from "./pages/messenger/Messenger";
 
 function App() {
 
@@ -31,6 +31,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/swipe" element={<Swipe />}></Route>
+          <Route path="/messenger" element={<Messenger />}></Route>
           
 
           {/*PROTECTED ROUTES*/}
