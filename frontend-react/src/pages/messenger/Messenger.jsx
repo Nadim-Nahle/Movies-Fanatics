@@ -10,6 +10,8 @@ import { useCookies } from 'react-cookie';
 const Messenger = () => {
 
     const [conversations, setConversations] = useState([]);
+    const [currentChat, setCurrentChat] = useState(null);
+    const [messages, setMessages] = useState([]);
 
     const [cookies ] = useCookies(['user'])
     const user = cookies?.user;
@@ -27,6 +29,18 @@ const Messenger = () => {
         getConversations();
     },[user._id]);
     
+    useEffect(()=>{
+        const getMessages = async () =>{
+            try {
+                const res = await axios.get(`/api/v1/auth/conv/${currentChat?._id}`)
+                
+                setMessages(res.data);
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getMessages();
+    },[currentChat])
   return (
     <>
         <div className="messenger">
@@ -34,32 +48,34 @@ const Messenger = () => {
                 <div className="chatMenuWrapper">
                     <input type="text" placeholder='search for friends' className='chatMenuInput' />
                     {conversations.map((c) => (
-                        <Conversation conversation={c} currentUser={user}/>
+                        <div onClick={()=>setCurrentChat(c)}>
+                            <Conversation conversation={c} currentUser={user}/>
+                        </div>                       
                     ))}
                     
                 </div>
             </div>
             <div className="chatBox">
                 <div className="chatBoxWrapper">
+                    {
+                        currentChat ?
+                        <>
+                        
+                    
                     <div className="chatBoxTop">
-                        <Message />
-                        <Message own={true}/>
-                        <Message />
-                        <Message own={true}/>
-                        <Message />
-                        <Message own={true}/>
-                        <Message />
-                        <Message own={true}/>
-                        <Message />
-                        <Message own={true}/>
-                        <Message />
-                        <Message own={true}/>
-                        <Message />
+                        {messages.map((m)=>(
+                            <Message message={m} own={m.sender === user._id}/>
+                        ))}
+                        
                     </div>
                     <div className="chatBoxBottom">
                         <textarea className='chatMessageInput' placeholder='write something...'></textarea>
                         <button className='chatSubmitButton'>send</button>
                     </div>
+                    </> : (
+                    <span className='noConversationText'> open a converstaions to start a chat</span>
+                    )
+                }
                 </div>
             </div>
             <div className="chatOnline">

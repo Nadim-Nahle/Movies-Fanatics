@@ -17,6 +17,7 @@
     "react-tinder-card": "^1.4.5",
     "react-youtube": "^9.0.3",
     "styled-components": "^5.3.5",
+    "timeago-react": "^3.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
