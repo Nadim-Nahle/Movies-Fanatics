@@ -1,6 +1,8 @@
 .messenger {
     height: calc(100vh - 70px);
     display: flex;
+    background-color: white;
+    color:black;
   }
   
   .chatMenu {
@@ -50,7 +52,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: teal;
+    background-color: red;
     color: white;
   }
   
