@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Conversation from '../../components/conversations/Conversation';
 import Message from '../../components/message/Message';
 import chatOnline from '../../components/chatOnline/chatOnline';
 import "./messenger.css";
+import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const Messenger = () => {
+
+    const [conversations, setConversations] = useState([]);
+
+    const { auth } = useAuth();
+    const user = (auth.user);
+
+    useEffect(()=>{
+        const getConversations = async () => {
+            try{
+                const res = await axios.get(`/api/v1/auth/conv/${user._id}`)
+                console.log(res)
+            }catch(error){
+                console.log(error)
+            }
+        }
+        getConversations();
+    },[user._id]);
+    
   return (
     <>
         <div className="messenger">
             <div className="chatMenu">
                 <div className="chatMenuWrapper">
                     <input type="text" placeholder='search for friends' className='chatMenuInput' />
-                    <Conversation />
-                    <Conversation />
-                    <Conversation />
-                    <Conversation />
                     <Conversation />
                 </div>
             </div>
