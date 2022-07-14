@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile} = require('../controllers/UserController');
+const { register, login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, } = require('../controllers/UserController');
 const { getConv, getConvs, newConv} = require('../controllers/ConversationController')
 const { newMsg, getMsg } = require('../controllers/MessageController')
 const { registerErrors } = require('../middlewares/ErrorsMiddleware')
@@ -22,11 +22,12 @@ router.patch('/auth/movie/update/:id', auth, updateMovie);
 //USER ROUTES
 router.patch('/auth/user/update/:id', auth, updateUser);
 router.get('/auth/users', getUsers);
-router.get('/auth/user/:id', getUser);
+router.get('/auth/user', getUser);
 router.get('/auth/user/friends/:userId', getFriends);
 router.put('/auth/user/:id/follow', followUser);
 router.put('/auth/user/:id/unfollow', unfollowUser);
 router.post('/auth/user/profile', auth, updateProfile);
+
 
 
 //CONV ROUTES

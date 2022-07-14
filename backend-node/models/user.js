@@ -45,18 +45,18 @@ isPremium:{
   default: false
 },
 
-pic: {
-      type: String,
-      default: "",
+url: {
+  type: String,
+  default: "",
     },
 
-    followers: {
-      type: Array,
-      default: [],
-    },
-    followings: {
-      type: Array,
-      default: [],
+followers: {
+    type: Array,
+    default: [],
+},
+followings: {
+  type: Array,
+  default: [],
     },
 
 movies: [{

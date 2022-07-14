@@ -6,6 +6,7 @@ async function addUser(body, hashPassword){
         name,
         email,
         username,
+        url,
 
     } = body;
 
@@ -13,6 +14,7 @@ async function addUser(body, hashPassword){
         name,
         email,
         username,
+        url,
         password: hashPassword
     })
     

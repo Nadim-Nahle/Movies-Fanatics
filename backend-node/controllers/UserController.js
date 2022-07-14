@@ -82,12 +82,12 @@ async function updateUser(req, res) {
           
 }
 
-//GET USER CONTROLLER
+//GET USERS CONTROLLER
 async function getUsers(req, res) {
   try{
       const user = await User.find(all)
       if(!user){
-          return res.status(404).send()
+          return res.status(405).send()
       }
       res.status(200).send(user)
   }
@@ -97,22 +97,21 @@ async function getUsers(req, res) {
        
 }
 
-
-//GET USER BY ID CONTROLLER
+//GET A USER
 async function getUser(req, res) {
-  try{
-      const user = await User.findById(req.params.id)
-      if(!user){
-          return res.status(404).send()
-      }
+  const userId = req.query.userId;
+  const username = req.query.username;
+  try {
+    const user = userId
+      ? await User.findById(userId)
+      : await User.findOne({ username: username });
+    const { password, updatedAt, ...other } = user._doc;
+    res.status(200).json(other);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
 
-      res.send({name: user.name, email: user.email, photo: user.photo})
-  }
-  catch(error){
-      res.status(400).send(error.message);
-  }
-          
-}
 
 //GET FRIENDS
 async function getFriends(req, res)  {
@@ -199,5 +198,5 @@ try{
 
 //EXPORTING MODULES
 module.exports = {
-  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile
+  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, 
 };
