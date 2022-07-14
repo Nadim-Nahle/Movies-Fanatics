@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './conversation.css';
+import axios from 'axios';
 
-const Conversations = () => {
+const Conversations = ({conversation, currentUser}) => {
+
+  const [user,setUser] = useState(null);
+
+
+  useEffect(()=>{
+    const friendId = conversation?.members?.find((m)=>m !== currentUser?._id);
+
+    const getUser = async () => {
+      try {
+        const res = await axios.get(`/api/v1/auth/user?userId=${friendId}`)
+        setUser(res.data)
+      } catch (error) {
+        console.log(error)       
+      }
+    }
+    getUser();
+  },[currentUser, conversation])
+  
   return (
     <div className='conversation'>
-        <img src="https:/i.imgur.com/oPj4A8u.jpg" alt="" className='conversationImg' />
-        <span className="conversationName">Nadim Nahle</span>
+        <img className='conversationImg' src={user.url ? user.url : 'https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg'} />
+        <span className="conversationName">{user.name}</span>
     </div>
   )
 }

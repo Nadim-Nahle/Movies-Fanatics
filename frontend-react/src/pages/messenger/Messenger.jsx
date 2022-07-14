@@ -5,19 +5,21 @@ import chatOnline from '../../components/chatOnline/chatOnline';
 import "./messenger.css";
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 const Messenger = () => {
 
     const [conversations, setConversations] = useState([]);
 
-    const { auth } = useAuth();
-    const user = (auth.user);
+    const [cookies ] = useCookies(['user'])
+    const user = cookies?.user;
+    
 
     useEffect(()=>{
         const getConversations = async () => {
             try{
                 const res = await axios.get(`/api/v1/auth/conv/${user._id}`)
-                console.log(res)
+                setConversations(res.data);
             }catch(error){
                 console.log(error)
             }
@@ -31,7 +33,10 @@ const Messenger = () => {
             <div className="chatMenu">
                 <div className="chatMenuWrapper">
                     <input type="text" placeholder='search for friends' className='chatMenuInput' />
-                    <Conversation />
+                    {conversations.map((c) => (
+                        <Conversation conversation={c} currentUser={user}/>
+                    ))}
+                    
                 </div>
             </div>
             <div className="chatBox">
@@ -59,7 +64,7 @@ const Messenger = () => {
             </div>
             <div className="chatOnline">
                 <div className="chatOnlineWrapper">
-                    <chatOnline />
+                    
                 </div>
             </div>
         </div>
