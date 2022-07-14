@@ -23,7 +23,7 @@ const Conversations = ({conversation, currentUser}) => {
   
   return (
     <div className='conversation'>
-        <img className='conversationImg' src={user?.url ? user?.url : 'https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg'} />
+        <img alt='' className='conversationImg' src={user?.url ? user?.url : 'https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg'} />
         <span className="conversationName">{user?.name}</span>
     </div>
   )

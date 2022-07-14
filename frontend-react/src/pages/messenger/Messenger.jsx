@@ -32,7 +32,7 @@ const Messenger = () => {
     useEffect(()=>{
         const getMessages = async () =>{
             try {
-                const res = await axios.get(`/api/v1/auth/conv/${currentChat?._id}`)
+                const res = await axios.get(`/api/v1/auth/msg/${currentChat?._id}`)
                 
                 setMessages(res.data);
             } catch (error) {
@@ -41,6 +41,8 @@ const Messenger = () => {
         }
         getMessages();
     },[currentChat])
+    
+    
   return (
     <>
         <div className="messenger">
