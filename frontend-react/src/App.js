@@ -13,6 +13,7 @@ import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
 import Messenger from "./pages/messenger/Messenger";
 
+
 function App() {
 
   const { setAuth } = useAuth();
@@ -32,6 +33,7 @@ function App() {
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/swipe" element={<Swipe />}></Route>
           <Route path="/messenger" element={<Messenger />}></Route>
+         
           
 
           {/*PROTECTED ROUTES*/}

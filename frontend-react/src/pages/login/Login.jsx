@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import '../register/register.css';
+import './login.css';
 import axios from 'axios';
 import useAuth from "../../hooks/useAuth";
 import { useCookies } from 'react-cookie';
@@ -78,22 +78,26 @@ const Login = () => {
     
 
   return (
-    <div className='register-container'>
-        <form className='register-form' onSubmit={handleSubmit}>
-        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <div className="name">
-                <label className='label-name'>email<h4>*</h4></label>
-                <input className='register-input' type="text" ref={userRef} onChange={(e) => setEmail(e.target.value)} value={email} />
+    <form onSubmit={handleSubmit}>
+    <div className='body'>
+    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+        <div className="login">
+        <p ref={errRef} className="login__title1" aria-live="assertive">{errMsg}</p>
+            <h1 className="login__title">Sign In</h1>
+           
+            <div className="login__group">
+                <input className="login__group__input" type="text" required="true"/>
+                <label className="login__group__label" type="text" ref={userRef} onChange={(e) => setEmail(e.target.value)} value={email} >Email</label>
             </div>
-            <div className="name">
-                <label className='label-name'>password<h4>*</h4></label>
-                <input className='register-input' type="text" onChange={(e) => setPassword(e.target.value)}  value={password} />
+            <div className="login__group">
+                <input className="login__group__input" type="text" onChange={(e) => setPassword(e.target.value)}  value={password}/>
+                <label className="login__group__label">Password</label>
             </div>
-            <div className="btn">
-                <button className='register-btn'>Login</button>
-            </div>
-        </form>
+            <button className="login__sign-in" type="submit">Sign In</button>
+           
+        </div>
     </div>
+    </form> 
   )
 }
 
