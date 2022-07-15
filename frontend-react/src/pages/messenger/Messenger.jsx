@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Conversation from '../../components/conversations/Conversation';
 import Message from '../../components/message/Message';
 import "./messenger.css";
@@ -12,6 +12,7 @@ const Messenger = () => {
     const [currentChat, setCurrentChat] = useState(null);
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
+    const scrollRef = useRef();
 
     const [cookies ] = useCookies(['user'])
     const user = cookies?.user;
@@ -59,6 +60,10 @@ const Messenger = () => {
         }
     }
 
+    useEffect(()=>{
+        scrollRef.current?.scrollIntoView({behavior: "smooth"})
+    },[messages])
+
 
   return (
     <>
@@ -83,7 +88,10 @@ const Messenger = () => {
                     
                     <div className="chatBoxTop">
                         {messages.map((m)=>(
-                            <Message message={m} own={m.sender === user._id}/>
+                            <div ref={scrollRef}>
+                                <Message message={m} own={m.sender === user._id}/>
+                            </div>
+                            
                         ))}
                         
                     </div>
