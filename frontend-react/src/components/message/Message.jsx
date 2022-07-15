@@ -13,7 +13,7 @@ const Message = ({message,own}) => {
              />
             <p className="messageText">{message.text}</p>
         </div>
-        <div className="messageBottom">{format(message.created)}</div>
+        <div className="messageBottom">{format(message.createdAt)}</div>
     </div>
   )
 }
