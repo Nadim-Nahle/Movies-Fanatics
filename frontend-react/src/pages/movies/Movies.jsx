@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
@@ -13,6 +13,7 @@ const Movies = () => {
   const [searchKey, setSearchKey] = useState("");
   const [selectedMovie, setSelectedMovie] = useState({});
   const [playTrailer, setPlayTrailer] = useState(false);
+  const scrollRef = useRef();
 
   //FETCH MOVIES
   const fetchMovies = async (searchKey) => {
@@ -47,7 +48,7 @@ const Movies = () => {
     setPlayTrailer(false);
     const data = await fetchMovie(movie.id);
     setSelectedMovie(data)
-
+    scrollRef.current?.scrollIntoView({behavior: "smooth"})
   } 
 
 
@@ -97,7 +98,7 @@ const Movies = () => {
         </div>
       </header>
 
-      <div className="hero" style={{backgroundImage: `url('${IMAGE_URL}${selectedMovie.backdrop_path}')`}}>
+      <div className="hero" ref={scrollRef} style={{backgroundImage: `url('${IMAGE_URL}${selectedMovie.backdrop_path}')`}}>
         <div className="hero-content max-center" >
             
             {playTrailer ? <button onClick={() => setPlayTrailer(false)} className="play-btn close">X</button>:null }
