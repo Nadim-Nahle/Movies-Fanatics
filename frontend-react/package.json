@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-tinder-card": "^1.4.5",
     "react-youtube": "^9.0.3",
+    "socket.io-client": "^4.5.1",
     "styled-components": "^5.3.5",
     "timeago-react": "^3.0.5",
     "web-vitals": "^2.1.4"
