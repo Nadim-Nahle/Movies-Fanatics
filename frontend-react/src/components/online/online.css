@@ -1,0 +1,35 @@
+.onlineFriend {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.onlineImgContainer {
+  position: relative;
+  margin-right: 10px;
+}
+
+.onlineImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.onlineBadge {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: limegreen;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+@media screen and (max-width: 768px) {
+  .onlineName {
+    display: none;
+  }
+}

@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     padding-top: 2%;
-    font-size: 2vw;
+    font-size: 1vw;
 }
 .dashboard .swipe-container{
     width:70%;
@@ -72,6 +72,7 @@
     height: 90%;
     display: flex;
     flex-direction: column;
+   
         
 }
 .user-matches-title{
@@ -80,3 +81,4 @@
     justify-content: center;
     font-size: 1.3vw;
 }
+

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Conversation from '../../components/conversations/Conversation';
 import Message from '../../components/message/Message';
-import chatOnline from '../../components/chatOnline/chatOnline';
 import "./messenger.css";
-import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
+import Online from '../../components/online/Online';
 
 const Messenger = () => {
 
@@ -82,7 +81,7 @@ const Messenger = () => {
             </div>
             <div className="chatOnline">
                 <div className="chatOnlineWrapper">
-                    
+                    <Online />
                 </div>
             </div>
         </div>
