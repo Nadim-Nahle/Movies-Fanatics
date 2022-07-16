@@ -1,0 +1,102 @@
+.chatbot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .chatbot-wrapper{
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 30px;
+    background: #fdfdfe;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.4);
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-header{
+    display: flex;
+    align-items: center;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-header .chatbot-img img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-header .chatbot-right{
+    margin-left: 10px;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-header .chatbot-right .chatbot-name{
+    font-weight: 500;
+    font-size: 1.3em;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-header .chatbot-right .chatbot-status{
+    font-weight: 400;
+    color: #363062;
+    font-weight: 500;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-main{
+    margin: 30px 0 0;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-main .chatbot-main_content .chatbot-messages{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-main .chatbot-main_content .chatbot-messages .chatbot-bot-message{
+    width: 100%;
+    /* max-width: 100px; */
+    padding: 15px;
+    text-align: center;
+    background: #EDECED;
+    font-size: 1.1em;
+    border-radius: 10px;
+    margin: 0 10px 0;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-main .chatbot-main_content .chatbot-messages .chatbot-human-message{
+    width: 100%;
+    /* max-width: 100px; */
+    padding: 15px;
+    text-align: center;
+    background: #363062;
+    color: #EDECED;
+    font-size: 1.1em;
+    border-radius: 10px;
+    position: relative;
+    top: 120px;
+    margin-bottom: 20px;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-bottom{
+    margin: 120px 0 0;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-bottom .chatbot-btm{
+    display: flex;
+    align-items: center;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-bottom .chatbot-btm .chatbot-input input{
+    width: 400px;
+    height: 58px;
+    padding-left: 36px;
+    outline: none;
+    border: none;
+    background: #EDECED;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-bottom .chatbot-btm .chatbot-btn{
+    margin-left: 10px;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-bottom .chatbot-btm .chatbot-btn button{
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #363062;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.1em;
+  }
+  .chatbot-wrapper .chatbot-content .chatbot-bottom .chatbot-btm .chatbot-btn button i{
+    margin-right: 5px;
+  }

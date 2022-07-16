@@ -12,6 +12,7 @@ import Swipe from "./pages/swipe/Swipe";
 import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
 import Messenger from "./pages/messenger/Messenger";
+import ChatBot from "./components/chatBot/ChatBot";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/swipe" element={<Swipe />}></Route>
           <Route path="/messenger" element={<Messenger />}></Route>
+          <Route path='/chatbot' element={<ChatBot />}></Route>
          
           
 
