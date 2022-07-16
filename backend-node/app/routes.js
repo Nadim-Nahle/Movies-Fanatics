@@ -27,7 +27,7 @@ router.get('/auth/user/friends/:userId', getFriends);
 router.put('/auth/user/:id/follow', followUser);
 router.put('/auth/user/:id/unfollow', unfollowUser);
 router.post('/auth/user/profile', auth, updateProfile);
-router.post('/auth/user/premium', auth, premiumUser);
+router.get('/auth/user/premium', auth, premiumUser);
 
 
 

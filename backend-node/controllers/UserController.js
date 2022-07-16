@@ -200,11 +200,11 @@ async function premiumUser(req, res){
   const user = await User.findById(req.user._id)
   try{
     if(user){
-      user.isPremium = true;      
+      user.roles = 'premium';      
     }
     const updatedUser = await user.save();
     res.json({
-      id:user._id, isPremium:user.isPremium
+      id:user._id, role:user.roles
     })
     
   }catch(err){
