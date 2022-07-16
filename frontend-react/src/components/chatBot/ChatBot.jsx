@@ -18,7 +18,7 @@ const ChatBot = () => {
     const [dateTime, setDateTime] = useState(`${days[day]}, ${day} ${months[month]} ${year}`); //using the useState hook to get the data from the local date and set it to the dateTime variable
   // console.log(dateTime);
     const checkStatus = (e) => {
-        let isActive = true;
+        let isActive = false;
         if(dateTime === 'Thursday, 20 April 2022'){ //if the dateTime is Thursday, 20 April 2022, the bot will be inactive
             isActive = false;
         }

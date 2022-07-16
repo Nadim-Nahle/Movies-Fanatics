@@ -33,7 +33,6 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/swipe" element={<Swipe />}></Route>
-          <Route path="/messenger" element={<Messenger />}></Route>
           <Route path='/chatbot' element={<ChatBot />}></Route>
          
           
@@ -41,7 +40,7 @@ function App() {
           {/*PROTECTED ROUTES*/}
           <Route element={<RequireAuth />}>
             <Route path="/movies" element={<Movies />}></Route>
-
+            <Route path="/messenger" element={<Messenger />}></Route>
           </Route>
 
           {/*404 ROUTE*/}

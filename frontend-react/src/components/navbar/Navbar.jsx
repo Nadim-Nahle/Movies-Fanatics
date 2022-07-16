@@ -21,6 +21,17 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
+                to="/profile"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Profile
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
                 to="/messenger"
                 activeClassName="active"
                 className="nav-links"
@@ -43,7 +54,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/profile"
+                to="/premium"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
