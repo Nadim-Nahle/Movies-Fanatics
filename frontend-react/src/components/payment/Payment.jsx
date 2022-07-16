@@ -1,9 +1,31 @@
+import axios from 'axios';
 import React, { useState } from 'react'
+import { useCookies } from 'react-cookie';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import './payment.css';
 
 const Payment = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['user'])
+  const AuthToken = cookies.AuthToken;
+  const Bearer = localStorage.getItem('Bearer')
+    const handlePremium = async () => {
+        
+      
+      try{
+        const response = await axios.get('/api/v1/auth/user/premium',
+        {
+        headers: {'Authorization': 'Bearer '+Bearer} 
+        })
+        console.log(response.data)
+        window.close();
+      }catch(err){
+        console.log(Bearer)
+        console.log(err);
+        
+      }
+
+    }
     
     const [number, setNumber] = useState('');
     const [name, setName] = useState('');
@@ -22,7 +44,7 @@ const Payment = () => {
             
         </form>
         <div className="payment-container">
-        <button className="payment-btn">Submit</button>
+        <button className="payment-btn" onClick={handlePremium}>Submit</button>
         </div>
         
     </div>

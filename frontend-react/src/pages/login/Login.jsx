@@ -43,6 +43,7 @@ const Login = () => {
             const accessToken = response?.data?.secret_token;
             const user = response?.data?.user;
 
+            localStorage.setItem('Bearer', accessToken)
             console.log(response.data.user._id)
 
             setCookie('user', response.data.user);
