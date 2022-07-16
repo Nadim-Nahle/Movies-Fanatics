@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "./register.css";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const REGISTER_URL = "/api/v1/auth/register";
 
 const Register = () => {
   const userRef = useRef();
   const errRef = useRef();
+
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [username, setUserame] = useState("");
@@ -38,7 +40,7 @@ const Register = () => {
       setName("");
       setEmail("");
       setPassword("");
-      Navigate("/login");
+      navigate("/login");
     } catch (err) {
       setErrMsg("No server response");
 

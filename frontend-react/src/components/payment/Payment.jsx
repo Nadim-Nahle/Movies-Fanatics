@@ -3,15 +3,18 @@ import React, { useState } from 'react'
 import { useCookies } from 'react-cookie';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import { useNavigate } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './payment.css';
 
 
 const Payment = () => {
-  const [cookies, setCookie, removeCookie] = useCookies(['user'])
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
+  const navigate = useNavigate();
   const { setAuth } = useAuth();
-  const AuthToken = cookies?.AuthToken;
-    const handlePremium = async () => {
+  const { auth } = useAuth();
+  const AuthToken = localStorage.getItem('AuthToken')
+  const handlePremium = async () => {
         
       
       try{
@@ -20,9 +23,16 @@ const Payment = () => {
         headers: {'Authorization': 'Bearer '+AuthToken} 
         })
           const user = response.data.user
-          setCookie('user', user);
-          setAuth({user})
-        
+          
+
+            console.log(response.data.user._id)
+
+            setCookie('user', user);
+            setCookie('Email', response.data.user.email);
+            setCookie('userId', response.data.user._id);
+            setAuth({user})
+            console.log(auth)          
+            navigate('/chatbot')
       }catch(err){
         console.log(AuthToken)
         console.log(err);

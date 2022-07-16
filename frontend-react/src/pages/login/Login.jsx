@@ -45,6 +45,10 @@ const Login = () => {
 
             console.log(response.data.user._id)
 
+            localStorage.setItem('user', user)
+            localStorage.setItem('Email', response.data.user.email)
+            localStorage.setItem('userId', response.data.user._id)
+            localStorage.setItem('AuthToken', accessToken);
             setCookie('user', user);
             setCookie('Email', response.data.user.email);
             setCookie('userId', response.data.user._id);

@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import "./premium.css";
 
 const Premium = () => {
+  const navigate = useNavigate();
   const openPayment = () => {
-    window.open('/payment','payment', 'width=800,height=500')
+    navigate('/payment')
   };
   return (
     <div className="premium-body">
