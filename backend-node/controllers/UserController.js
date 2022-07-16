@@ -125,7 +125,7 @@ async function getFriends(req, res)  {
     let friendList = [];
     friends.map((friend) => {
       const { _id, username, profilePicture } = friend;
-      friendList.push({ _id, username, profilePicture });
+      friendList.push({ _id, username, url });
     });
     res.status(200).json(friendList)
   } catch (err) {
@@ -195,8 +195,25 @@ try{
 
 }
 
+//PREMIUM USER
+async function premiumUser(req, res){
+  const user = await User.findById(req.user._id)
+  try{
+    if(user){
+      user.isPremium = true;      
+    }
+    const updatedUser = await user.save();
+    res.json({
+      id:user._id, isPremium:user.isPremium
+    })
+    
+  }catch(err){
+    res.status(404).json("user not found");
+  }
+}
+
 
 //EXPORTING MODULES
 module.exports = {
-  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, 
+  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser
 };
