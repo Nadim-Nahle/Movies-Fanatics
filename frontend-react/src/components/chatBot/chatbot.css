@@ -47,7 +47,7 @@
     /* max-width: 100px; */
     padding: 15px;
     text-align: center;
-    background: #EDECED;
+    background: red;
     font-size: 1.1em;
     border-radius: 10px;
     margin: 0 10px 0;
@@ -57,7 +57,7 @@
     /* max-width: 100px; */
     padding: 15px;
     text-align: center;
-    background: #363062;
+    background: black;
     color: #EDECED;
     font-size: 1.1em;
     border-radius: 10px;
@@ -91,7 +91,7 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    background: #363062;
+    background: red;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
