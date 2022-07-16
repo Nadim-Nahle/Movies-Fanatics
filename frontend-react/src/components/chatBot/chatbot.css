@@ -28,6 +28,7 @@
   .chatbot-wrapper .chatbot-content .chatbot-header .chatbot-right .chatbot-name{
     font-weight: 500;
     font-size: 1.3em;
+    color:black;
   }
   .chatbot-wrapper .chatbot-content .chatbot-header .chatbot-right .chatbot-status{
     font-weight: 400;
