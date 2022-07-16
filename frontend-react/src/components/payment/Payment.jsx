@@ -37,10 +37,10 @@ const Payment = () => {
     <div className='payment'>
         <Cards number={number} name={name} xpiry={expiry} cvc={cvc} focus={focus} />
         <form action="" className='form-payment'>
-            <input type="tel" placeholder='Card Number' value={number} onChange={(e) => setNumber(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
-            <input type="text" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
-            <input type="text" placeholder='MM/YY Expiry' value={expiry} onChange={(e) => setExpiry(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
-            <input type="tel" placeholder='cvc' value={cvc} onChange={(e) => setCvc(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
+            <input className='payment-input' type="tel" placeholder='Card Number' value={number} onChange={(e) => setNumber(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
+            <input className='payment-input' type="text" placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
+            <input className='payment-input' type="text" placeholder='MM/YY Expiry' value={expiry} onChange={(e) => setExpiry(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
+            <input className='payment-input' type="tel" placeholder='cvc' value={cvc} onChange={(e) => setCvc(e.target.value)} onFocus={(e) => setFocus(e.target.name)}/>
             
         </form>
         <div className="payment-container">

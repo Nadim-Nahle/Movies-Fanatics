@@ -71,7 +71,6 @@ header .slider{
 .card-area{
   overflow: hidden;
   color: #000;
-  text-align: center;
 }
 .card-area .cards{
   display: flex;

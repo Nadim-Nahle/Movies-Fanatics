@@ -92,8 +92,8 @@ const Movies = () => {
         <div className="header-content max-center">
 
           <form onSubmit={searchMovies}>
-            <input typr="text" onChange={(e) => setSearchKey(e.target.value)} />
-            <button type="submit"> Search...</button>
+            <input type="text" onChange={(e) => setSearchKey(e.target.value)} className='movie-search'/>
+            <button type="submit" className="movie-search-btn"> Search...</button>
           </form>
         </div>
       </header>
