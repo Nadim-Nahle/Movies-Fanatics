@@ -3,24 +3,28 @@ import React, { useState } from 'react'
 import { useCookies } from 'react-cookie';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import useAuth from '../../hooks/useAuth';
 import './payment.css';
+
 
 const Payment = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['user'])
-  const AuthToken = cookies.AuthToken;
-  const Bearer = localStorage.getItem('Bearer')
+  const { setAuth } = useAuth();
+  const AuthToken = cookies?.AuthToken;
     const handlePremium = async () => {
         
       
       try{
         const response = await axios.get('/api/v1/auth/user/premium',
         {
-        headers: {'Authorization': 'Bearer '+Bearer} 
+        headers: {'Authorization': 'Bearer '+AuthToken} 
         })
-        console.log(response.data)
-        window.close();
+          const user = response.data.user
+          setCookie('user', user);
+          setAuth({user})
+        
       }catch(err){
-        console.log(Bearer)
+        console.log(AuthToken)
         console.log(err);
         
       }

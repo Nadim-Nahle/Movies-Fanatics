@@ -9,21 +9,18 @@ import RequireAuth from "./middlewares/RequireAuth";
 import Missing from "./pages/missing/Missing";
 import Profile from "./pages/profile/Profile";
 import Swipe from "./pages/swipe/Swipe";
-import useAuth from "./hooks/useAuth";
-import { useCookies } from "react-cookie";
 import Messenger from "./pages/messenger/Messenger";
 import ChatBot from "./components/chatBot/ChatBot";
 import Payment from "./components/payment/Payment";
 import Premium from "./components/premium/Premium";
+import useAuth from "./hooks/useAuth";
+import { useCookies } from "react-cookie";
 
 function App() {
-
   const { setAuth } = useAuth();
-  const [cookies ] = useCookies(['user'])
-  const user = cookies?.user;
-  
-  
-
+    const [cookies ] = useCookies(['user'])
+    const user = cookies?.user;
+    setAuth({user});
   return (
     <div>
       <Routes>
@@ -32,18 +29,22 @@ function App() {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path='payment' element={<Payment />}></Route>
           
           
 
           {/*PROTECTED ROUTES*/}
-          <Route element={<RequireAuth />}>
+          <Route element={<RequireAuth allowedRoles={['user', 'premium']}/>}>
             <Route path="/movies" element={<Movies />}></Route>
             <Route path="/messenger" element={<Messenger />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/swipe" element={<Swipe />}></Route>
-            <Route path='/chatbot' element={<ChatBot />}></Route>
-            <Route path='payment' element={<Payment />}></Route>
             <Route path='premium' element={<Premium />}></Route>
+          </Route>
+
+          {/*PREMIUM ROUTES*/}
+          <Route element={<RequireAuth allowedRoles={['premium']}/>}>
+            <Route path='/chatbot' element={<ChatBot />}></Route>
           </Route>
 
           {/*404 ROUTE*/}
