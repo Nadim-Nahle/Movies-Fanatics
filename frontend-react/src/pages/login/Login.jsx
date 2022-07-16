@@ -79,18 +79,18 @@ const Login = () => {
   return (
     <form onSubmit={handleSubmit}>
     <div className='body'>
-    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+    
         <div className="login">
         <p ref={errRef} className="login__title1" aria-live="assertive">{errMsg}</p>
             <h1 className="login__title">Sign In</h1>
            
             <div className="login__group">
-                <input className="login__group__input" type="text" required="true"/>
-                <label className="login__group__label" type="text" ref={userRef} onChange={(e) => setEmail(e.target.value)} value={email} >Email</label>
+                <input className="login__group__input" type="text" placeholder='Email' ref={userRef} onChange={(e) => setEmail(e.target.value)} value={email} />
+                
             </div>
             <div className="login__group">
-                <input className="login__group__input" type="text" onChange={(e) => setPassword(e.target.value)}  value={password}/>
-                <label className="login__group__label">Password</label>
+                <input className="login__group__input" placeholder='Password' type="text" onChange={(e) => setPassword(e.target.value)}  value={password}/>
+                
             </div>
             <button className="login__sign-in" type="submit">Sign In</button>
            
