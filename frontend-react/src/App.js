@@ -18,6 +18,12 @@ import Premium from "./components/premium/Premium";
 
 function App() {
 
+  const { setAuth } = useAuth();
+  const [cookies ] = useCookies(['user'])
+  const user = cookies?.user;
+  
+  
+
   return (
     <div>
       <Routes>
@@ -26,17 +32,18 @@ function App() {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/profile" element={<Profile />}></Route>
-          <Route path="/swipe" element={<Swipe />}></Route>
-          <Route path='/chatbot' element={<ChatBot />}></Route>
-          <Route path='payment' element={<Payment />}></Route>
-          <Route path='premium' element={<Premium />}></Route>
+          
           
 
           {/*PROTECTED ROUTES*/}
           <Route element={<RequireAuth />}>
             <Route path="/movies" element={<Movies />}></Route>
             <Route path="/messenger" element={<Messenger />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/swipe" element={<Swipe />}></Route>
+            <Route path='/chatbot' element={<ChatBot />}></Route>
+            <Route path='payment' element={<Payment />}></Route>
+            <Route path='premium' element={<Premium />}></Route>
           </Route>
 
           {/*404 ROUTE*/}
