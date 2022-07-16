@@ -13,6 +13,7 @@ import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
 import Messenger from "./pages/messenger/Messenger";
 import ChatBot from "./components/chatBot/ChatBot";
+import Payment from "./components/payment/Payment";
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/swipe" element={<Swipe />}></Route>
           <Route path='/chatbot' element={<ChatBot />}></Route>
-         
+          <Route path='btc' element={<Payment />}></Route>
           
 
           {/*PROTECTED ROUTES*/}

@@ -1,0 +1,39 @@
+input {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s;
+    width: 25%;
+}
+.payment{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 100vh;
+    padding-top: 5%;
+    text-align: center;
+}
+
+.form-payment{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+}
+.payment-btn{
+    background-color: red;
+    border: 0;
+    padding: 1%;
+    border-radius: 50%;
+    cursor: pointer;   
+}
+.payment-container{
+    padding-top: 1%;
+}
