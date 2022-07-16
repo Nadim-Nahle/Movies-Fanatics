@@ -54,30 +54,43 @@ const Register = () => {
 
 
   return (
-    <div className='register-container'>
-        <form className='register-form' onSubmit={handleSubmit}>
-        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <div className="name">
-                <label className='label-name'>name<h4>*</h4></label>
-                <input className='register-input' type="text" ref={userRef} onChange={(e) => setName(e.target.value)} value={name} />
+    
+
+
+
+        <form onSubmit={handleSubmit}>
+    <div className='body'>
+    
+        <div className="login">
+        <p ref={errRef} className="login__title1" aria-live="assertive">{errMsg}</p>
+            <h1 className="login__title">Sign Up</h1>
+           
+            <div className="login__group">
+                <input className="login__group__input" type="text" placeholder='name' ref={userRef} onChange={(e) => setName(e.target.value)} value={name}  />
+                
             </div>
-            <div className="name">
-                <label className='label-name'>username<h4>*</h4></label>
-                <input className='register-input' type="text" ref={userRef} onChange={(e) => setUserame(e.target.value)} value={username} />
+            <div className="login__group">
+                <input className="login__group__input" type="text" placeholder='username' ref={userRef} onChange={(e) => setUserame(e.target.value)} value={username}  />
+                
             </div>
-            <div className="name">
-                <label className='label-name'>email<h4>*</h4></label>
-                <input className='register-input' type="text" ref={userRef} onChange={(e) => setEmail(e.target.value)} value={email}/>
+            <div className="login__group">
+                <input className="login__group__input" type="text" placeholder='Email' ref={userRef} onChange={(e) => setEmail(e.target.value)} value={email} />
+                
             </div>
-            <div className="name">
-                <label className='label-name'>password<h4>*</h4></label>
-                <input className='register-input' type="text" onChange={(e) => setPassword(e.target.value)}  value={password}/>
+            <div className="login__group">
+                <input className="login__group__input" placeholder='Password' type="text" onChange={(e) => setPassword(e.target.value)}  value={password}/>
+                
             </div>
-            <div className="btn">
-                <button className='register-btn'>Sign up</button>
-            </div>
-        </form>
+            <button className="login__sign-in" type="submit">Sign Up</button>
+           
+        </div>
     </div>
+    </form>
+
+
+
+    
+    
   )
 }
 
