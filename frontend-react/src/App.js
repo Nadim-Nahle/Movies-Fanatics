@@ -18,12 +18,6 @@ import Premium from "./components/premium/Premium";
 
 function App() {
 
-  const { setAuth } = useAuth();
-  const [cookies ] = useCookies(['user'])
-  const user = cookies?.user;
-  
-  setAuth({user});
-
   return (
     <div>
       <Routes>
