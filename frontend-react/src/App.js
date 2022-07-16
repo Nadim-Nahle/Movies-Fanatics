@@ -14,7 +14,6 @@ import { useCookies } from "react-cookie";
 import Messenger from "./pages/messenger/Messenger";
 import ChatBot from "./components/chatBot/ChatBot";
 import Payment from "./components/payment/Payment";
-import NewWindow from "./components/newWindow/NewWindow";
 import Premium from "./components/premium/Premium";
 
 function App() {
@@ -37,7 +36,6 @@ function App() {
           <Route path="/swipe" element={<Swipe />}></Route>
           <Route path='/chatbot' element={<ChatBot />}></Route>
           <Route path='payment' element={<Payment />}></Route>
-          <Route path='wind' element={<NewWindow />}></Route>
           <Route path='premium' element={<Premium />}></Route>
           
 
