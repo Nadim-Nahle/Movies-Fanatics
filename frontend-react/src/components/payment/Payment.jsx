@@ -11,6 +11,7 @@ const Payment = () => {
     const [cvc, setCvc] = useState('');
     const [focus, setFocus] = useState('');
   return (
+    
     <div className='payment'>
         <Cards number={number} name={name} xpiry={expiry} cvc={cvc} focus={focus} />
         <form action="" className='form-payment'>
