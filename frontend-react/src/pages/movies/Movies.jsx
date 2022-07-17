@@ -117,6 +117,7 @@ const Movies = () => {
             {playTrailer ? <button onClick={() => setPlayTrailer(false)} className="play-btn close">X</button>:null }
             { selectedMovie.videos && playTrailer ?  renderTrailer() : null }
             <button onClick={() => setPlayTrailer(true)} className="play-btn">Play Trailer</button>
+            <button className="play-btn">Add To Favorites</button>
             <h1 className="hero-title">{selectedMovie.title}</h1>
             {selectedMovie.overview ? <p className="hero-overview"> {selectedMovie.overview} </p> : null }
         </div>
