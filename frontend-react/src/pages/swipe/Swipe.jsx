@@ -70,10 +70,11 @@ useEffect(() => {
   const filteredUsers = users?.filter(
     newUser => !followedUserIds.includes(newUser._id)
   )
+  const followedUsers = users?.filter(
+    newUser => followedUserIds.includes(newUser._id)
+  )
 
 
-  console.log('OLD',followedUserIds)
-  console.log('new',filteredUsers)
     
 
   return (
@@ -92,7 +93,12 @@ useEffect(() => {
               <h3>Followings</h3>
             </div>
             <div className="user-matches-content">
-              <h4></h4>
+            {followedUsers?.map((user) => (
+              <h4>
+                {user.name}
+              </h4>
+            ))}
+              
             </div>
           </div>
         </div>
