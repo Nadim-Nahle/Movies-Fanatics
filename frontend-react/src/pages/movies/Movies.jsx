@@ -12,7 +12,9 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchKey, setSearchKey] = useState("");
   const [selectedMovie, setSelectedMovie] = useState({});
+  const [reviews, setReviews] = useState({});
   const [playTrailer, setPlayTrailer] = useState(false);
+  const [movieId, setMovieId] = useState('');
   const scrollRef = useRef();
 
   //FETCH MOVIES
@@ -39,9 +41,20 @@ const Movies = () => {
             api_key: process.env.REACT_APP_MOVIE_API_KEY,
             append_to_response: 'videos',
         }
+        
     })
+    setMovieId(data.id)
     return data;
 }
+  const getReviews = async (id) => {
+    const{data} = await axios.get(`${API_URL}/movie/${movieId}/reviews`,{
+        params:{
+            api_key: process.env.REACT_APP_MOVIE_API_KEY,
+        }
+    })
+    setReviews(data.results)
+}
+
 
   //SELECT MOVIE
   const selectMovie = async (movie) => {
