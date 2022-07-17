@@ -2,11 +2,12 @@ import React from 'react'
 import './movies.css';
 
 const MovieCard = ({movie, selectMovie}) => {
+  
 
-    const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+  const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
   return (
     <div className='movie-card' onClick={() => selectMovie(movie)}>
-        {movie.poster_path ? <img className='movie-cover' src={`${IMAGE_URL}${movie.poster_path}`}alt=''/>
+        {movie.poster_path ? <img className='movie-cover' src={`${IMAGE_URL}${movie.poster_path}`}alt=''  />
         
         : 
         <div className='movie-placeholder'> Image Not Found</div>

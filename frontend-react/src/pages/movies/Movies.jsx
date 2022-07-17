@@ -16,6 +16,10 @@ const Movies = () => {
   const [playTrailer, setPlayTrailer] = useState(false);
   const [movieId, setMovieId] = useState('');
   const scrollRef = useRef();
+  const [img, setImg] = useState('');
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const AuthToken = localStorage.getItem('AuthToken')
 
   //FETCH MOVIES
   const fetchMovies = async (searchKey) => {
@@ -44,6 +48,7 @@ const Movies = () => {
         
     })
     setMovieId(data.id)
+    
     return data;
 }
   const getReviews = async (id) => {
@@ -64,15 +69,16 @@ const Movies = () => {
     scrollRef.current?.scrollIntoView({behavior: "smooth"})
   } 
 
+  
 
   useEffect(() => {
     fetchMovies();
   }, []);
 
   //RENDER MOVIES
-  const renderMovies = () =>
+  const renderMovies = () => 
     movies.map((movie) => <MovieCard key={movie.id} movie={movie} selectMovie={selectMovie} />);
-
+    
   //SEARCH MOVIES
   const searchMovies = (e) => {
     e.preventDefault();
@@ -99,6 +105,31 @@ const Movies = () => {
         />
     )
   }
+
+  useEffect(()=>{
+    setImg(IMAGE_URL+selectedMovie?.poster_path);
+    setName(selectedMovie?.title);
+    setDescription(selectedMovie?.tagline);
+  },[selectedMovie])
+  
+  //ADD MOVIES TO FAVORITES
+  const addToFav = async () => {
+    try{
+      const response = await axios.post('/api/v1/auth/addmovie', ({name,img,description}),
+      {
+      headers: {'Authorization': 'Bearer '+AuthToken} 
+      })
+    
+      console.log(response.data)      
+        
+    }catch(err){
+      console.log(AuthToken)
+      console.log(err);
+      
+    }
+
+  }
+
   return (
     <>
       <header className="header">
@@ -117,7 +148,7 @@ const Movies = () => {
             {playTrailer ? <button onClick={() => setPlayTrailer(false)} className="play-btn close">X</button>:null }
             { selectedMovie.videos && playTrailer ?  renderTrailer() : null }
             <button onClick={() => setPlayTrailer(true)} className="play-btn">Play Trailer</button>
-            <button className="play-btn">Add To Favorites</button>
+            <button onClick={addToFav} className="play-btn">Add To Favorites</button>
             <h1 className="hero-title">{selectedMovie.title}</h1>
             {selectedMovie.overview ? <p className="hero-overview"> {selectedMovie.overview} </p> : null }
         </div>
