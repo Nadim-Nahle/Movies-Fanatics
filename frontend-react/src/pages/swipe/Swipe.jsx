@@ -66,12 +66,13 @@ useEffect(() => {
   };
 
   const followedUserIds = user?.data?.followings.map((m)=>(m)).concat(userId)
+  const newFollowedUserIds = user?.data?.followings.map((m)=>(m))
 
   const filteredUsers = users?.filter(
     newUser => !followedUserIds.includes(newUser._id)
   )
   const followedUsers = users?.filter(
-    newUser => followedUserIds.includes(newUser._id)
+    newUser => newFollowedUserIds.includes(newUser._id)
   )
 
 
