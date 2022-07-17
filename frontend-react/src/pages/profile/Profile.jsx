@@ -8,14 +8,14 @@ const Profile = () => {
     const name = (auth?.user?.name)
     const username = (auth?.user?.username)
     const email = (auth?.user?.email)
-    const pic = (auth?.user?.pic)
+    const url = (auth?.user?.url)
 
   return (
     <>
       
       <div className="wrapper">
     <div className="left">
-        <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100"/>
+        <img src={url ? url : 'https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg' } alt="user" width="100"/>
         <h4>{name}</h4>
     </div>
     <div className="right">
@@ -48,13 +48,6 @@ const Profile = () => {
             </div>
         </div>
       
-        <div className="social_media">
-            <ul>
-              <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-          </ul>
-      </div>
     </div>
 </div>
     </>
