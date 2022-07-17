@@ -59,6 +59,16 @@ followings: {
   default: [],
     },
 
+favMovie: {
+  type: string,
+  default: ""
+},
+
+favMovieUrl :{
+  type: string,
+  dedault: ""
+},
+
 movies: [{
   type: mongoose.Schema.Types.ObjectId,
   ref: "Movie"
