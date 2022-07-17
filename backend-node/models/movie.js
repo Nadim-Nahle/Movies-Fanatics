@@ -13,10 +13,8 @@ const movieSchema = new mongoose.Schema({
 
   description: {
     type: String,
-    required: true,
     min: 6,
     max: 255,
-    unique: true,
   },
 
   date: {
