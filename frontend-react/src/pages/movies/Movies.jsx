@@ -115,7 +115,7 @@ const Movies = () => {
   //ADD MOVIES TO FAVORITES
   const addToFav = async () => {
     try{
-      const response = await axios.post('/api/v1/auth/addmovie', ({name,img,description}),
+      const response = await axios.post('/api/v1/auth/user/fav', ({favMovie: name, favMovieUrl: img}),
       {
       headers: {'Authorization': 'Bearer '+AuthToken} 
       })
@@ -123,12 +123,12 @@ const Movies = () => {
       console.log(response.data)      
         
     }catch(err){
-      console.log(AuthToken)
       console.log(err);
       
     }
 
   }
+  
 
   return (
     <>

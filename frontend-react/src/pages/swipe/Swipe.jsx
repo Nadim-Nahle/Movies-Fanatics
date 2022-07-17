@@ -112,7 +112,7 @@ useEffect(() => {
                 onCardLeftScreen={() => outOfFrame(user.name)}
               >
                 <div
-                  style={{ backgroundImage: "url(" + user.url + ")" }}
+                  style={{ backgroundImage: "url(" + user.favMovieUrl + ")" }}
                   className="card"
                 >
                   <h3>{user.name}</h3>
