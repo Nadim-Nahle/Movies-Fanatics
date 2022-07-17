@@ -2,6 +2,7 @@
     display:flex;
     justify-content: space-between;
     text-align: center;
+    
 }
 .dashboard-title{
     display: flex;
@@ -42,7 +43,7 @@
   
 
   .following{
-    margin-top: -3%;
+    margin-top: -5%;
   }
 .card h3{
     color: black;
@@ -64,6 +65,7 @@
     text-align: center;
     height: 10vh;
     font-size: 1.5vw;
+    padding-top: 10;
 }
 .user-matches{
     background-color: #fff;
@@ -76,7 +78,6 @@
         
 }
 .user-matches-title{
-    text-decoration: underline red 5px;
     display: flex;
     justify-content: center;
     font-size: 1.3vw;

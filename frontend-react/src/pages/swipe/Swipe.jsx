@@ -9,14 +9,13 @@ const Swipe = () => {
   const [user, setUser] = useState(null);
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const [lastDirection, setLastDirection] = useState();
-  const [id, setId] = useState();
 
   const userId = cookies?.userId;
   const name = cookies?.user?.name;
 
   const getUser = async () => {
     try {
-      const response = await axios.get(`/api/v1/auth/user/${userId}`);
+      const response = await axios.get(`/api/v1/auth/user/id/${userId}`);
       setUser(response?.data);
       //console.log(response.data)
     } catch (err) {}
@@ -30,19 +29,25 @@ const Swipe = () => {
   };
 
   useEffect(() => {
-    getUsers();
-    getUser();
-  }, [users, user]);
+    getUser()
+
+}, [])
+
+useEffect(() => {
+    if (user) {
+        getUsers()
+    }
+}, [user])
 
   //console.log('user',user)
 
-  const updateMatches = async (matchedUserId) => {
+  const followUser = async (followedUserId) => {
     try {
       const response = await axios.put(
-        `/api/v1/auth/user/${matchedUserId}/follow`,
+        `/api/v1/auth/user/${followedUserId}/follow`,
         { userId }
       );
-      console.log(response);
+      
       getUser();
     } catch (error) {
       //console.log(error)
@@ -51,7 +56,7 @@ const Swipe = () => {
 
   const swiped = (direction, swipedUserId) => {
     if (direction === "right") {
-      updateMatches(swipedUserId);
+      followUser(swipedUserId);
     }
     setLastDirection(direction);
   };
@@ -60,8 +65,19 @@ const Swipe = () => {
     //console.log(name + ' left the screen!')
   };
 
+  const followedUserIds = user?.data?.followings.map((m)=>(m)).concat(userId)
+
+  const filteredUsers = users?.filter(
+    newUser => !followedUserIds.includes(newUser._id)
+  )
+
+
+  console.log('OLD',followedUserIds)
+  console.log('new',filteredUsers)
+    
+
   return (
-    <>
+    <di>
       <div className="dashboard-title">
         <h1>Swipe right to follow a user</h1>
       </div>
@@ -82,7 +98,7 @@ const Swipe = () => {
         </div>
         <div className="swipe-container">
           <div className="card-container">
-            {users?.map((user) => (
+            {filteredUsers?.map((user) => (
               <TinderCard
                 className="swipe"
                 key={user._id}
@@ -103,7 +119,7 @@ const Swipe = () => {
           </div>
         </div>
       </div>
-    </>
+    </di>
   );
 };
 
