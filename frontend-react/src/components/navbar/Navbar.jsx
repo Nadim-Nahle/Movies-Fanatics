@@ -22,7 +22,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/chatbot"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -33,7 +33,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/profile"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -44,7 +44,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/messenger"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -55,7 +55,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/swipe"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -66,7 +66,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/premium"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -77,7 +77,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/movies"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -88,7 +88,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/register"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -100,7 +100,7 @@ function Navbar() {
               <NavLink
                 exact
                 to="/login"
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
               >
