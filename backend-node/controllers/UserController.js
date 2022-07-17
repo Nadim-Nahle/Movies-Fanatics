@@ -81,6 +81,20 @@ async function updateUser(req, res) {
   }
           
 }
+//UPDATE USER CONTROLLER
+async function getUserById(req, res) {
+  try{
+      const user = await User.findById(req.params.id)
+      if(!user){
+          return res.status(404).send()
+      }
+      res.send({data:user})
+  }
+  catch(error){
+      res.status(400).send(error.message);
+  }
+          
+}
 
 //GET USERS CONTROLLER
 async function getUsers(req, res) {
@@ -204,7 +218,7 @@ async function premiumUser(req, res){
     }
     const updatedUser = await user.save();
     res.json({
-      id:user._id, role:user.roles
+      user: user
     })
     
   }catch(err){
@@ -215,5 +229,5 @@ async function premiumUser(req, res){
 
 //EXPORTING MODULES
 module.exports = {
-  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser
+  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById
 };
