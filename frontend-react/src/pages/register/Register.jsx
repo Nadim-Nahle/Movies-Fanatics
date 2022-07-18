@@ -40,6 +40,7 @@ const Register = () => {
       setName("");
       setEmail("");
       setPassword("");
+      setUserame("");
       navigate("/login");
     } catch (err) {
       setErrMsg("No server response");
