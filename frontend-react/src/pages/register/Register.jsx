@@ -16,6 +16,9 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [image, setImage] = useState("");
+
+  let base64code ='';
 
   useEffect(() => {
     userRef.current.focus();
@@ -48,6 +51,29 @@ const Register = () => {
       errRef.current.focus();
     }
   };
+
+  const uploadImage = (e) => {
+    const files = e.target.files
+    const file = files[0]
+    getBased64(file)
+  }
+
+  const onLoad = (fileString) => {
+    setImage(fileString)
+    
+  }
+  
+
+  const getBased64 = (file) => {
+    let reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = () => {
+      onLoad(reader.result)
+    }
+
+  }
+
+  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -97,7 +123,15 @@ const Register = () => {
               value={password}
             />
           </div>
-          <button className="login__sign-in" type="submit">
+          <div className="login__group">
+            <input
+              className="login__group__input"
+              placeholder="Password"
+              type="file"
+              onChange={uploadImage}
+            />
+          </div>
+          <button className="login__sign-in" type="submit" >
             Sign Up
           </button>
         </div>
