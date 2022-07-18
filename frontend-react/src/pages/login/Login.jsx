@@ -41,18 +41,16 @@ const Login = () => {
         try{
             const response =await axios.post(LOGIN_URL, ({email, password})); 
             const accessToken = response?.data?.secret_token;
-            const user = response?.data?.user;
+            const user = response?.data?.user
+            console.log(response.data.user)
 
-            console.log(response.data.user._id)
-
-            localStorage.setItem('user', user)
             localStorage.setItem('email', response.data.user.email)
             localStorage.setItem('userId', response.data.user._id)
             localStorage.setItem('name', response.data.user.name)
-            localStorage.setItem('url', response.data.user.url)
+            localStorage.setItem('url', response.data.url)
             localStorage.setItem('username', response.data.user.username)
             localStorage.setItem('AuthToken', accessToken);
-            setCookie('user', user);
+            setCookie('user', response.data.user);
             setCookie('Email', response.data.user.email);
             setCookie('userId', response.data.user._id);
             setCookie('AuthToken', accessToken);

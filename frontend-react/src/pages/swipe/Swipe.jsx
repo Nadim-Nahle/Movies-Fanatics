@@ -11,7 +11,7 @@ const Swipe = () => {
   const [lastDirection, setLastDirection] = useState();
 
   const userId = cookies?.userId;
-  const name = cookies?.user?.name;
+  const name = localStorage.getItem('name')
 
   const getUser = async () => {
     try {
