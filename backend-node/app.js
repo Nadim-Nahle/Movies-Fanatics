@@ -8,7 +8,9 @@ const userRouter = require('./app/routes');
 
 const DB_CONNECTION = process.env.DB_CONNECTION;
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+    limit: '50mb'
+}));
 
 //DB CONNECTION
 mongoose.connect(DB_CONNECTION, () => {

@@ -225,9 +225,26 @@ async function premiumUser(req, res){
     res.status(404).json("user not found");
   }
 }
+//PREMIUM USER
+async function userFavMovie(req, res){
+  const user = await User.findById(req.user._id)
+  try{
+    if(user){
+      user.favMovie = req.body.favMovie || user.favMovie;
+      user.favMovieUrl = req.body.favMovieUrl || user.favMovieUrl;      
+    }
+    const updatedUser = await user.save();
+    res.json({
+      favMovie: user.favMovie, favMovieUrl: user.favMovieUrl
+    })
+    
+  }catch(err){
+    res.status(404).json("user not found");
+  }
+}
 
 
 //EXPORTING MODULES
 module.exports = {
-  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById
+  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById, userFavMovie
 };

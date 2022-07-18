@@ -60,12 +60,12 @@ followings: {
     },
 
 favMovie: {
-  type: string,
+  type: String,
   default: ""
 },
 
 favMovieUrl :{
-  type: string,
+  type: String,
   dedault: ""
 },
 
