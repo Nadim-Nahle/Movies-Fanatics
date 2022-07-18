@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-import useAuth from '../../hooks/useAuth';
 import './profile.css'
 
 
 const Profile = () => {
-    const { auth } = useAuth();
-    const name = (auth?.user?.name)
-    const username = (auth?.user?.username)
-    const email = (auth?.user?.email)
-    const url = (auth?.user?.url)
+    const name = (localStorage.getItem('name'))
+    const username = (localStorage.getItem('username'))
+    const email = (localStorage.getItem('email'))
+    const url = (localStorage.getItem('url'))
 
+    
   return (
     <>
       

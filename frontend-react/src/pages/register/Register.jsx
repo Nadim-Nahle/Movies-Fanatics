@@ -37,6 +37,7 @@ const Register = () => {
         username,
         email,
         password,
+        url:image
       });
       console.log(response?.data);
 
