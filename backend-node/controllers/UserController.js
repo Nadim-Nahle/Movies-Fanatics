@@ -90,6 +90,33 @@ async function login(req, res) {
 
     }
   }
+//GOOGLE LOGIN CONTROLLER
+async function googleLogin(req, res) {
+    try {
+
+        const user = await getByEmail(req.body.email);
+        if (!user) return res.status(401).send('invalid email');
+  
+        const validPassword = await bcrypt.compare(req.body.email, user.password);
+        if (!validPassword) return res.status(400).send('invalid password');
+        
+        //CRETAE USER AND JWT TOKEN
+        const token = jwt.sign(
+        {_id: user._id, name: user.name, email: user.email},
+        TOKEN_SECRET
+
+        );
+
+        return res.send({ user: {name: user.name, email: user.email, _id: user._id, roles:user.roles, username:user.username, followings: user.followings}, secret_token: token, url: user.url}, );
+        
+        //CATCHING ERRORS
+       } catch (error) {
+
+      //console.log(error);
+      res.status(500).send(error);
+
+    }
+  }
 
 
 //UPDATE USER CONTROLLER
