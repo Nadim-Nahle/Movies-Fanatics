@@ -11,7 +11,7 @@ const { addMovie, getMovie, deleteMovies, updateMovie } = require('../controller
 
 //AUTH ROUTES
 router.post('/auth/register', registerErrors, register);   
-router.post('/auth/register/google', registerErrors, googleRegister);   
+router.post('/auth/register/google', googleRegister);   
 router.post('/auth/login', login);
 router.post('/auth/login/google', googleLogin);
 

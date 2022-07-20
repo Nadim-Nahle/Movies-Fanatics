@@ -37,23 +37,13 @@ async function register(req, res) {
 //GOOGLE REGISTER CONTROLLER
 async function googleRegister(req, res) {
     try {
-        //VALIDATING NAME,EMAIL,PASSWORD
-        const errors = validationResult(req);
-
-        if (!errors.isEmpty()) {
-
-        return res.status(422).jsonp(errors);
-
-      } else {
-
-        //ENCRYPT THE PASSWORD
+       //ENCRYPT THE PASSWORD
         const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(req.body.email, salt);
 
         //STORE THE NEW USER
         const addUserResult = await addGoogleUser(req.body, hashPassword);
         return res.send({ userId: addUserResult._id });
-      }
       //CATCHING ERRORS
     } catch (error) {
 
