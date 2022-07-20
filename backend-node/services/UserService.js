@@ -20,6 +20,26 @@ async function addUser(body, hashPassword){
     
     return await user.save();
 }
+//GOOGLE REGISTER SERVICE
+async function addGoogleUser(body, hashPassword){
+    const {
+        name,
+        email,
+        username,
+        url,
+
+    } = body;
+
+    const user = new User({
+        name,
+        email,
+        username,
+        url,
+        password: hashPassword
+    })
+    
+    return await user.save();
+}
 
 //LOGIN SERVICE
 async function getByEmail(email) {
@@ -29,6 +49,6 @@ async function getByEmail(email) {
   }
 
 module.exports = {
-    addUser,getByEmail
+    addUser,getByEmail,addGoogleUser
 }
 

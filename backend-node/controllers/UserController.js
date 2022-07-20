@@ -1,4 +1,4 @@
-const { addUser, getByEmail } = require("../services/UserService");
+const { addUser, getByEmail, addGoogleUser } = require("../services/UserService");
 const User = require("../models/user")
 const { all } = require('../app/routes')
 require("dotenv").config();
@@ -15,7 +15,7 @@ async function register(req, res) {
 
         if (!errors.isEmpty()) {
 
-        return res.status(422).jsonp(errors.array());
+        return res.status(422).jsonp(errors);
 
       } else {
 
@@ -25,6 +25,33 @@ async function register(req, res) {
 
         //STORE THE NEW USER
         const addUserResult = await addUser(req.body, hashPassword);
+        return res.send({ userId: addUserResult._id });
+      }
+      //CATCHING ERRORS
+    } catch (error) {
+
+      res.status(409).send(error);
+
+    }
+  }
+//GOOGLE REGISTER CONTROLLER
+async function googleRegister(req, res) {
+    try {
+        //VALIDATING NAME,EMAIL,PASSWORD
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+
+        return res.status(422).jsonp(errors);
+
+      } else {
+
+        //ENCRYPT THE PASSWORD
+        const salt = await bcrypt.genSalt(10);
+        const hashPassword = await bcrypt.hash(req.body.email, salt);
+
+        //STORE THE NEW USER
+        const addUserResult = await addGoogleUser(req.body, hashPassword);
         return res.send({ userId: addUserResult._id });
       }
       //CATCHING ERRORS
@@ -246,5 +273,5 @@ async function userFavMovie(req, res){
 
 //EXPORTING MODULES
 module.exports = {
-  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById, userFavMovie
+  register,login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById, userFavMovie, googleRegister,googleLogin
 };

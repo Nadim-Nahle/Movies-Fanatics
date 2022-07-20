@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById, userFavMovie} = require('../controllers/UserController');
+const {googleLogin, register, login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById, userFavMovie, googleRegister} = require('../controllers/UserController');
 const { getConv, getConvs, newConv} = require('../controllers/ConversationController')
 const { newMsg, getMsg } = require('../controllers/MessageController')
 const { registerErrors } = require('../middlewares/ErrorsMiddleware')
@@ -11,7 +11,9 @@ const { addMovie, getMovie, deleteMovies, updateMovie } = require('../controller
 
 //AUTH ROUTES
 router.post('/auth/register', registerErrors, register);   
+router.post('/auth/register/google', registerErrors, googleRegister);   
 router.post('/auth/login', login);
+router.post('/auth/login/google', googleLogin);
 
 //MOVIES ROUTES
 router.post('/auth/addmovie', auth, addMovie);
