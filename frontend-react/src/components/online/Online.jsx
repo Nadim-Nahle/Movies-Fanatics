@@ -1,8 +1,8 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import './online.css';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "./online.css";
 
-const Online = ({onlineUsers, currentId, setCurrentChat}) => {
+const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
   const [friends, setFriends] = useState([]);
   const [onlineFriends, setOnlineFriends] = useState([]);
 
@@ -13,29 +13,27 @@ const Online = ({onlineUsers, currentId, setCurrentChat}) => {
     };
 
     getFriends();
-    
   }, [currentId]);
 
-    useEffect(()=>{
-      setOnlineFriends(friends.filter((f)=> onlineUsers.inculdes(f._id)))
-    },[friends, onlineUsers])
-
-
+  useEffect(() => {
+    setOnlineFriends(friends.filter((f) => onlineUsers.inculdes(f._id)));
+  }, [friends, onlineUsers]);
 
   return (
     <div className="online">
-      
-        <div className="onlineFriend">
-          <div className="onlineImgContainer">
-            <img className='onlineImg' src="https:/i.imgur.com/oPj4A8u.jpg" alt="" />
-            <div className="onlineBadge"></div>
-          </div>
-          <span className="onlineName">omar</span>
+      <div className="onlineFriend">
+        <div className="onlineImgContainer">
+          <img
+            className="onlineImg"
+            src="https:/i.imgur.com/oPj4A8u.jpg"
+            alt=""
+          />
+          <div className="onlineBadge"></div>
         </div>
-      
-        
+        <span className="onlineName">omar</span>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Online;

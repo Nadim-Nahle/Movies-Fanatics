@@ -19,9 +19,9 @@ import FloatingBtn from "./components/floatingBtn/FloatingBtn";
 
 function App() {
   const { setAuth } = useAuth();
-    const [cookies ] = useCookies(['user'])
-    const user = cookies?.user;
-    setAuth({user});
+  const [cookies] = useCookies(["user"]);
+  const user = cookies?.user;
+  setAuth({ user });
   return (
     <div>
       <Routes>
@@ -30,32 +30,27 @@ function App() {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path='payment' element={<Payment />}></Route>
-          <Route path='/fab' element={<FloatingBtn />}></Route>
-          
-          
+          <Route path="payment" element={<Payment />}></Route>
+          <Route path="/fab" element={<FloatingBtn />}></Route>
 
           {/*PROTECTED ROUTES*/}
-          <Route element={<RequireAuth allowedRoles={['user', 'premium']}/>}>
+          <Route element={<RequireAuth allowedRoles={["user", "premium"]} />}>
             <Route path="/movies" element={<Movies />}></Route>
             <Route path="/messenger" element={<Messenger />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/swipe" element={<Swipe />}></Route>
-            <Route path='/premium' element={<Premium />}></Route>
+            <Route path="/premium" element={<Premium />}></Route>
           </Route>
 
           {/*PREMIUM ROUTES*/}
-          <Route element={<RequireAuth allowedRoles={['premium']}/>}>
-            <Route path='/chatbot' element={<ChatBot />}></Route>
+          <Route element={<RequireAuth allowedRoles={["premium"]} />}>
+            <Route path="/chatbot" element={<ChatBot />}></Route>
           </Route>
 
           {/*404 ROUTE*/}
           <Route path="*" element={<Missing />}></Route>
-
         </Route>
-        
       </Routes>
-
     </div>
   );
 }

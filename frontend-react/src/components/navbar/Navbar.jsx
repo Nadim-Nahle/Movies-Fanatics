@@ -13,8 +13,7 @@ function Navbar() {
           <NavLink exact to="/" className="nav-logo">
             Logo
           </NavLink>
-          
-     
+
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
@@ -82,7 +81,7 @@ function Navbar() {
                 Sign up
               </NavLink>
             </li>
-            
+
             <li className="nav-item">
               <NavLink
                 exact

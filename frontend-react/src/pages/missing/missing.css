@@ -1,19 +1,19 @@
-.missing-page{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 40rem;
-    padding-bottom: 10%;
-    color: rgb(131, 130, 130) ;
-  }
-  
-  .missing-page >h3{
-    width: 50%;
-    text-align: center;
-    padding-top: 2%;
-  }
-  
-  .missing-img{
-    height: 20%;
-  }
+.missing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+  padding-bottom: 10%;
+  color: rgb(131, 130, 130);
+}
+
+.missing-page > h3 {
+  width: 50%;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.missing-img {
+  height: 20%;
+}

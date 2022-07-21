@@ -5,7 +5,7 @@ import "./premium.css";
 const Premium = () => {
   const navigate = useNavigate();
   const openPayment = () => {
-    navigate('/payment')
+    navigate("/payment");
   };
   return (
     <div className="premium-body">

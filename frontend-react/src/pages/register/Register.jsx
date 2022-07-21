@@ -18,8 +18,6 @@ const Register = () => {
   const [errMsg, setErrMsg] = useState("");
   const [image, setImage] = useState("");
 
-  
-
   useEffect(() => {
     userRef.current.focus();
   }, []);
@@ -37,7 +35,7 @@ const Register = () => {
         username,
         email,
         password,
-        url:image
+        url: image,
       });
       console.log(response?.data);
 
@@ -47,8 +45,7 @@ const Register = () => {
       setUserame("");
       navigate("/login");
     } catch (err) {
-
-      console.log(err.response)
+      console.log(err.response);
       setErrMsg("No server response");
 
       errRef.current.focus();
@@ -56,27 +53,22 @@ const Register = () => {
   };
 
   const uploadImage = (e) => {
-    const files = e.target.files
-    const file = files[0]
-    getBased64(file)
-  }
+    const files = e.target.files;
+    const file = files[0];
+    getBased64(file);
+  };
 
   const onLoad = (fileString) => {
-    setImage(fileString)
-    
-  }
-  
+    setImage(fileString);
+  };
 
   const getBased64 = (file) => {
-    let reader = new FileReader()
-    reader.readAsDataURL(file)
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
     reader.onload = () => {
-      onLoad(reader.result)
-    }
-
-  }
-
-  
+      onLoad(reader.result);
+    };
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -134,7 +126,7 @@ const Register = () => {
               onChange={uploadImage}
             />
           </div>
-          <button className="login__sign-in" type="submit" >
+          <button className="login__sign-in" type="submit">
             Sign Up
           </button>
         </div>

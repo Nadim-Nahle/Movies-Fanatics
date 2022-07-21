@@ -1,91 +1,83 @@
-.dashboard{
-    display:flex;
-    justify-content: space-between;
-    text-align: center;
-    
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
-.dashboard-title{
-    display: flex;
-    justify-content: center;
-    padding-top: 2%;
-    font-size: 1vw;
+.dashboard-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+  font-size: 1vw;
 }
-.dashboard .swipe-container{
-    width:70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    padding-top: 1%;
-    padding-right: 15%;
+.dashboard .swipe-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding-top: 1%;
+  padding-right: 15%;
 }
 
 .swipe {
-    position: absolute;
-  }
-
-  
-  .dashboard .card-container {
-    width: 25vw;
-    height: 95vh;
-  }
-  
-  .card {
-    position: relative;
-    background-color: #fff;
-    width: 25vw;
-    height: 75vh;
-    border-radius: 30px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-
-  .following{
-    margin-top: -5%;
-  }
-.card h3{
-    color: black;
+  position: absolute;
 }
 
-.dashboard .swipe-info{
-    position: absolute;
-    bottom: 0;
-    padding: 5px;
-
+.dashboard .card-container {
+  width: 25vw;
+  height: 95vh;
 }
 
-.user-name{
-    background-color: red;
-    width: 13vw;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 10vh;
-    font-size: 1.5vw;
-    padding-top: 10;
-}
-.user-matches{
-    background-color: #fff;
-    color: black;
-    width: 13vw;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-   
-        
-}
-.user-matches-title{
-    display: flex;
-    justify-content: center;
-    font-size: 1.3vw;
+.card {
+  position: relative;
+  background-color: #fff;
+  width: 25vw;
+  height: 75vh;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
 }
 
-.user-matches-content{
-    padding-top: 10%;
-    color:red;
+.following {
+  margin-top: -5%;
+}
+.card h3 {
+  color: black;
 }
 
+.dashboard .swipe-info {
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+}
 
+.user-name {
+  background-color: red;
+  width: 13vw;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 10vh;
+  font-size: 1.5vw;
+  padding-top: 10;
+}
+.user-matches {
+  background-color: #fff;
+  color: black;
+  width: 13vw;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.user-matches-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.3vw;
+}
+
+.user-matches-content {
+  padding-top: 10%;
+  color: red;
+}

@@ -11,7 +11,7 @@ const Swipe = () => {
   const [lastDirection, setLastDirection] = useState();
 
   const userId = cookies?.userId;
-  const name = localStorage.getItem('name')
+  const name = localStorage.getItem("name");
 
   const getUser = async () => {
     try {
@@ -29,15 +29,14 @@ const Swipe = () => {
   };
 
   useEffect(() => {
-    getUser()
+    getUser();
+  }, []);
 
-}, [])
-
-useEffect(() => {
+  useEffect(() => {
     if (user) {
-        getUsers()
+      getUsers();
     }
-}, [user])
+  }, [user]);
 
   //console.log('user',user)
 
@@ -47,7 +46,7 @@ useEffect(() => {
         `/api/v1/auth/user/${followedUserId}/follow`,
         { userId }
       );
-      
+
       getUser();
     } catch (error) {
       //console.log(error)
@@ -65,18 +64,15 @@ useEffect(() => {
     //console.log(name + ' left the screen!')
   };
 
-  const followedUserIds = user?.data?.followings.map((m)=>(m)).concat(userId)
-  const newFollowedUserIds = user?.data?.followings.map((m)=>(m))
+  const followedUserIds = user?.data?.followings.map((m) => m).concat(userId);
+  const newFollowedUserIds = user?.data?.followings.map((m) => m);
 
   const filteredUsers = users?.filter(
-    newUser => !followedUserIds.includes(newUser._id)
-  )
-  const followedUsers = users?.filter(
-    newUser => newFollowedUserIds.includes(newUser._id)
-  )
-
-
-    
+    (newUser) => !followedUserIds.includes(newUser._id)
+  );
+  const followedUsers = users?.filter((newUser) =>
+    newFollowedUserIds.includes(newUser._id)
+  );
 
   return (
     <di>
@@ -94,12 +90,9 @@ useEffect(() => {
               <h3>Followings</h3>
             </div>
             <div className="user-matches-content">
-            {followedUsers?.map((user) => (
-              <h4>
-                {user.name}
-              </h4>
-            ))}
-              
+              {followedUsers?.map((user) => (
+                <h4>{user.name}</h4>
+              ))}
             </div>
           </div>
         </div>
