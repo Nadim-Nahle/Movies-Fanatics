@@ -161,4 +161,7 @@
     cursor: pointer;
     color: red;
   }
+  .navbar{
+    font-size: 3vw;
+  }
 }
