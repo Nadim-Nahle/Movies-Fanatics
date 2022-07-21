@@ -24,7 +24,7 @@ const Register = () => {
 
   useEffect(() => {
     setErrMsg("");
-  }, [name, email, password]);
+  }, [name, email, password, username]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -83,7 +83,7 @@ const Register = () => {
             <input
               className="login__group__input"
               type="text"
-              placeholder="name"
+              placeholder="Full Name"
               ref={userRef}
               onChange={(e) => setName(e.target.value)}
               value={name}
@@ -93,7 +93,7 @@ const Register = () => {
             <input
               className="login__group__input"
               type="text"
-              placeholder="username"
+              placeholder="Username"
               ref={userRef}
               onChange={(e) => setUserame(e.target.value)}
               value={username}
@@ -113,7 +113,7 @@ const Register = () => {
             <input
               className="login__group__input"
               placeholder="Password"
-              type="text"
+              type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
@@ -121,7 +121,6 @@ const Register = () => {
           <div className="login__group">
             <input
               className="login__group__input"
-              placeholder="Password"
               type="file"
               onChange={uploadImage}
             />

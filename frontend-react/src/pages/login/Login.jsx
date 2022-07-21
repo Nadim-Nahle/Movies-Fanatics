@@ -55,18 +55,9 @@ const Login = () => {
       setEmail("");
       setPassword("");
     } catch (err) {
-      if (!err?.response) {
-        setErrMsg("No server response");
-      } else if (err.response?.status === 422) {
-        setErrMsg("missing email or pssword");
-      } else if (err.response?.status === 401) {
-        setErrMsg("Incorrect email or password");
-      } else {
-        setErrMsg("Login Failed");
-      }
+      console.log(err.response);
+      setErrMsg("No server response");
       errRef.current.focus();
-      setEmail("");
-      setPassword("");
     }
   };
 
@@ -93,7 +84,7 @@ const Login = () => {
             <input
               className="login__group__input"
               placeholder="Password"
-              type="text"
+              type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
