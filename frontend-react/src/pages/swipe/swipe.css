@@ -81,3 +81,26 @@
   padding-top: 10%;
   color: red;
 }
+@media screen and (max-width: 850px) {
+  .card {
+    position: relative;
+    background-color: #fff;
+    width: 50vw;
+    height: 75vh;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+  }
+  .dashboard .card-container {
+    width: 40vw;
+    height: 95vh;
+  }
+  .dashboard-title {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    font-size: 1vw;
+    padding-left: 10%;
+  }
+
+}
