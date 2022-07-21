@@ -14,21 +14,8 @@ function Navbar() {
             Logo
           </NavLink>
           
-            
-          
-           
+     
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/chatbot"
-                activeclassname="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Chatbot
-              </NavLink>
-            </li>
             <li className="nav-item">
               <NavLink
                 exact

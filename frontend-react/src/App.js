@@ -41,7 +41,7 @@ function App() {
             <Route path="/messenger" element={<Messenger />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/swipe" element={<Swipe />}></Route>
-            <Route path='premium' element={<Premium />}></Route>
+            <Route path='/premium' element={<Premium />}></Route>
           </Route>
 
           {/*PREMIUM ROUTES*/}
