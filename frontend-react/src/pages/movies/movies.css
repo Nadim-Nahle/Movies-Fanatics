@@ -36,6 +36,13 @@ body {
   align-items: center;
   color: black;
 }
+.movie-search {
+  padding: 1%;
+  width: 50%;
+}
+.movie-search-btn{
+  padding: 1%;
+}
 
 .hero {
   position: relative;
@@ -91,6 +98,18 @@ body {
   border: 1;
   border-radius: 10%;
   font-size: 1vw;
+}
+.header-content {
+  position: absolute;
+  z-index: 10;
+  margin-top: 1%;
+  margin-right: 1%;
+  top: 0;
+  left: 0;
+  border: 1;
+  border-radius: 10%;
+  font-size: 1vw;
+  
 }
 @media screen and (max-width: 850px) {
   .hero {

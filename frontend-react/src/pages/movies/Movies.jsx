@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import "./movies.css";
 import YouTube from "react-youtube";
+import Box from "@mui/material/Box";
+import Fab from "@mui/material/Fab";
+import SearchIcon from '@mui/icons-material/Search';
 
 const Movies = () => {
   const API_URL = "https://api.themoviedb.org/3";
@@ -15,6 +18,7 @@ const Movies = () => {
   const [reviews, setReviews] = useState({});
   const [playTrailer, setPlayTrailer] = useState(false);
   const [movieId, setMovieId] = useState("");
+  const [search, setSearch] = useState(true)
   const scrollRef = useRef();
   const [img, setImg] = useState("");
   const [name, setName] = useState("");
@@ -131,19 +135,7 @@ const Movies = () => {
   return (
     <>
       <header className="header">
-        <div className="header-content max-center">
-          <form onSubmit={searchMovies}>
-            <input
-              type="text"
-              onChange={(e) => setSearchKey(e.target.value)}
-              className="movie-search"
-            />
-            <button type="submit" className="movie-search-btn">
-              {" "}
-              Search...
-            </button>
-          </form>
-        </div>
+        
       </header>
 
       <div
@@ -156,12 +148,30 @@ const Movies = () => {
         <div className="hero-content max-center">
           {playTrailer ? (
             <button
-              onClick={() => setPlayTrailer(false)}
+              onClick={() => {setPlayTrailer(false); setSearch(true)}}
               className="play-btn close"
             >
               Close Video
             </button>
           ) : null}
+          {
+            search ?
+          <div className="header-content max-center">
+          <form onSubmit={searchMovies}>
+            <input
+              type="text"
+              onChange={(e) => setSearchKey(e.target.value)}
+              className="movie-search"
+              placeholder="search for movies"
+            />
+            <button type="submit" className="movie-search-btn">
+              {" "}
+              Search...
+            </button>
+          </form>
+        </div>
+        :null
+          }
           {selectedMovie.videos && playTrailer ? renderTrailer() : null}
           
           <h1 className="hero-title">{selectedMovie.title}</h1>
@@ -169,18 +179,21 @@ const Movies = () => {
             <p className="hero-overview"> {selectedMovie.overview} </p>
           ) : null}
           <div className="movie-btns">
-          <button onClick={() => setPlayTrailer(true)} className="play-btn">
+          <button onClick={() => {setPlayTrailer(true); setSearch(false)}} className="play-btn">
             Play Trailer
           </button>
           <button onClick={addToFav} className="play-btn">
             Add To Favorites
           </button>
+          
+          
           </div>
           
         </div>
       </div>
 
       <div className="container max-center">{renderMovies()}</div>
+      
     </>
   );
 };
