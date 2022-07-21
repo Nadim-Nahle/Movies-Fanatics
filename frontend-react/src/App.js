@@ -15,6 +15,7 @@ import Payment from "./components/payment/Payment";
 import Premium from "./components/premium/Premium";
 import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
+import FloatingBtn from "./components/floatingBtn/FloatingBtn";
 
 function App() {
   const { setAuth } = useAuth();
@@ -30,6 +31,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path='payment' element={<Payment />}></Route>
+          <Route path='/fab' element={<FloatingBtn />}></Route>
           
           
 

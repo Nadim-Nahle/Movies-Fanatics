@@ -1,6 +1,6 @@
-import { useCookies } from "react-cookie";
+
 import { Outlet } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import FloatingBtn from "./floatingBtn/FloatingBtn";
 import Navbar from "./navbar/Navbar";
 
 const Layout = () => {
@@ -14,6 +14,7 @@ const Layout = () => {
                 <Outlet />
                 
             </main>
+            <FloatingBtn />
         </>
         
     )

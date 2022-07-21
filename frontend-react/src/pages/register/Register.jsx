@@ -18,7 +18,7 @@ const Register = () => {
   const [errMsg, setErrMsg] = useState("");
   const [image, setImage] = useState("");
 
-  let base64code ='';
+  
 
   useEffect(() => {
     userRef.current.focus();
@@ -47,6 +47,8 @@ const Register = () => {
       setUserame("");
       navigate("/login");
     } catch (err) {
+
+      console.log(err.response)
       setErrMsg("No server response");
 
       errRef.current.focus();
