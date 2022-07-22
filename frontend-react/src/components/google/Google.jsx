@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import jwt_decode from "jwt-decode";
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
@@ -14,6 +14,9 @@ const Google = () => {
 
     const { setAuth } = useAuth();
 
+    const [errMsg, setErrMsg] = useState("");
+    const errRef = useRef();
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -25,7 +28,7 @@ const Google = () => {
 
         
         var userObject = jwt_decode(response.credential)
-        console.log(userObject)
+        
         localStorage.setItem('fullName',(userObject.name));
         localStorage.setItem('email1',(userObject.email));
         localStorage.setItem('username1',(`${userObject.given_name}_${userObject.family_name}`));
@@ -102,11 +105,20 @@ const Google = () => {
             
         } catch (error) {
             console.log(error.response)
+            setErrMsg("Email Already Exists");
+            errRef.current.focus();
         }
     }
 
   return (
+    <>
     <div id="signInDiv" className='google-login'></div>
+    <div className='google-login'>
+    <p ref={errRef} className="login__title1" aria-live="assertive">
+            {errMsg}
+          </p>
+    </div>
+    </>
   )
 }
 
