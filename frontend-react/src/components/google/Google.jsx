@@ -25,7 +25,7 @@ const Google = () => {
 
         
         var userObject = jwt_decode(response.credential)
-
+        console.log(userObject)
         localStorage.setItem('fullName',(userObject.name));
         localStorage.setItem('email1',(userObject.email));
         localStorage.setItem('username1',(`${userObject.given_name}_${userObject.family_name}`));
@@ -39,7 +39,7 @@ const Google = () => {
 
         /* global google */
         google.accounts.id.initialize({
-            client_id: "80248917396-m4ihiqea2hs9ltjbri1j8lurko6710m7.apps.googleusercontent.com",
+            client_id: process.env.REACT_APP_GOOGLE_API_KEY,
             callback: handleCallBackResponse
         });
 
@@ -76,7 +76,7 @@ const Google = () => {
     }
 
     const googleLogin = async () => {
-        const email = localStorage.getItem('email');
+        const email = localStorage.getItem('email1');
 
         try {
             const response = await axios.post(LOGIN_URL, {   
@@ -101,7 +101,7 @@ const Google = () => {
 
             
         } catch (error) {
-            
+            console.log(error.response)
         }
     }
 
