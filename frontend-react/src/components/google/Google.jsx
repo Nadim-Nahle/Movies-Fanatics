@@ -4,6 +4,7 @@ import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router';
 import { useCookies } from 'react-cookie';
+import './google.css';
 
 const REGISTER_URL = "/api/v1/auth/register/google";
 const LOGIN_URL = "/api/v1/auth/login/google";
@@ -105,7 +106,7 @@ const Google = () => {
     }
 
   return (
-    <div id="signInDiv"></div>
+    <div id="signInDiv" className='google-login'></div>
   )
 }
 
