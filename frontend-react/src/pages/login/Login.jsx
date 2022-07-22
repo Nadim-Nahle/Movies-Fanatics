@@ -4,7 +4,10 @@ import "./login.css";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import { useCookies } from "react-cookie";
+import Google from "../../components/google/Google";
+
 const LOGIN_URL = "/api/v1/auth/login";
+
 
 const Login = () => {
   const { setAuth } = useAuth();
@@ -92,6 +95,7 @@ const Login = () => {
           <button className="login__sign-in" type="submit">
             Sign In
           </button>
+          <Google />
         </div>
       </div>
     </form>
