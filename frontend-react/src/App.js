@@ -16,6 +16,7 @@ import Premium from "./components/premium/Premium";
 import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
 import FloatingBtn from "./components/floatingBtn/FloatingBtn";
+import YoutubeDownloader from "./components/youtubeDownloader/YoutubeDownloader";
 
 function App() {
   const { setAuth } = useAuth();
@@ -32,6 +33,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="payment" element={<Payment />}></Route>
           <Route path="/fab" element={<FloatingBtn />}></Route>
+          <Route path="/downloader" element={<YoutubeDownloader />}></Route>
 
           {/*PROTECTED ROUTES*/}
           <Route element={<RequireAuth allowedRoles={["user", "premium"]} />}>

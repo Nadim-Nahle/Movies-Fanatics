@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import "./movies.css";
 import YouTube from "react-youtube";
-import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import SearchIcon from '@mui/icons-material/Search';
+import YoutubeDownloader from "../../components/youtubeDownloader/YoutubeDownloader";
 
 const Movies = () => {
   const API_URL = "https://api.themoviedb.org/3";
@@ -23,7 +21,9 @@ const Movies = () => {
   const [img, setImg] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [trailerkey, setTrailerKey] = useState("");
   const AuthToken = localStorage.getItem("AuthToken");
+
 
   //FETCH MOVIES
   const fetchMovies = async (searchKey) => {
@@ -49,6 +49,11 @@ const Movies = () => {
         append_to_response: "videos",
       },
     });
+    const trailer = data.videos.results.find(
+      (vid) => vid.name === "Official Trailer"
+    );
+    const key = trailer ? trailer.key : selectedMovie.videos.results[0].key;
+    setTrailerKey(key)
     setMovieId(data.id);
 
     return data;
@@ -92,7 +97,8 @@ const Movies = () => {
       (vid) => vid.name === "Official Trailer"
     );
     const key = trailer ? trailer.key : selectedMovie.videos.results[0].key;
-    console.log("trailer:", trailer);
+    
+    
     return (
       <YouTube
         videoId={key}
@@ -134,9 +140,7 @@ const Movies = () => {
 
   return (
     <>
-      <header className="header">
-        
-      </header>
+    
 
       <div
         className="hero"
@@ -185,6 +189,7 @@ const Movies = () => {
           <button onClick={addToFav} className="play-btn">
             Add To Favorites
           </button>
+          <YoutubeDownloader videoId={trailerkey}/>
           
           
           </div>
