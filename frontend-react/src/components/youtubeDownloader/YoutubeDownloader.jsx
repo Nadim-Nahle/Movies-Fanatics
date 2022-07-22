@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router';
+import './youtubeDownloader.css'
 
 const YoutubeDownloader = ({videoId}) => {
-    const navigate = useNavigate();
 
-    const [downloadLink, setDownloadLink] = useState('');
+    
     const options = {
         method: 'GET',
         url: 'https://youtube-dl4.p.rapidapi.com/',
@@ -20,7 +19,6 @@ const YoutubeDownloader = ({videoId}) => {
         try {
             const response = await axios.request(options)
             const link =(response.data);
-            console.log(link.url)
             window.open(link.url, "_blank")
             
             
@@ -36,9 +34,9 @@ const YoutubeDownloader = ({videoId}) => {
     
                            
   return (
-    <div>        
-        <button onClick={getDownloads}>Download</button>
-    </div>
+           
+        <button className='download-btn' onClick={getDownloads}>Download</button>
+    
   )
 }
 
