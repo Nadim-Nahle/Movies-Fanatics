@@ -1,3 +1,6 @@
+.swipe-page{
+  background: linear-gradient(to bottom, #161515, #ff0000);
+}
 .dashboard {
   display: flex;
   justify-content: space-between;

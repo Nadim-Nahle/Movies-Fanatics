@@ -23,10 +23,10 @@ const Google = () => {
 
   function handleCallBackResponse(response) {
     var userObject = jwt_decode(response.credential);
-    console.log(userObject)
+    console.log(userObject);
     const name = userObject.name;
     const email = userObject.email;
-    const username =  `${userObject.given_name}_${userObject.family_name}`;
+    const username = `${userObject.given_name}_${userObject.family_name}`;
     const url = userObject.picture;
 
     googleRegister(name, email, username, url);
@@ -62,7 +62,6 @@ const Google = () => {
   };
 
   const googleLogin = async (email) => {
-    
     try {
       const response = await axios.post(LOGIN_URL, {
         email,
