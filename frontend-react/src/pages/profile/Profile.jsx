@@ -13,16 +13,67 @@ const Profile = () => {
         left
       </div>
       <div className="right-profile">
-        <form className="profile-form">
-          <div className="left-form">
-            <input type="text" />
-            <input type="text" />
-          </div>
-          <div className="right-form">
-            <input type="text" />
-            <input type="text" />
-          </div>
-        </form>
+      <>
+   
+   <div class="bg_img"></div>
+<div class="form_wrapper">
+ <div class="form_container">
+   <div class="title_container">
+     <h2>Edit Your Profile</h2>
+   </div>
+   <form>
+     <div class="row clearfix">
+       <div class="col_half">
+         <label>Full Name</label>
+         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+           <input type="text" name="first_name" placeholder="John" required />
+         </div>
+       </div>
+       <div class="col_half">
+         <label>User Name</label>
+         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+           <input type="text" name="last_name" placeholder="Doe" />
+         </div>
+       </div>
+     </div>
+     <div class="row clearfix">
+       <div class="col_half">
+         <label>Email</label>
+         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+           <input type="email" name="email" placeholder="johndoe@gmail.com" required />
+         </div>
+       </div>
+       <div class="col_half">
+         <label>Phone</label>
+         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+           <input type="tel" name="phone" placeholder="Phone no" pattern="[0-9]{10}" />
+         </div>
+       </div>
+     </div>
+     <div class="row clearfix">
+       <div class="col_half">
+         <label>Country</label>
+         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-globe"></i></span>
+           <input type="email" name="email" placeholder="johndoe@gmail.com" required />
+         </div>
+       </div>
+       <div class="col_half">
+         <label>City</label>
+         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-map-marker"></i></span>
+           <input type="tel" name="phone" placeholder="Phone no" pattern="[0-9]{10}" />
+         </div>
+       </div>
+     </div>
+     <div class="row clearfix">
+     </div>
+     <div className="form-btn">
+        <button className="profile-btn">Save Profile</button>
+     </div>
+     
+   </form>
+ </div>
+</div>
+</>
       </div>
     </div>
   );
