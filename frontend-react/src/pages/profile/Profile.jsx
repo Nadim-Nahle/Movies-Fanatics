@@ -8,6 +8,9 @@ const Profile = () => {
   const url = localStorage.getItem("url");
 
   return (
+    <div className="profile-page">
+
+    
     <div className="profile">
       <div className="left-profile">
         <div className="left-content">
@@ -80,6 +83,7 @@ const Profile = () => {
 </div>
 </>
       </div>
+    </div>
     </div>
   );
 };
