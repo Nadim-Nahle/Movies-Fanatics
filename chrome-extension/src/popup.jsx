@@ -4,10 +4,14 @@ import { render } from 'react-dom';
 function Popup() {
     return (
         <div>
-            <h1>Hello World</h1>
-            <p>Popup</p>
+            <form className='form-download' action="">
+                <label htmlFor="">Enter A Youtube Link</label>
+                <input type="text" placeholder='link' />
+                <button className='download-btn'>Download</button>
+            </form>
+            
         </div>
     )
 }
 
-render(<Popup />, document.getElementById("react-target"))
+render(<Popup />, document.getElementById("react-target"));
