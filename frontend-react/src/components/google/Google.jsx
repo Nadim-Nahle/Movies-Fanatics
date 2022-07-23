@@ -23,16 +23,13 @@ const Google = () => {
 
   function handleCallBackResponse(response) {
     var userObject = jwt_decode(response.credential);
+    console.log(userObject)
+    const name = userObject.name;
+    const email = userObject.email;
+    const username =  `${userObject.given_name}_${userObject.family_name}`;
+    const url = userObject.picture;
 
-    localStorage.setItem("fullName", userObject.name);
-    localStorage.setItem("email1", userObject.email);
-    localStorage.setItem(
-      "username1",
-      `${userObject.given_name}_${userObject.family_name}`
-    );
-    localStorage.setItem("url1", userObject.picture);
-
-    googleRegister();
+    googleRegister(name, email, username, url);
   }
 
   useEffect(() => {
@@ -48,12 +45,7 @@ const Google = () => {
     });
   }, []);
 
-  const googleRegister = async () => {
-    const name = localStorage.getItem("fullName");
-    const email = localStorage.getItem("email1");
-    const username = localStorage.getItem("username1");
-    const url = localStorage.getItem("url1");
-
+  const googleRegister = async (name, email, username, url) => {
     try {
       const response = await axios.post(REGISTER_URL, {
         name,
@@ -62,16 +54,15 @@ const Google = () => {
         url,
       });
       console.log(response.data);
-      googleLogin();
+      googleLogin(email);
     } catch (error) {
       console.log(error);
-      googleLogin();
+      googleLogin(email);
     }
   };
 
-  const googleLogin = async () => {
-    const email = localStorage.getItem("email1");
-
+  const googleLogin = async (email) => {
+    
     try {
       const response = await axios.post(LOGIN_URL, {
         email,
