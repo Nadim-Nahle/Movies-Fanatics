@@ -1,84 +1,85 @@
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //USER SCHEMA
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    min: 6,
-    max: 255,
-  },
-
-  username: {
-    type: String,
-    required: true,
-    min: 6,
-    max: 255,
-  },
-
-  email: {
-    type: String,
-    required: true,
-    min: 6,
-    max: 255,
-    unique: true,
-  },
-
-  password: {
-    type: String,
-    required: true,
-    min: [6, 'please choose a stronger password'],
-    max: 1024,
-  },
-
-  roles: {
-    type: [{
-        type: String,
-        enum: ['user', 'admin', 'premium']
-    }],
-    default: ['user']
-},
-
-isPremium:{
-  type: Boolean,
-  default: false
-},
-
-url: {
-  type: String,
-  default: "",
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      min: 6,
+      max: 255,
     },
 
-followers: {
-    type: Array,
-    default: [],
-},
-followings: {
-  type: Array,
-  default: [],
+    username: {
+      type: String,
+      required: true,
+      min: 6,
+      max: 255,
     },
 
-favMovie: {
-  type: String,
-  default: ""
-},
+    email: {
+      type: String,
+      required: true,
+      min: 6,
+      max: 255,
+      unique: true,
+    },
 
-favMovieUrl :{
-  type: String,
-  dedault: ""
-},
+    password: {
+      type: String,
+      required: true,
+      min: [6, "please choose a stronger password"],
+      max: 1024,
+    },
 
-movies: [{
-  type: mongoose.Schema.Types.ObjectId,
-  ref: "Movie"
-}]
-  
+    roles: {
+      type: [
+        {
+          type: String,
+          enum: ["user", "admin", "premium"],
+        },
+      ],
+      default: ["user"],
+    },
 
-},
-{ timestamps: true }
+    isPremium: {
+      type: Boolean,
+      default: false,
+    },
+
+    url: {
+      type: String,
+      default: "",
+    },
+
+    followers: {
+      type: Array,
+      default: [],
+    },
+    followings: {
+      type: Array,
+      default: [],
+    },
+
+    favMovie: {
+      type: String,
+      default: "",
+    },
+
+    favMovieUrl: {
+      type: String,
+      dedault: "",
+    },
+
+    movies: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Movie",
+      },
+    ],
+  },
+  { timestamps: true }
 );
 
-
 //EXPORTING SCHEMA
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model("user", userSchema);

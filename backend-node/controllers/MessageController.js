@@ -1,7 +1,7 @@
 const Message = require("../models/Message");
 
 //ADD NEW MSG
-async function newMsg(req, res)  {
+async function newMsg(req, res) {
   const newMessage = new Message(req.body);
 
   try {
@@ -10,10 +10,10 @@ async function newMsg(req, res)  {
   } catch (err) {
     res.status(500).json(err);
   }
-};
+}
 
 //GET MSG
-async function getMsg(req, res)  {
+async function getMsg(req, res) {
   try {
     const messages = await Message.find({
       conversationId: req.params.conversationId,
@@ -22,9 +22,9 @@ async function getMsg(req, res)  {
   } catch (err) {
     res.status(500).json(err);
   }
-};
-
-module.exports = {
-    getMsg, newMsg, 
 }
 
+module.exports = {
+  getMsg,
+  newMsg,
+};

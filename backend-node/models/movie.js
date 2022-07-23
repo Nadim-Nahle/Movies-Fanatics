@@ -1,5 +1,4 @@
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //MOVIE SCHEMA
 const movieSchema = new mongoose.Schema({
@@ -42,19 +41,13 @@ const movieSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  
+
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
     required: true,
-  }
-  
-
-  
-  
-
+  },
 });
 
-
 //EXPORTING SCHEMA
-module.exports = mongoose.model('Movie', movieSchema);
+module.exports = mongoose.model("Movie", movieSchema);

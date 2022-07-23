@@ -12,7 +12,7 @@ async function newConv(req, res) {
   } catch (err) {
     res.status(500).json(err);
   }
-};
+}
 
 //GET CONV OF A USER
 async function getConv(req, res) {
@@ -24,7 +24,7 @@ async function getConv(req, res) {
   } catch (err) {
     res.status(500).json(err);
   }
-};
+}
 
 // GET CONV OF TWO USERS
 async function getConvs(req, res) {
@@ -32,12 +32,14 @@ async function getConvs(req, res) {
     const conversation = await Conversation.findOne({
       members: { $all: [req.params.firstUserId, req.params.secondUserId] },
     });
-    res.status(200).json(conversation)
+    res.status(200).json(conversation);
   } catch (err) {
     res.status(500).json(err);
   }
-};
+}
 
 module.exports = {
-    newConv, getConv, getConvs
-}
+  newConv,
+  getConv,
+  getConvs,
+};
