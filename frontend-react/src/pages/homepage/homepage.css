@@ -17,7 +17,7 @@
   background-blend-mode: multiply;
   padding: 0;
 }
-.homepage-content{
+.homepage-content {
   padding-bottom: 10%;
 }
 
@@ -49,7 +49,7 @@
 .enter-btn {
   background-color: red;
   color: white;
-  padding:3%;
+  padding: 3%;
   padding-right: 8%;
   padding-left: 8%;
   cursor: pointer;

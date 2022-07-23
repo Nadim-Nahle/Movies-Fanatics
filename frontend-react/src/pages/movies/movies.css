@@ -40,7 +40,7 @@ body {
   padding: 1%;
   width: 50%;
 }
-.movie-search-btn{
+.movie-search-btn {
   padding: 1%;
 }
 
@@ -72,7 +72,7 @@ body {
   padding-bottom: 3%;
   font-size: 1.5vw;
 }
-.movie-btns{
+.movie-btns {
   padding-top: 4vh;
 }
 
@@ -109,7 +109,6 @@ body {
   border: 1;
   border-radius: 10%;
   font-size: 1vw;
-  
 }
 @media screen and (max-width: 850px) {
   .hero {

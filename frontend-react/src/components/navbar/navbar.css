@@ -116,7 +116,7 @@
 .nav-icon {
   display: none;
 }
-.logo{
+.logo {
   height: 23vh;
   padding-top: 3%;
 }
@@ -165,7 +165,7 @@
     cursor: pointer;
     color: red;
   }
-  .navbar{
+  .navbar {
     font-size: 3vw;
   }
 }

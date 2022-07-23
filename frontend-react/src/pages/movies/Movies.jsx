@@ -16,14 +16,13 @@ const Movies = () => {
   const [reviews, setReviews] = useState({});
   const [playTrailer, setPlayTrailer] = useState(false);
   const [movieId, setMovieId] = useState("");
-  const [search, setSearch] = useState(true)
+  const [search, setSearch] = useState(true);
   const scrollRef = useRef();
   const [img, setImg] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [trailerkey, setTrailerKey] = useState("");
   const AuthToken = localStorage.getItem("AuthToken");
-
 
   //FETCH MOVIES
   const fetchMovies = async (searchKey) => {
@@ -53,7 +52,7 @@ const Movies = () => {
       (vid) => vid.name === "Official Trailer"
     );
     const key = trailer ? trailer.key : selectedMovie.videos.results[0].key;
-    setTrailerKey(key)
+    setTrailerKey(key);
     setMovieId(data.id);
 
     return data;
@@ -97,8 +96,7 @@ const Movies = () => {
       (vid) => vid.name === "Official Trailer"
     );
     const key = trailer ? trailer.key : selectedMovie.videos.results[0].key;
-    
-    
+
     return (
       <YouTube
         videoId={key}
@@ -140,8 +138,6 @@ const Movies = () => {
 
   return (
     <>
-    
-
       <div
         className="hero"
         ref={scrollRef}
@@ -152,53 +148,56 @@ const Movies = () => {
         <div className="hero-content max-center">
           {playTrailer ? (
             <button
-              onClick={() => {setPlayTrailer(false); setSearch(true)}}
+              onClick={() => {
+                setPlayTrailer(false);
+                setSearch(true);
+              }}
               className="play-btn close"
             >
               Close Video
             </button>
           ) : null}
-          {
-            search ?
-          <div className="header-content max-center">
-          <form onSubmit={searchMovies}>
-            <input
-              type="text"
-              onChange={(e) => setSearchKey(e.target.value)}
-              className="movie-search"
-              placeholder="search for movies"
-            />
-            <button type="submit" className="movie-search-btn">
-              {" "}
-              Search...
-            </button>
-          </form>
-        </div>
-        :null
-          }
+          {search ? (
+            <div className="header-content max-center">
+              <form onSubmit={searchMovies}>
+                <input
+                  type="text"
+                  onChange={(e) => setSearchKey(e.target.value)}
+                  className="movie-search"
+                  placeholder="search for movies"
+                />
+                <button type="submit" className="movie-search-btn">
+                  {" "}
+                  Search...
+                </button>
+              </form>
+            </div>
+          ) : null}
           {selectedMovie.videos && playTrailer ? renderTrailer() : null}
-          
+
           <h1 className="hero-title">{selectedMovie.title}</h1>
           {selectedMovie.overview ? (
             <p className="hero-overview"> {selectedMovie.overview} </p>
           ) : null}
           <div className="movie-btns">
-          <button onClick={() => {setPlayTrailer(true); setSearch(false)}} className="play-btn">
-            Play Trailer
-          </button>
-          <button onClick={addToFav} className="play-btn">
-            Add To Favorites
-          </button>
-          <YoutubeDownloader videoId={trailerkey}/>
-          
-          
+            <button
+              onClick={() => {
+                setPlayTrailer(true);
+                setSearch(false);
+              }}
+              className="play-btn"
+            >
+              Play Trailer
+            </button>
+            <button onClick={addToFav} className="play-btn">
+              Add To Favorites
+            </button>
+            <YoutubeDownloader videoId={trailerkey} />
           </div>
-          
         </div>
       </div>
 
       <div className="container max-center">{renderMovies()}</div>
-      
     </>
   );
 };

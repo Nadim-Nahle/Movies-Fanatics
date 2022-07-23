@@ -1,9 +1,9 @@
-.download-btn{
-    background-color: rgb(0, 0, 0);
-    color: white;
-  
-    padding: 1%;
-    border-radius: 20px;
-    cursor: pointer;
-    border: solid 1px;
+.download-btn {
+  background-color: rgb(0, 0, 0);
+  color: white;
+
+  padding: 1%;
+  border-radius: 20px;
+  cursor: pointer;
+  border: solid 1px;
 }

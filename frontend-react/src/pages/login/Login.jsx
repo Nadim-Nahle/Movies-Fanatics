@@ -8,7 +8,6 @@ import Google from "../../components/google/Google";
 
 const LOGIN_URL = "/api/v1/auth/login";
 
-
 const Login = () => {
   const { setAuth } = useAuth();
 
