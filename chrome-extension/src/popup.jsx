@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
-import './popup.css'
+import './popup.css';
+import axios from 'axios';
 
 function Popup() {
 
     const [link, setLink ] = useState('');
-    console.log(link)
+    let keySlice = link.split("=");
+    let key = keySlice[1]
+    console.log(key)
+    
     const options = {
         method: 'GET',
-        url: `https://youtube-downloader9.p.rapidapi.com//videoandaudio`,
+        url: `https://youtube-downloader9.p.rapidapi.com/${key}/videoandaudio`,
         headers: {
           'X-RapidAPI-Key': '1f947199c7msh3bc6fd219522000p1bd19cjsn318d2499f463',
           'X-RapidAPI-Host': 'youtube-downloader9.p.rapidapi.com'
