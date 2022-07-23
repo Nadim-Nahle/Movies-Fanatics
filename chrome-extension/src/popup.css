@@ -1,4 +1,7 @@
 .form-download{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+.download-btn{
+    color:red;
 }
