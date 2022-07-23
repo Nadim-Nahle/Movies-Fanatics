@@ -14,6 +14,7 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  padding-bottom: 10%;
 }
 .right-profile{
   display: flex;
@@ -140,5 +141,17 @@
   border: 0;
   cursor: pointer;
   border-radius: 5px;
+}
+.profile-pic{
+  height: 15vh;
+  border-radius: 50%;
+}
+.left-content{
+  text-align: center;
+  padding: 10px;
+}
+.profile-email{
+  font-weight: 1;
+  padding: 5%;
 }
 

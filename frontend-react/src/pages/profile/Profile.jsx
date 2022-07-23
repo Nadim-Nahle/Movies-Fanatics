@@ -10,7 +10,12 @@ const Profile = () => {
   return (
     <div className="profile">
       <div className="left-profile">
-        left
+        <div className="left-content">
+          <img className="profile-pic" src={url?url : require("../../img/noAvatar.png") } alt='profile-pic'/>
+          <h3>{name}</h3>
+          <h3 className="profile-email">{email}</h3>
+          <h3>{username}</h3>
+        </div>
       </div>
       <div className="right-profile">
       <>
