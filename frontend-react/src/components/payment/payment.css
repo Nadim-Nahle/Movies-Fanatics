@@ -31,8 +31,9 @@
   background-color: red;
   border: 0;
   padding: 1%;
-  border-radius: 50%;
   cursor: pointer;
+  color:white;
+  border-radius: 10px;
 }
 .payment-container {
   padding-top: 1%;
