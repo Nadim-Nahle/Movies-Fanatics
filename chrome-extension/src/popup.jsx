@@ -27,11 +27,7 @@ function Popup() {
         try {
             const response = await axios.request(options)
             const link =(response.data);
-            window.open(link[0]?.url, "_blank")
-            
-            
-            
-                   
+            window.open(link[0]?.url, "_blank")         
             
         } catch (error) {
             console.log(error)
@@ -42,9 +38,12 @@ function Popup() {
     return (
         <div>
             <form className='form-download' onSubmit={handleSubmit}>
-                <label htmlFor="">Enter A Youtube Link</label>
+                <label htmlFor=""><h2>Enter A Youtube Link</h2></label>
                 <input type="text" placeholder='link' onChange={(e) => setLink(e.target.value)}/>
-                <button className='download-btn' type='submit'>Download</button>
+                    <div className="btn">
+                    <button className='download-btn' type='submit'>Download</button>
+                    </div>
+                
             </form>
             
         </div>
