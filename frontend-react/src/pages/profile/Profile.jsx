@@ -25,7 +25,11 @@ const Profile = () => {
         `/api/v1/auth/user/update/${user._id}`,
         { name, email, username, country, city, phoneNumber }
       );
+      localStorage.setItem('name',response.data.data.name)
+      localStorage.setItem('username',response.data.data.username)
+      localStorage.setItem('email',response.data.data.email)
       setResponse("Profile Updated");
+      
     } catch (error) {
       setResponse("Network Error");
     }
