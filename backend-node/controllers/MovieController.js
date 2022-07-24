@@ -1,5 +1,6 @@
 const { all } = require("../app/routes");
 const Movie = require("../models/movie");
+const fs = require('fs');
 
 //ADD MOVIE CONTROLLER
 async function addMovie(req, res) {
@@ -57,7 +58,8 @@ async function updateMovie(req, res) {
 
 async function watchMovie(req, res) {
   const range = req.headers.range;
-  const videoPath = '../movies/minions.mp4'
+  const videoPath = '../movies/minions.mp4';
+  const videoSize = fs.statSync(videoPath)
 }
 
 module.exports = {
