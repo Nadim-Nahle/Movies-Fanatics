@@ -5,6 +5,8 @@ import MovieCard from "./MovieCard";
 import "./movies.css";
 import YouTube from "react-youtube";
 import YoutubeDownloader from "../../components/youtubeDownloader/YoutubeDownloader";
+import VideoStream from "../../components/videoStream/VideoStream";
+import { useNavigate } from "react-router";
 
 const Movies = () => {
   const API_URL = "https://api.themoviedb.org/3";
@@ -23,6 +25,8 @@ const Movies = () => {
   const [description, setDescription] = useState("");
   const [trailerkey, setTrailerKey] = useState("");
   const AuthToken = localStorage.getItem("AuthToken");
+
+  const navigate = useNavigate();
 
   //FETCH MOVIES
   const fetchMovies = async (searchKey) => {
@@ -136,6 +140,10 @@ const Movies = () => {
     }
   };
 
+  const openMovie = () => {
+    navigate('/video')
+  }
+
   return (
     <>
       <div
@@ -193,6 +201,7 @@ const Movies = () => {
               Add To Favorites
             </button>
             <YoutubeDownloader videoId={trailerkey} />
+            <button className="play-btn" onClick={openMovie}>Watch Movie</button>
           </div>
         </div>
       </div>
