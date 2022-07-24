@@ -54,9 +54,15 @@ async function updateMovie(req, res) {
   }
 }
 
+
+async function watchMovie(req, res) {
+  console.log('hello')
+}
+
 module.exports = {
   addMovie,
   getMovie,
   deleteMovies,
   updateMovie,
+  watchMovie,
 };
