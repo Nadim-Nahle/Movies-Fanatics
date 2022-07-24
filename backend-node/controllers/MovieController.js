@@ -62,7 +62,10 @@ async function watchMovie(req, res) {
   const videoSize = fs.statSync(videoPath).size;
 
   const chunkSize = 1 * 1e+6;
+  const start = Number(range.replace(/\D/g, ''));
+  const end = Math.min( start + chunkSize, videoSize -1);
 
+  
   
 }
 
