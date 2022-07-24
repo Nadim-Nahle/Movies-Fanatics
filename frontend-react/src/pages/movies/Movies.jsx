@@ -141,8 +141,8 @@ const Movies = () => {
   };
 
   const openMovie = () => {
-    navigate('/video')
-  }
+    navigate("/video");
+  };
 
   return (
     <>
@@ -201,7 +201,9 @@ const Movies = () => {
               Add To Favorites
             </button>
             <YoutubeDownloader videoId={trailerkey} />
-            <button className="play-btn" onClick={openMovie}>Watch Movie</button>
+            <button className="play-btn" onClick={openMovie}>
+              Watch Movie
+            </button>
           </div>
         </div>
       </div>
