@@ -59,7 +59,11 @@ async function updateMovie(req, res) {
 async function watchMovie(req, res) {
   const range = req.headers.range;
   const videoPath = '../movies/minions.mp4';
-  const videoSize = fs.statSync(videoPath)
+  const videoSize = fs.statSync(videoPath).size;
+
+  const chunkSize = 1 * 1e+6;
+
+  
 }
 
 module.exports = {
