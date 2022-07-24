@@ -195,3 +195,43 @@ input[type=file]{
   color: red;
   font-weight: bold;
 }
+
+@media screen and (max-width: 850px) {
+
+  .right-profile{
+    display: flex;
+    width: 65%;
+    border: 1px solid rgb(211, 203, 203);
+    background-color: #fff;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .left-profile{
+    width: 35%;
+    border: 1px solid rgb(211, 203, 203);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding-bottom: 10%;
+    font-size: 10px;
+  }
+
+  .profile-btn{
+    padding: 7%;
+    color: #fff;
+    background-color: #ff0000;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .form-btn{
+    font-size: 14px;
+    padding: 0;
+
+    
+  }
+  
+}
