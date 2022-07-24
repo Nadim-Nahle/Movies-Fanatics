@@ -56,7 +56,8 @@ async function updateMovie(req, res) {
 
 
 async function watchMovie(req, res) {
-  console.log('hello')
+  const range = req.headers.range;
+  const videoPath = '../movies/minions.mp4'
 }
 
 module.exports = {
