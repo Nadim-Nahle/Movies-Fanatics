@@ -29,7 +29,6 @@ const {
   getMovie,
   deleteMovies,
   updateMovie,
-  watchMovie
 } = require("../controllers/MovieController");
 
 // ROUTES
@@ -45,7 +44,7 @@ router.post("/auth/addmovie", auth, addMovie);
 router.get("/auth/movies", auth, getMovie);
 router.delete("/auth/delete/:id", auth, deleteMovies);
 router.patch("/auth/movie/update/:id", auth, updateMovie);
-router.get("/auth/movie",  watchMovie);
+
 
 //USER ROUTES
 router.patch("/auth/user/update/:id", updateUser);

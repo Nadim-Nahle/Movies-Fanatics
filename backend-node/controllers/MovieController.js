@@ -55,36 +55,12 @@ async function updateMovie(req, res) {
   }
 }
 
-
-async function watchMovie(req, res) {
-  const range = req.headers.range;
-  const videoPath = '../movies/minions.mp4';
-  const videoSize = fs.statSync(videoPath).size;
-
-  const chunkSize = 1 * 1e+6;
-  const start = Number(range.replace(/\D/g, ''));
-  const end = Math.min( start + chunkSize, videoSize -1);
-
-  const contentLength = end - start + 1;
-
-  const headers = {
-    'Content-range': `bytes ${start}-${end}/${videoSize}`,
-    'Accept-Ranges': 'bytes',
-    'Content-Length': contentLength,
-    'Content-Type': 'video/mp4'
-  }
-  res.writeHead(206, headers);
-
   
 
-
-  
-}
 
 module.exports = {
   addMovie,
   getMovie,
   deleteMovies,
   updateMovie,
-  watchMovie,
 };
