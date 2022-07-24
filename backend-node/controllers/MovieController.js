@@ -65,7 +65,19 @@ async function watchMovie(req, res) {
   const start = Number(range.replace(/\D/g, ''));
   const end = Math.min( start + chunkSize, videoSize -1);
 
+  const contentLength = end - start + 1;
+
+  const headers = {
+    'Content-range': `bytes ${start}-${end}/${videoSize}`,
+    'Accept-Ranges': 'bytes',
+    'Content-Length': contentLength,
+    'Content-Type': 'video/mp4'
+  }
+  res.writeHead(206, headers);
+
   
+
+
   
 }
 
