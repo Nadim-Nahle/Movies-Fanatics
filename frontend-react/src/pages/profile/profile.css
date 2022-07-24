@@ -3,9 +3,11 @@
   padding-left: 5%;
   padding-right: 5%;
   height: 80vh;
+  width: 70vw;
   padding-top: 2%;
   background: linear-gradient(to bottom, #161515, #ff0000);
   color: black;
+  padding-left: 14vw;
 }
 .profile-page{
   background: linear-gradient(to bottom, #161515, #ff0000);
