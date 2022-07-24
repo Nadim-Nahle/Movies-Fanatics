@@ -1,0 +1,13 @@
+.video-stream{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 90vh;
+    background: linear-gradient(to bottom, #161515, #ff0000);
+}
+
+.video-card{
+    width:1000px;
+}
+

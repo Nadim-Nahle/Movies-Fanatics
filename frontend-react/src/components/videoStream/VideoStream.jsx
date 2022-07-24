@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './videoStream.css';
 
 const VideoStream = () => {
   return (
-    <div>VideoStream</div>
+    <div className='video-stream'>
+        <div className="video-stream-card">
+            <video className='video-card' src="http://localhost:9000/movie"  controls></video>
+        </div>
+        
+    </div>
   )
 }
 
