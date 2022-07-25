@@ -38,22 +38,20 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="payment" element={<Payment />}></Route>
-          <Route path="/fab" element={<FloatingBtn />}></Route>
-          <Route path="/downloader" element={<YoutubeDownloader />}></Route>
           <Route path="/video" element={<VideoStream />}></Route>
 
           {/*PROTECTED ROUTES*/}
           <Route element={<RequireAuth allowedRoles={["user", "premium"]} />}>
-            <Route path="/movies" element={<Movies />}></Route>
-            <Route path="/messenger" element={<Messenger />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
-            <Route path="/swipe" element={<Swipe />}></Route>
-            <Route path="/premium" element={<Premium />}></Route>
+            <Route path="/auth/movies" element={<Movies />}></Route>
+            <Route path="/auth/messenger" element={<Messenger />}></Route>
+            <Route path="/auth/profile" element={<Profile />}></Route>
+            <Route path="/auth/swipe" element={<Swipe />}></Route>
+            <Route path="/auth/premium" element={<Premium />}></Route>
           </Route>
 
           {/*PREMIUM ROUTES*/}
           <Route element={<RequireAuth allowedRoles={["premium"]} />}>
-            <Route path="/chatbot" element={<ChatBot />}></Route>
+            <Route path="/auth/chatbot" element={<ChatBot />}></Route>
           </Route>
 
           {/*404 ROUTE*/}

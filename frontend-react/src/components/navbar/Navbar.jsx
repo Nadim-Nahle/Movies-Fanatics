@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./navbar.css";
 
@@ -8,6 +8,7 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const { setAuth } = useAuth();
+  const location = useLocation();
   
 
   const handleClick = () => setClick(!click);
@@ -24,6 +25,7 @@ function Navbar() {
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
+          {location.pathname.includes("auth") && (
             <li className="nav-item">
               <NavLink
                 exact
@@ -35,10 +37,11 @@ function Navbar() {
                 Logout
               </NavLink>
             </li>
+          )}
             <li className="nav-item">
               <NavLink
                 exact
-                to="/profile"
+                to="/auth/profile"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -49,7 +52,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/messenger"
+                to="/auth/messenger"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -60,7 +63,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/swipe"
+                to="/auth/swipe"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -71,7 +74,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/premium"
+                to="/auth/premium"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -82,7 +85,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/movies"
+                to="/auth/movies"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -93,7 +96,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/register"
+                to="/auth/register"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -105,7 +108,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/login"
+                to="/auth/login"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
