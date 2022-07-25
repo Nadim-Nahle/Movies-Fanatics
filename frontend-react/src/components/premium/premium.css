@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(rgba(95, 95, 95, 0.863) 0%, #000 100%);
+  background: linear-gradient(to bottom, #161515, #ff0000);
 }
 .premium-wrapper {
   width: 400px;
