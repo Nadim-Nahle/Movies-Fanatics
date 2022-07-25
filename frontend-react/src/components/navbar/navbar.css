@@ -166,6 +166,26 @@
     color: red;
   }
   .navbar {
+    background-color: #000000;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 3vw;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .nav-logo {
+    color: red;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    flex-grow: 1;
+  }
+  .logo {
+    height: 15vh;
+    padding-top: 3%;
   }
 }
