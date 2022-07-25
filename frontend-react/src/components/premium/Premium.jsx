@@ -9,44 +9,44 @@ const Premium = () => {
   };
   return (
     <div className="premium-body">
-      <div class="premium-wrapper">
+      <div className="premium-wrapper">
         <input type="radio" name="slider" id="tab-1" />
-        <input type="radio" name="slider" id="tab-2" checked />
+        <input type="radio" name="slider" id="tab-2"  readOnly checked />
         <input type="radio" name="slider" id="tab-3" />
         <header>
-          <label for="tab-1" class="tab-1">
+          <label htmlFor="tab-1" className="tab-1">
             Basic
           </label>
-          <label for="tab-2" class="tab-2">
+          <label htmlFor="tab-2" className="tab-2">
             Standard
           </label>
-          <label for="tab-3" class="tab-3">
+          <label htmlFor="tab-3" className="tab-3">
             Team
           </label>
-          <div class="slider"></div>
+          <div className="slider"></div>
         </header>
-        <div class="card-area">
-          <div class="cards">
-            <div class="row">
-              <div class="price-details">
-                <span class="price">10</span>
+        <div className="card-area">
+          <div className="cards">
+            <div className="row">
+              <div className="price-details">
+                <span className="price">10</span>
                 <p>For premium</p>
               </div>
-              <ul class="features">
+              <ul className="features">
                 <li>
-                  <i class="fas fa-check"></i>
+                  <i className="fas fa-check"></i>
                   <span>Unlimited links</span>
                 </li>
                 <li>
-                  <i class="fas fa-check"></i>
+                  <i className="fas fa-check"></i>
                   <span>Exclusive content</span>
                 </li>
                 <li>
-                  <i class="fas fa-check"></i>
+                  <i className="fas fa-check"></i>
                   <span>Get acess to our chatbot</span>
                 </li>
                 <li>
-                  <i class="fas fa-check"></i>
+                  <i className="fas fa-check"></i>
                   <span>Unlimited movie download</span>
                 </li>
               </ul>

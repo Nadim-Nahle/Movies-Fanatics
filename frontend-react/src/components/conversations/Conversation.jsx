@@ -30,7 +30,7 @@ const Conversations = ({ conversation, currentUser }) => {
             : "https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"
         }
       />
-      <span className="conversationName">{user?.name}</span>
+      <span key={conversation?._id} className="conversationName">{user?.name}</span>
     </div>
   );
 };

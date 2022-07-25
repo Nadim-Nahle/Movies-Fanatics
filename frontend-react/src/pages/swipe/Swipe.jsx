@@ -91,7 +91,7 @@ const Swipe = () => {
             </div>
             <div className="user-matches-content">
               {followedUsers?.map((user) => (
-                <h4>{user.name}</h4>
+                <h4 key={user._id}>{user.name}</h4>
               ))}
             </div>
           </div>

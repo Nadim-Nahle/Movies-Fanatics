@@ -113,7 +113,7 @@ const Messenger = () => {
               className="chatMenuInput"
             />
             {conversations.map((c) => (
-              <div onClick={() => setCurrentChat(c)}>
+              <div onClick={() => setCurrentChat(c)} key={conversations?._id}>
                 <Conversation conversation={c} currentUser={user} />
               </div>
             ))}
@@ -125,7 +125,7 @@ const Messenger = () => {
               <>
                 <div className="chatBoxTop">
                   {messages.map((m) => (
-                    <div ref={scrollRef}>
+                    <div ref={scrollRef} key={messages?._id}>
                       <Message message={m} own={m.sender === user._id} />
                     </div>
                   ))}
