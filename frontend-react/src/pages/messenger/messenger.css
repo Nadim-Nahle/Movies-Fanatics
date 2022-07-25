@@ -1,5 +1,5 @@
 .messenger {
-  height: 100vh;
+  height: 105vh;
   display: flex;
   background-color: white;
   color: black;
@@ -22,6 +22,7 @@
 
 .chatBox {
   flex: 5.5;
+
 }
 
 .chatBoxWrapper {
@@ -29,6 +30,7 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  
 }
 
 .chatBoxTop {

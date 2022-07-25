@@ -201,7 +201,7 @@ const Movies = () => {
               Add To Favorites
             </button>
             <YoutubeDownloader videoId={trailerkey} />
-            <button className="play-btn" onClick={openMovie}>
+            <button className="play-btn watch-movie" onClick={openMovie}>
               Watch Movie
             </button>
           </div>

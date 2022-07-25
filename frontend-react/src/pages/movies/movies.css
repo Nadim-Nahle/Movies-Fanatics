@@ -67,6 +67,7 @@ body {
   cursor: pointer;
   border: solid 1px;
 }
+
 .hero-content {
   max-width: 70%;
   padding-bottom: 3%;
@@ -118,6 +119,9 @@ body {
     background-size: cover;
     display: flex;
     align-items: flex-end;
+  }
+  .watch-movie{
+    display: none;
   }
 
   .close {
