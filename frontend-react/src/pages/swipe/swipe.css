@@ -88,8 +88,8 @@
   .card {
     position: relative;
     background-color: #fff;
-    width: 50vw;
-    height: 75vh;
+    width: 70vw;
+    height: 65vh;
     border-radius: 30px;
     background-size: cover;
     background-position: center;
@@ -104,5 +104,8 @@
     padding-top: 2%;
     font-size: 1vw;
     padding-left: 10%;
+  }
+  .following{
+    display: none;
   }
 }
