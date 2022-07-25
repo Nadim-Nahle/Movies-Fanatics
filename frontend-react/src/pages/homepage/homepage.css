@@ -56,3 +56,63 @@
   border: solid 0px;
   font-size: 2vw;
 }
+
+@media screen and (max-width: 850px) {
+  .homepage {
+    display: flex;
+    width: 100%;
+    height: 46vh;
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://i.ibb.co/Jk5jLtM/pexels-lucas-pezeta-2398356.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #5c5656;
+    background-blend-mode: multiply;
+    padding: 0;
+  }
+  .homepage-content {
+    padding-bottom: 80%;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 4vw;
+  }
+  .desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 2% 0;
+    text-align: center;
+    font-size: 2vw;
+    padding-top: 5%;
+  }
+  .enter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 5%;
+  }
+  
+  .enter-btn {
+    background-color: red;
+    color: white;
+    padding: 3%;
+    padding-right: 8%;
+    padding-left: 8%;
+    cursor: pointer;
+    border: solid 0px;
+    font-size: 4vw;
+  }
+}
