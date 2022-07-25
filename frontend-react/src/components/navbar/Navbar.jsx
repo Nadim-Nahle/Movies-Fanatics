@@ -20,7 +20,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo">
+          <NavLink to="/" className="nav-logo">
             <img
               className="logo"
               src={require("../../img/logo.png")}
@@ -32,7 +32,6 @@ function Navbar() {
             {auth.user ?
               <li className="nav-item">
                 <NavLink
-                  exact
                   to=""
                   activeclassname="active"
                   className="nav-links"
@@ -45,7 +44,7 @@ function Navbar() {
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
-                  exact
+                
                   to="/auth/profile"
                   activeclassname="active"
                   className="nav-links"
@@ -58,7 +57,7 @@ function Navbar() {
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
-                  exact
+                
                   to="/auth/messenger"
                   activeclassname="active"
                   className="nav-links"
@@ -71,7 +70,7 @@ function Navbar() {
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
-                  exact
+                
                   to="/auth/swipe"
                   activeclassname="active"
                   className="nav-links"
@@ -84,7 +83,7 @@ function Navbar() {
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
-                  exact
+                
                   to="/auth/premium"
                   activeclassname="active"
                   className="nav-links"
@@ -97,7 +96,7 @@ function Navbar() {
 
             <li className="nav-item">
               <NavLink
-                exact
+              
                 to="/movies"
                 activeclassname="active"
                 className="nav-links"
@@ -110,7 +109,7 @@ function Navbar() {
             {auth.user ? null : (
               <li className="nav-item">
                 <NavLink
-                  exact
+                
                   to="/register"
                   activeclassname="active"
                   className="nav-links"
@@ -123,7 +122,7 @@ function Navbar() {
             {auth.user ? null : (
               <li className="nav-item">
                 <NavLink
-                  exact
+                
                   to="/login"
                   activeclassname="active"
                   className="nav-links"
