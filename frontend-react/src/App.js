@@ -26,7 +26,7 @@ function App() {
   useEffect(()=>{
     const user = cookies?.user;
     setAuth({ user });
-  },[cookies?.user])
+  },[])
   
 
   return (

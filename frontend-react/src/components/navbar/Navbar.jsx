@@ -13,8 +13,9 @@ function Navbar() {
 
   const handleClick = () => setClick(!click);
   const handleLogout = () => {
+    setAuth({});
     removeCookie("user");
-    setAuth("");
+    setAuth({});
   };
   return (
     <>
@@ -29,7 +30,7 @@ function Navbar() {
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {location.pathname.includes("auth") && (
+            {auth.user ?
               <li className="nav-item">
                 <NavLink
                   exact
@@ -41,7 +42,7 @@ function Navbar() {
                   Logout
                 </NavLink>
               </li>
-            )}
+            :null}
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
