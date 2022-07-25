@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background: linear-gradient(to top, #161515, #ff0000);
 }
 .chatbot-wrapper {
   width: 100%;
