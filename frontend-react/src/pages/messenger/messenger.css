@@ -1,8 +1,11 @@
 .messenger {
-  height: calc(100vh - 70px);
+  height: 100vh;
   display: flex;
   background-color: white;
   color: black;
+}
+.color{
+  background-color: white;
 }
 
 .chatMenu {
@@ -29,7 +32,7 @@
 }
 
 .chatBoxTop {
-  height: 100%;
+  height: 100vh;
   overflow-y: scroll;
   padding-right: 10px;
 }
@@ -43,7 +46,7 @@
 
 .chatMessageInput {
   width: 80%;
-  height: 90px;
+  height: 20vh;
   padding: 10px;
 }
 
@@ -66,7 +69,7 @@
 .chatBoxWrapper,
 .chatOnlineWrapper {
   padding: 10px;
-  height: 100%;
+  height: 100vh;
 }
 
 .noConversationText {
@@ -93,5 +96,9 @@
 
   .chatOnline {
     flex: 1px;
+  }
+
+  .chatOnline{
+    display: none;
   }
 }

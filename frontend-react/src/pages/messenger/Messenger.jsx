@@ -103,7 +103,7 @@ const Messenger = () => {
   }, [messages]);
 
   return (
-    <>
+    <div className="color">
       <div className="messenger">
         <div className="chatMenu">
           <div className="chatMenuWrapper">
@@ -160,7 +160,7 @@ const Messenger = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
