@@ -6,7 +6,7 @@ import "./navbar.css";
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [removeCookie] = useCookies(["user"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const { setAuth } = useAuth();
   
 
