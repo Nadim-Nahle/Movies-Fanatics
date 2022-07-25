@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 const FloatingBtn = () => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/chatbot");
+    navigate("/auth/chatbot");
   };
 
   return (
