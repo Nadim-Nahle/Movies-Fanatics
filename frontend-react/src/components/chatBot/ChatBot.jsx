@@ -234,8 +234,8 @@ const ChatBot = () => {
           <div className="chatbot-main">
             <div className="chatbot-main_content">
               <div className="chatbot-messages">
-                <div className="chatbot-bot-message" id="message1"></div>
-                <div className="chatbot-human-message" id="message2"></div>
+                <div className="chatbot-bot-message" id="message2"></div>
+                <div className="chatbot-human-message" id="message1"></div>
               </div>
             </div>
           </div>
