@@ -9,6 +9,8 @@ function Navbar() {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const { setAuth } = useAuth();
   const location = useLocation();
+  const { auth } = useAuth();
+
   
 
   const handleClick = () => setClick(!click);
@@ -38,6 +40,7 @@ function Navbar() {
               </NavLink>
             </li>
           )}
+            {auth.user ?
             <li className="nav-item">
               <NavLink
                 exact
@@ -49,6 +52,8 @@ function Navbar() {
                 Profile
               </NavLink>
             </li>
+            :null}
+            {auth.user ?
             <li className="nav-item">
               <NavLink
                 exact
@@ -60,6 +65,9 @@ function Navbar() {
                 Messenger
               </NavLink>
             </li>
+            :null
+            }
+            {auth.user ?
             <li className="nav-item">
               <NavLink
                 exact
@@ -71,6 +79,8 @@ function Navbar() {
                 Connect
               </NavLink>
             </li>
+            :null}
+            {auth.user ?
             <li className="nav-item">
               <NavLink
                 exact
@@ -82,6 +92,8 @@ function Navbar() {
                 Premuim
               </NavLink>
             </li>
+            :null}
+            
             <li className="nav-item">
               <NavLink
                 exact
@@ -93,10 +105,13 @@ function Navbar() {
                 Movies
               </NavLink>
             </li>
+            
+            
+            {auth.user ? null :
             <li className="nav-item">
               <NavLink
                 exact
-                to="/auth/register"
+                to="/register"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -104,11 +119,12 @@ function Navbar() {
                 Sign up
               </NavLink>
             </li>
-
+            }
+            {auth.user ? null :
             <li className="nav-item">
               <NavLink
                 exact
-                to="/auth/login"
+                to="/login"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -116,6 +132,7 @@ function Navbar() {
                 Sign in
               </NavLink>
             </li>
+            }
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
