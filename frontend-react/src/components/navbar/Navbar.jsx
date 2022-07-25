@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./navbar.css";
 
@@ -8,7 +8,6 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const { setAuth } = useAuth();
-  const location = useLocation();
   const { auth } = useAuth();
 
   const handleClick = () => setClick(!click);
@@ -99,7 +98,7 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/auth/movies"
+                to="/movies"
                 activeclassname="active"
                 className="nav-links"
                 onClick={handleClick}

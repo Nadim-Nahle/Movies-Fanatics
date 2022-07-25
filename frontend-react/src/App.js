@@ -15,8 +15,6 @@ import Payment from "./components/payment/Payment";
 import Premium from "./components/premium/Premium";
 import useAuth from "./hooks/useAuth";
 import { useCookies } from "react-cookie";
-import FloatingBtn from "./components/floatingBtn/FloatingBtn";
-import YoutubeDownloader from "./components/youtubeDownloader/YoutubeDownloader";
 import VideoStream from "./components/videoStream/VideoStream";
 
 function App() {
@@ -42,7 +40,7 @@ function App() {
 
           {/*PROTECTED ROUTES*/}
           <Route element={<RequireAuth allowedRoles={["user", "premium"]} />}>
-            <Route path="/auth/movies" element={<Movies />}></Route>
+            <Route path="/movies" element={<Movies />}></Route>
             <Route path="/auth/messenger" element={<Messenger />}></Route>
             <Route path="/auth/profile" element={<Profile />}></Route>
             <Route path="/auth/swipe" element={<Swipe />}></Route>
