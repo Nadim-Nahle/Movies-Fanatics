@@ -198,9 +198,21 @@ input[type=file]{
 
 @media screen and (max-width: 850px) {
 
+  .profile{
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 80vh;
+    width: 90vw;
+    padding-top: 2%;
+    background: linear-gradient(to bottom, #161515, #ff0000);
+    color: black;
+    flex-direction: column;
+  }
+
   .right-profile{
     display: flex;
-    width: 65%;
+    width: 100%;
     border: 1px solid rgb(211, 203, 203);
     background-color: #fff;
     justify-content: center;
@@ -209,7 +221,7 @@ input[type=file]{
   }
 
   .left-profile{
-    width: 35%;
+    width: 100%;
     border: 1px solid rgb(211, 203, 203);
     display: flex;
     justify-content: center;
