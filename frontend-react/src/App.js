@@ -22,8 +22,13 @@ import VideoStream from "./components/videoStream/VideoStream";
 function App() {
   const { setAuth } = useAuth();
   const [cookies] = useCookies(["user"]);
-  const user = cookies?.user;
-  setAuth({ user });
+
+  useEffect(()=>{
+    const user = cookies?.user;
+    setAuth({ user });
+  },[cookies?.user])
+  
+
   return (
     <div>
       <Routes>
