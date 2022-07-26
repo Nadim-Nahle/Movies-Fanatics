@@ -23,6 +23,7 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
 
   return (
     <div className="online">
+    
       <div className="onlineFriend">
         <div className="onlineImgContainer">
           <img

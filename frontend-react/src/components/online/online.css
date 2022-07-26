@@ -28,12 +28,13 @@
   top: 2px;
   right: 2px;
 }
+.online-friend {
+  border-bottom: 1px solid black;
+  }
 @media screen and (max-width: 768px) {
   .onlineName {
     display: none;
   }
-  .onlineFriend {
   
-  }
 
 }

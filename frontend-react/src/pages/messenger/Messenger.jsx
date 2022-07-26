@@ -152,6 +152,7 @@ const Messenger = () => {
         </div>
         <div className="chatOnline">
           <div className="chatOnlineWrapper">
+            <p className="online-friend">Online Firends</p>
             <Online
               onlineUsers={onlineUsers}
               currentId={user._id}
