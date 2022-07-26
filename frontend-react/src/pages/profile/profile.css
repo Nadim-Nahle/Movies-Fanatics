@@ -201,7 +201,14 @@ input[type=file]{
   font-weight: bold;
 }
 .logout-btn{
- padding-top: 150%;
+
+  padding: 2%;
+  color: #fff;
+  background-color: #000000;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+ 
 }
 
 

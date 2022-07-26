@@ -11,11 +11,7 @@ function Navbar() {
   const { auth } = useAuth();
 
   const handleClick = () => setClick(!click);
-  const handleLogout = () => {
-    setAuth({});
-    removeCookie("user");
-    setAuth({});
-  };
+  
   return (
     <>
       <nav className="navbar">
@@ -29,18 +25,6 @@ function Navbar() {
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {auth.user ?
-              <li className="nav-item">
-                <NavLink
-                  to=""
-                  activeclassname="active"
-                  className="nav-links"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </NavLink>
-              </li>
-            :null}
             
             {auth.user ? (
               <li className="nav-item">

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
+import useAuth from "../../hooks/useAuth";
 import "./profile.css";
 
 const Profile = () => {
@@ -11,10 +12,11 @@ const Profile = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+  const { setAuth } = useAuth();
 
   const [response, setResponse] = useState("");
 
-  const [cookies] = useCookies(["user"]);
   const user = cookies?.user;
 
   const handleSubmit = async (e) => {
@@ -33,6 +35,12 @@ const Profile = () => {
     } catch (error) {
       setResponse("Network Error");
     }
+  };
+
+  const handleLogout = () => {
+    setAuth({});
+    removeCookie("user");
+    setAuth({});
   };
 
   return (
@@ -181,6 +189,7 @@ const Profile = () => {
                     <p className="res">{response}</p>
                   </div>
                 </form>
+                <button className="logout-btn" onClick={handleLogout}>Logout</button>
               </div>
             </div>
           </>
