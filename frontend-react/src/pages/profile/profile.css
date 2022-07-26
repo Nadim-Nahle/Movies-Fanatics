@@ -15,7 +15,7 @@
 }
 .left-profile{
   width: 35%;
-  border: 1px solid rgb(211, 203, 203);
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
 }
 .form_container {
   padding:15px;
-  border:1px dashed #ccc;
+  
 }
 .form_wrapper h2 {
   font-size:1.5em;
@@ -55,7 +55,7 @@
   text-align:center;
   margin:-15px -15px 15px;
   padding:15px 0;
-  border-bottom:1px dashed #ccc;
+  
 }
 .form_wrapper h3 {
   font-size:1.1em;
@@ -73,6 +73,7 @@
 .form_wrapper .col_half {
   width:50%;
   float:left;
+   ;
 }
 .form_wrapper label {
   display:block;
@@ -117,6 +118,7 @@
   -moz-box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);
   box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);
   border:1px solid #f5ba1a;
+
 }
 .form_wrapper input[type="submit"] {
   background:#ff0000;
@@ -160,6 +162,9 @@
 .left-content{
   text-align: center;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+
 }
 .profile-email{
   font-weight: 1;
@@ -195,6 +200,10 @@ input[type=file]{
   color: red;
   font-weight: bold;
 }
+.logout-btn{
+ padding-top: 150%;
+}
+
 
 @media screen and (max-width: 850px) {
 

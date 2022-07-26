@@ -41,19 +41,7 @@ function Navbar() {
                 </NavLink>
               </li>
             :null}
-            {auth.user ? (
-              <li className="nav-item">
-                <NavLink
-                
-                  to="/auth/profile"
-                  activeclassname="active"
-                  className="nav-links"
-                  onClick={handleClick}
-                >
-                  Profile
-                </NavLink>
-              </li>
-            ) : null}
+            
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
@@ -132,6 +120,19 @@ function Navbar() {
                 </NavLink>
               </li>
             )}
+            {auth.user ? (
+              <li className="nav-item">
+                <NavLink
+                
+                  to="/auth/profile"
+                  activeclassname="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Profile
+                </NavLink>
+              </li>
+            ) : null}
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

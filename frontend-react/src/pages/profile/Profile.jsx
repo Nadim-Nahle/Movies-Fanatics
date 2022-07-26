@@ -38,6 +38,7 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <div className="profile">
+        
         <div className="left-profile">
           <div className="left-content">
             <div className="pic-content">
@@ -56,8 +57,13 @@ const Profile = () => {
             <h3>{name}</h3>
             <h3 className="profile-email">{email}</h3>
             <h3>{username}</h3>
+            
           </div>
+          
+          
+       
         </div>
+        
         <div className="right-profile">
           <>
             <div className="bg_img"></div>
