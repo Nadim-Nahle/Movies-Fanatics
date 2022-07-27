@@ -5,8 +5,8 @@
 <h1>React - Node.js - Express.js - MongoDB - Socket.io</h1>
 <img src='./SEF Readme Template (3)/title5.svg' alt='implementation'>
 <div>
-    <h1>Google Login></h2>
-    ![Alt Text](https://media.giphy.com/media/0u7z9mwbpxOAqz2wvq/giphy.gif)
+    <h1>Google Login</h2>
+    ![](https://media.giphy.com/media/0u7z9mwbpxOAqz2wvq/giphy.gif)
 </div>
 <img src='./SEF Readme Template (3)/title6.svg' alt='how to run'>
 <div>
