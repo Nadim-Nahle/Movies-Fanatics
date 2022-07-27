@@ -9,6 +9,8 @@
     <img src="https://media.giphy.com/media/0u7z9mwbpxOAqz2wvq/giphy.gif"/>
     <h1>Live chat</h1>
     <img src="https://media.giphy.com/media/WCm8i3uQ6n52HYKdp7/giphy.gif"/>
+    <h1>Swipe right or left!</h1>
+    <img src="https://media.giphy.com/media/CyeNhviK7luQTn04zu/giphy.gif"/>
 </div>
 <img src='./SEF Readme Template (3)/title6.svg' alt='how to run'>
 <div>
