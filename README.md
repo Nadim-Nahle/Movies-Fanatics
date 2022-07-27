@@ -6,19 +6,20 @@
 <img src='./SEF Readme Template (3)/title5.svg'>
 <img src='./SEF Readme Template (3)/title6.svg'>
 <div>
-    <ul>
+    <ol>
         <li>Clone or download this repository to your computer</li>
         <li>Open backend-Node folder</li>
-        <li>Open your favourite code editor and run 'npm i express' in the terminal to install the required dependencies</li>
+        <li>Open your favourite code editor and type 'npm i express' in the terminal to install the required dependencies</li>
         <li>Type 'npm start' in the terminal to run the server</li>
         <li>Open socket folder</li>
-        <li>Open your favourite code editor and run 'npm i socket.io' in the terminal to install the required dependencies</li>
+        <li>Open your favourite code editor and type 'npm i socket.io' in the terminal to install the required dependencies</li>
         <li>Type 'npm start' in the terminal to run the socket</li>
         <li>Open frontend-react folder</li>
-        <li>Open your favourite code editor and run 'npm i socket.io' in the terminal to install the required dependencies</li>
+        <li>Open your favourite code editor and type 'npm i react-dom' in the terminal to install the required dependencies</li>
         <li>Type 'npm start' in the terminal to run the frontend</li>
+        <li>Please contact me for the .env files</li>
         <li>Enjoy the project!</li>
-    </ul>
+    </ol>
 
 </div>
 
