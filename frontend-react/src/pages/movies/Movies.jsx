@@ -166,7 +166,7 @@ const Movies = () => {
             </NavLink>
 
             <ul className={click ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item">
+              <li className="new-nav-item">
                 {searchBar ? null : (
                   <i
                     class="fa fa-search"
@@ -190,7 +190,7 @@ const Movies = () => {
                 ) : null}
               </li>
               {auth.user ? (
-                <li className="nav-item">
+                <li className="new-nav-item">
                   <NavLink
                     to="/auth/messenger"
                     activeclassname="active"
@@ -202,7 +202,7 @@ const Movies = () => {
                 </li>
               ) : null}
               {auth.user ? (
-                <li className="nav-item">
+                <li className="new-nav-item">
                   <NavLink
                     to="/auth/swipe"
                     activeclassname="active"
@@ -214,7 +214,7 @@ const Movies = () => {
                 </li>
               ) : null}
               {auth.user ? (
-                <li className="nav-item">
+                <li className="new-nav-item">
                   <NavLink
                     to="/auth/premium"
                     activeclassname="active"
@@ -226,7 +226,7 @@ const Movies = () => {
                 </li>
               ) : null}
 
-              <li className="nav-item">
+              <li className="new-nav-item">
                 <NavLink
                   to="/movies"
                   activeclassname="active"
@@ -238,7 +238,7 @@ const Movies = () => {
               </li>
 
               {auth.user ? null : (
-                <li className="nav-item">
+                <li className="new-nav-item">
                   <NavLink
                     to="/register"
                     activeclassname="active"
@@ -250,7 +250,7 @@ const Movies = () => {
                 </li>
               )}
               {auth.user ? null : (
-                <li className="nav-item">
+                <li className="new-nav-item">
                   <NavLink
                     to="/login"
                     activeclassname="active"
@@ -262,7 +262,7 @@ const Movies = () => {
                 </li>
               )}
               {auth.user ? (
-                <li className="nav-item">
+                <li className="new-nav-item">
                   <NavLink
                     to="/auth/profile"
                     activeclassname="active"

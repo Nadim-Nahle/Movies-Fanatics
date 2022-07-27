@@ -112,6 +112,29 @@
   color: red;
   border: 1px solid red;
 }
+.new-nav-item {
+  line-height: 40px;
+  margin-right: 1rem;
+}
+
+.new-nav-item:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.new-nav-item:hover:after {
+  width: 100%;
+  background: red;
+}
+
+.new-nav-item .active {
+  color: red;
+  border: 1px solid red;
+}
 
 .nav-icon {
   display: none;
