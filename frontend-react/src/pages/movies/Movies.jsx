@@ -5,10 +5,18 @@ import MovieCard from "./MovieCard";
 import "./movies.css";
 import YouTube from "react-youtube";
 import YoutubeDownloader from "../../components/youtubeDownloader/YoutubeDownloader";
-import VideoStream from "../../components/videoStream/VideoStream";
 import { useNavigate } from "react-router";
+import Navbar from '../../components/navbar/Navbar'
+import { NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+
 
 const Movies = () => {
+  const [click, setClick] = useState(false);
+  const { auth } = useAuth();
+
+  const handleClick = () => setClick(!click);
+
   const API_URL = "https://api.themoviedb.org/3";
   const IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
@@ -25,6 +33,7 @@ const Movies = () => {
   const [description, setDescription] = useState("");
   const [trailerkey, setTrailerKey] = useState("");
   const AuthToken = localStorage.getItem("AuthToken");
+  const [searchBar, setSearchBar] = useState(false);
 
   const navigate = useNavigate();
 
@@ -146,6 +155,138 @@ const Movies = () => {
 
   return (
     <>
+    <>
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink to="/" className="nav-logo">
+            <img
+              className="logo"
+              src={require("../../img/logo.png")}
+              alt="logo"
+            />
+          </NavLink>
+               
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            
+            <li className="nav-item">
+                {searchBar ? null :
+                <i class="fa fa-search" aria-hidden="true" onClick={() => setSearchBar(true)}></i>
+                  }
+                {searchBar ?
+                <form onSubmit={searchMovies}>
+                    <input
+                      type="text"
+                      onChange={(e) => setSearchKey(e.target.value)}
+                      className="movie-search"
+                      placeholder="search for movies"
+                    />
+                    <button type="submit" className="movie-search-btn">
+                      {" "}
+                      Search...
+                    </button>
+                  </form>
+                  : null}
+              
+           
+            </li>
+            {auth.user ? (
+              <li className="nav-item">
+                <NavLink
+                
+                  to="/auth/messenger"
+                  activeclassname="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Messenger
+                </NavLink>
+              </li>
+            ) : null}
+            {auth.user ? (
+              <li className="nav-item">
+                <NavLink
+                
+                  to="/auth/swipe"
+                  activeclassname="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Connect
+                </NavLink>
+              </li>
+            ) : null}
+            {auth.user ? (
+              <li className="nav-item">
+                <NavLink
+                
+                  to="/auth/premium"
+                  activeclassname="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Premuim
+                </NavLink>
+              </li>
+            ) : null}
+
+            <li className="nav-item">
+              <NavLink
+              
+                to="/movies"
+                activeclassname="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Movies
+              </NavLink>
+            </li>
+
+            {auth.user ? null : (
+              <li className="nav-item">
+                <NavLink
+                
+                  to="/register"
+                  activeclassname="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Sign up
+                </NavLink>
+              </li>
+            )}
+            {auth.user ? null : (
+              <li className="nav-item">
+                <NavLink
+                
+                  to="/login"
+                  activeclassname="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Sign in
+                </NavLink>
+              </li>
+            )}
+            {auth.user ? (
+              <li className="nav-item">
+                <NavLink
+                
+                  to="/auth/profile"
+                  activeclassname="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Profile
+                </NavLink>
+              </li>
+            ) : null}
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
+        </div>
+      </nav>
+    </>
       <div
         className="hero"
         ref={scrollRef}
@@ -165,22 +306,7 @@ const Movies = () => {
               Close Video
             </button>
           ) : null}
-          {search ? (
-            <div className="header-content max-center">
-              <form onSubmit={searchMovies}>
-                <input
-                  type="text"
-                  onChange={(e) => setSearchKey(e.target.value)}
-                  className="movie-search"
-                  placeholder="search for movies"
-                />
-                <button type="submit" className="movie-search-btn">
-                  {" "}
-                  Search...
-                </button>
-              </form>
-            </div>
-          ) : null}
+          
           {selectedMovie.videos && playTrailer ? renderTrailer() : null}
 
           <h1 className="hero-title">{selectedMovie.title}</h1>

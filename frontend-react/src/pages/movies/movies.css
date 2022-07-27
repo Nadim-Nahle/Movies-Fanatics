@@ -54,6 +54,14 @@ body {
   background-color: #5c5656;
   background-blend-mode: multiply;
 }
+.search-nav{
+  display: flex;
+  flex-direction: row;
+}
+.fa fa-search{
+  cursor: pointer;
+  
+}
 .hero-title {
   font-size: 4vw;
   margin: 0;

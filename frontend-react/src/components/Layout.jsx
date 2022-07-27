@@ -8,7 +8,9 @@ const Layout = () => {
   const Location = useLocation();
   return (
     <>
+    {Location.pathname.includes("auth") && (
       <Navbar />
+    )}
 
       <main className="App">
         <Outlet />
