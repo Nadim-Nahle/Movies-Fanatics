@@ -4,6 +4,9 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./navbar.css";
 
+const name = localStorage.getItem("name");
+const url = localStorage.getItem("url");
+
 function Navbar() {
   const [click, setClick] = useState(false);
   const { auth } = useAuth();
@@ -103,16 +106,21 @@ function Navbar() {
               </li>
             )}
             {auth.user ? (
-              <li className="nav-item">
+              <li className="nav-items nav-pic">
+                
                 <NavLink
                 
                   to="/auth/profile"
                   activeclassname="active"
-                  className="nav-links"
+                  className="nav-links "
                   onClick={handleClick}
                 >
-                  Profile
+                  {name}
+                  
                 </NavLink>
+                <div className="nav-url">
+                  <img src={url} alt="" className="navbar-url"/>
+                  </div>
               </li>
             ) : null}
           </ul>

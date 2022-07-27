@@ -18,7 +18,7 @@ const Movies = () => {
 
   const API_URL = "https://api.themoviedb.org/3";
   const IMAGE_URL = "https://image.tmdb.org/t/p/original";
-
+  const profileName = localStorage.getItem("name");
   const [movies, setMovies] = useState([]);
   const [searchKey, setSearchKey] = useState("");
   const [selectedMovie, setSelectedMovie] = useState({});
@@ -269,7 +269,7 @@ const Movies = () => {
                     className="nav-links"
                     onClick={handleClick}
                   >
-                    Profile
+                    {profileName}
                   </NavLink>
                 </li>
               ) : null}

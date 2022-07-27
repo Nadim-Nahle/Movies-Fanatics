@@ -58,7 +58,7 @@ body {
   display: flex;
   flex-direction: row;
 }
-.fa fa-search{
+.fa-search{
   cursor: pointer;
   
 }
