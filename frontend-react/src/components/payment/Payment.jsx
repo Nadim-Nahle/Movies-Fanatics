@@ -27,7 +27,7 @@ const Payment = () => {
       setCookie("userId", response.data.user._id);
       setAuth({ user });
       console.log(auth);
-      navigate("/chatbot");
+      navigate("/auth/chatbot");
     } catch (err) {
       console.log(AuthToken);
       console.log(err);
