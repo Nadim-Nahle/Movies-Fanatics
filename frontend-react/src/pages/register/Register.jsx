@@ -37,7 +37,6 @@ const Register = () => {
         password,
         url: image,
       });
-      console.log(response?.data);
 
       setName("");
       setEmail("");
@@ -45,8 +44,7 @@ const Register = () => {
       setUserame("");
       navigate("/login");
     } catch (err) {
-      console.log(err.response);
-      setErrMsg("No server response");
+      setErrMsg(err.response.data.errors[0].msg);
 
       errRef.current.focus();
     }
