@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import useAuth from "../../hooks/useAuth";
 import "./profile.css";
+import missing from '../../img/noAvatar.png';
 
 const Profile = () => {
   const [name, setName] = useState(localStorage.getItem("name"));
@@ -53,7 +54,7 @@ const Profile = () => {
               <div className="btnimg">
                 <img
                   className="profile-pic"
-                  src={url ? url : require("../../img/noAvatar.png")}
+                  src={url ? url : missing}
                   alt="profile-pic"
                   onChange={(e) => setUrl(e.target.value)}
                 />

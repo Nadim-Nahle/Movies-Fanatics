@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./navbar.css";
-import missing from '../../img/noAvatar.png'
+import missing from '../../img/noAvatar.png';
 
 const name = localStorage.getItem("name");
 const url = localStorage.getItem("url");
@@ -120,7 +120,7 @@ function Navbar() {
                   
                 </NavLink>
                 <div className="nav-url">
-                  <img src={url ? url : require("../../img/noAvatar.png")} alt="" className="navbar-url"/>
+                  <img src={url ? url : missing} alt="" className="navbar-url"/>
                   </div>
               </li>
             ) : null}

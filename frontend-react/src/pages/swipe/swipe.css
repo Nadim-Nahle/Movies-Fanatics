@@ -5,6 +5,13 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
+  padding-top: 0;
+}
+.followed-users{
+  padding: 3%;
+}
+.following-img{
+  width: 10%;
 }
 .dashboard-title {
   display: flex;
@@ -13,18 +20,22 @@
   font-size: 1vw;
 }
 .dashboard .swipe-container {
-  width: 70%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  padding-top: 1%;
+  height: 88vh;
+  padding-top: 2%;
   padding-right: 15%;
+}
+.swipe-right{
+  font-size: 1.9vw;
 }
 
 .swipe {
   position: absolute;
+  padding-top: 2%;
 }
 
 .dashboard .card-container {
@@ -70,14 +81,21 @@
   background-color: #fff;
   color: black;
   width: 13vw;
-  height: 90%;
+  height: 89%;
   display: flex;
   flex-direction: column;
+}
+.no-users{
+  padding-top: 50%;
 }
 .user-matches-title {
   display: flex;
   justify-content: center;
   font-size: 1.3vw;
+  padding-top: 5%;
+  background-color: red;
+  padding: 10%;
+  color: #fff;
 }
 
 .user-matches-content {

@@ -46,10 +46,11 @@ const Swipe = () => {
         `/api/v1/auth/user/${followedUserId}/follow`,
         { userId }
       );
+      
 
       getUser();
     } catch (error) {
-      //console.log(error)
+      console.log(error.response)
     }
   };
 
@@ -76,9 +77,6 @@ const Swipe = () => {
 
   return (
     <div className="swipe-page">
-      <div className="dashboard-title">
-        <h1>Swipe right to follow a user</h1>
-      </div>
 
       <div className="dashboard">
         <div className="following">
@@ -91,13 +89,16 @@ const Swipe = () => {
             </div>
             <div className="user-matches-content">
               {followedUsers?.map((user) => (
-                <h4 key={user._id}>{user.name}</h4>
+                <>
+                  <h4 className="followed-users" key={user._id}>{user?.name}</h4>
+                </>
               ))}
             </div>
           </div>
         </div>
         <div className="swipe-container">
           <div className="card-container">
+            <h1 className="swipe-right">Swipe right to follow a user</h1>
             {filteredUsers?.map((user) => (
               <TinderCard
                 className="swipe"
@@ -112,7 +113,9 @@ const Swipe = () => {
                   <h3>{user.name}</h3>
                 </div>
               </TinderCard>
+              
             ))}
+            <h1 className="no-users">No Users Available</h1>
             <div className="swipe-info">
               {lastDirection ? <p> You swiped {lastDirection}</p> : <p />}
             </div>
