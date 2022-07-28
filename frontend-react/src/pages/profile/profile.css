@@ -109,6 +109,11 @@
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
   transition: all 0.30s ease-in-out;
+  
+}
+.profile-label{
+  padding-bottom: 3%;
+  padding-top: 3%;
 }
 .form_wrapper textarea {
   height:8em;
@@ -118,7 +123,6 @@
   -moz-box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);
   box-shadow:0 0 2px 1px rgba(255, 169, 0, 0.5);
   border:1px solid #f5ba1a;
-
 }
 .form_wrapper input[type="submit"] {
   background:#ff0000;
@@ -140,7 +144,7 @@
 }
 .form-btn{
   padding-left: 80%;
-  padding-top: 35%;
+  padding-top: 40%;
 }
 .profile-btn{
   padding: 10%;
@@ -248,18 +252,23 @@ input[type=file]{
   }
 
   .profile-btn{
-    padding: 7%;
+    padding: 10%;
     color: #fff;
     background-color: #ff0000;
     border: 0;
     cursor: pointer;
     border-radius: 5px;
   }
-  .form-btn{
-    font-size: 14px;
-    padding: 0;
 
-    
+  .logout-btn{
+
+    padding: 2%;
+    color: #fff;
+    background-color: #000000;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+   
   }
   
 }

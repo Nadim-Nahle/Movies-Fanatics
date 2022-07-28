@@ -84,7 +84,7 @@ const Profile = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="row clearfix">
                     <div className="col_half">
-                      <label>Full Name</label>
+                      <label className="profile-label">Full Name</label>
                       <div className="input_field">
                         {" "}
                         <span>
@@ -99,7 +99,7 @@ const Profile = () => {
                       </div>
                     </div>
                     <div className="col_half">
-                      <label>User Name</label>
+                      <label className="profile-label">User Name</label>
                       <div className="input_field">
                         {" "}
                         <span>
@@ -116,7 +116,7 @@ const Profile = () => {
                   </div>
                   <div className="row clearfix">
                     <div className="col_half">
-                      <label>Email</label>
+                      <label className="profile-label">Email</label>
                       <div className="input_field">
                         {" "}
                         <span>
@@ -131,7 +131,7 @@ const Profile = () => {
                       </div>
                     </div>
                     <div className="col_half">
-                      <label>Phone</label>
+                      <label className="profile-label">Phone</label>
                       <div className="input_field">
                         {" "}
                         <span>
@@ -149,7 +149,7 @@ const Profile = () => {
                   </div>
                   <div className="row clearfix">
                     <div className="col_half">
-                      <label>Country</label>
+                      <label className="profile-label">Country</label>
                       <div className="input_field">
                         {" "}
                         <span>
@@ -164,7 +164,7 @@ const Profile = () => {
                       </div>
                     </div>
                     <div className="col_half">
-                      <label>City</label>
+                      <label className="profile-label">City</label>
                       <div className="input_field">
                         {" "}
                         <span>
