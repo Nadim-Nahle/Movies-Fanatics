@@ -17,9 +17,7 @@ const YoutubeDownloader = ({ videoId }) => {
       const response = await axios.request(options);
       const link = response.data;
       window.open(link[0]?.url, "_blank");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (

@@ -23,7 +23,7 @@ const Google = () => {
 
   function handleCallBackResponse(response) {
     var userObject = jwt_decode(response.credential);
-    console.log(userObject);
+
     const name = userObject.name;
     const email = userObject.email;
     const username = `${userObject.given_name}_${userObject.family_name}`;
@@ -53,10 +53,9 @@ const Google = () => {
         email,
         url,
       });
-      console.log(response.data);
+
       googleLogin(email);
     } catch (error) {
-      console.log(error);
       googleLogin(email);
     }
   };
@@ -66,7 +65,6 @@ const Google = () => {
       const response = await axios.post(LOGIN_URL, {
         email,
       });
-      console.log(response.data);
       const user = response?.data?.user;
       const accessToken = response?.data?.secret_token;
       localStorage.setItem("url", response.data.url);
@@ -78,7 +76,6 @@ const Google = () => {
       setAuth({ user });
       navigate(from, { replace: true });
     } catch (error) {
-      console.log(error.response);
       setErrMsg("Email Already Exists");
       errRef.current.focus();
     }

@@ -12,9 +12,7 @@ const Conversations = ({ conversation, currentUser }) => {
       try {
         const res = await axios.get(`/user?userId=${friendId}`);
         setUser(res.data);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     };
     getUser();
   }, [currentUser, conversation]);

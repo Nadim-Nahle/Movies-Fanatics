@@ -51,9 +51,7 @@ const Messenger = () => {
       try {
         const res = await axios.get(`/conv/${user._id}`);
         setConversations(res.data);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     };
     getConversations();
   }, [user._id]);
@@ -64,9 +62,7 @@ const Messenger = () => {
         const res = await axios.get(`/msg/${currentChat?._id}`);
 
         setMessages(res.data);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     };
     getMessages();
   }, [currentChat]);
@@ -93,9 +89,7 @@ const Messenger = () => {
       const res = await axios.post("/newmsg", message);
       setMessages([...messages, res.data]);
       setNewMessage("");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {

@@ -17,14 +17,12 @@ const Swipe = () => {
     try {
       const response = await axios.get(`/user/id/${userId}`);
       setUser(response?.data);
-      //console.log(response.data)
     } catch (err) {}
   };
   const getUsers = async () => {
     try {
       const response = await axios.get(`/users`);
       setUsers(response?.data);
-      //console.log(response.data[0]._id)
     } catch (err) {}
   };
 
@@ -38,8 +36,6 @@ const Swipe = () => {
     }
   }, [user]);
 
-  //console.log('user',user)
-
   const followUser = async (followedUserId) => {
     try {
       const response = await axios.put(`/user/${followedUserId}/follow`, {
@@ -47,9 +43,7 @@ const Swipe = () => {
       });
 
       getUser();
-    } catch (error) {
-      console.log(error.response);
-    }
+    } catch (error) {}
   };
 
   const swiped = (direction, swipedUserId) => {
@@ -59,9 +53,7 @@ const Swipe = () => {
     setLastDirection(direction);
   };
 
-  const outOfFrame = (name) => {
-    //console.log(name + ' left the screen!')
-  };
+  const outOfFrame = (name) => {};
 
   const followedUserIds = user?.data?.followings.map((m) => m).concat(userId);
   const newFollowedUserIds = user?.data?.followings.map((m) => m);

@@ -39,7 +39,6 @@ const Login = () => {
       const response = await axios.post(LOGIN_URL, { email, password });
       const accessToken = response?.data?.secret_token;
       const user = response?.data?.user;
-      console.log(response.data.user);
 
       localStorage.setItem("url", response.data.url);
 
@@ -53,7 +52,6 @@ const Login = () => {
       setEmail("");
       setPassword("");
     } catch (err) {
-      console.log(err.response);
       setErrMsg("No server response");
       errRef.current.focus();
     }

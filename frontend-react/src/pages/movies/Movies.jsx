@@ -142,11 +142,7 @@ const Movies = () => {
           headers: { Authorization: "Bearer " + AuthToken },
         }
       );
-
-      console.log(response.data);
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const openMovie = () => {

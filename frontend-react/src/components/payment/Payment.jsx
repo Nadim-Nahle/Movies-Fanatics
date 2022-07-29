@@ -21,18 +21,13 @@ const Payment = () => {
       });
       const user = response.data.user;
 
-      console.log(response.data.user._id);
-
       setCookie("user", user);
       setCookie("Email", response.data.user.email);
       setCookie("userId", response.data.user._id);
       setAuth({ user });
-      console.log(auth);
+
       navigate("/auth/chatbot");
-    } catch (err) {
-      console.log(AuthToken);
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   const [number, setNumber] = useState("");
