@@ -324,5 +324,18 @@ async function userFavMovie(req, res) {
 
 //EXPORTING MODULES
 module.exports = {
-  register, login, updateUser, getUsers, getUser, getFriends, followUser, unfollowUser, updateProfile, premiumUser, getUserById, userFavMovie, googleRegister, googleLogin
+  register,
+  login,
+  updateUser,
+  getUsers,
+  getUser,
+  getFriends,
+  followUser,
+  unfollowUser,
+  updateProfile,
+  premiumUser,
+  getUserById,
+  userFavMovie,
+  googleRegister,
+  googleLogin
 };
