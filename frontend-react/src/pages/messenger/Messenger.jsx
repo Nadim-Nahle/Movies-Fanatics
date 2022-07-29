@@ -7,6 +7,8 @@ import Online from "../../components/online/Online";
 import { io } from "socket.io-client";
 import useAuth from "../../hooks/useAuth";
 
+const SOCKET_BASE_URL = "ws://localhost:8900";
+
 const Messenger = () => {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
@@ -21,7 +23,7 @@ const Messenger = () => {
   const user = auth?.user;
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io(SOCKET_BASE_URL);
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,

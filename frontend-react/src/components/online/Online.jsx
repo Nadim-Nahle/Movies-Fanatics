@@ -28,7 +28,9 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
           <img className="onlineImg" src={persona1} alt="" />
           <div className="onlineBadge"></div>
         </div>
-        <span className="onlineName">jane</span>
+        {onlineFriends.map((friend) => (
+          <span className="onlineName">{friend.name}</span>
+        ))}
       </div>
     </div>
   );
