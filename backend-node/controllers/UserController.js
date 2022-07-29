@@ -118,7 +118,7 @@ async function updateUser(req, res) {
       }
       Object.assign(user, req.body);
       user.save();
-      res.send({data:user})
+      return res.send({ user: {name: user.name, email: user.email, _id: user._id, roles:user.roles, username:user.username, followings: user.followings}, url: user.url}, );
   }
   catch(error){
       res.status(400).send(error.message);
