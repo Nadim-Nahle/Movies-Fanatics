@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Conversation from "../../components/conversations/Conversation";
 import Message from "../../components/message/Message";
 import "./messenger.css";
-import axios from '../../api/axios';
+import axios from "../../api/axios";
 import Online from "../../components/online/Online";
 import { io } from "socket.io-client";
 import useAuth from "../../hooks/useAuth";
@@ -19,7 +19,7 @@ const Messenger = () => {
   const { auth } = useAuth();
 
   const user = auth?.user;
-  
+
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {

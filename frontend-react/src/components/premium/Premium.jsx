@@ -11,7 +11,7 @@ const Premium = () => {
     <div className="premium-body">
       <div className="premium-wrapper">
         <input type="radio" name="slider" id="tab-1" />
-        <input type="radio" name="slider" id="tab-2"  readOnly checked />
+        <input type="radio" name="slider" id="tab-2" readOnly checked />
         <input type="radio" name="slider" id="tab-3" />
         <header>
           <label htmlFor="tab-1" className="tab-1">

@@ -1,4 +1,4 @@
-import axios from '../../api/axios';
+import axios from "../../api/axios";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import Cards from "react-credit-cards";

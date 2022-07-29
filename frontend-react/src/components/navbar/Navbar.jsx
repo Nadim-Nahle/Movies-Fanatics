@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./navbar.css";
-import missing from '../../img/noAvatar.png';
+import missing from "../../img/noAvatar.png";
 
 const url = localStorage.getItem("url");
 
@@ -12,10 +12,10 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const { auth } = useAuth();
 
-  const name = auth?.user?.name
+  const name = auth?.user?.name;
 
   const handleClick = () => setClick(!click);
-  
+
   return (
     <>
       <nav className="navbar">
@@ -29,11 +29,9 @@ function Navbar() {
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
-                
                   to="/auth/messenger"
                   activeclassname="active"
                   className="nav-links"
@@ -46,7 +44,6 @@ function Navbar() {
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
-                
                   to="/auth/swipe"
                   activeclassname="active"
                   className="nav-links"
@@ -59,7 +56,6 @@ function Navbar() {
             {auth.user ? (
               <li className="nav-item">
                 <NavLink
-                
                   to="/auth/premium"
                   activeclassname="active"
                   className="nav-links"
@@ -72,7 +68,6 @@ function Navbar() {
 
             <li className="nav-item">
               <NavLink
-              
                 to="/movies"
                 activeclassname="active"
                 className="nav-links"
@@ -85,7 +80,6 @@ function Navbar() {
             {auth.user ? null : (
               <li className="nav-item">
                 <NavLink
-                
                   to="/register"
                   activeclassname="active"
                   className="nav-links"
@@ -98,7 +92,6 @@ function Navbar() {
             {auth.user ? null : (
               <li className="nav-item">
                 <NavLink
-                
                   to="/login"
                   activeclassname="active"
                   className="nav-links"
@@ -110,20 +103,21 @@ function Navbar() {
             )}
             {auth.user ? (
               <li className="nav-items nav-pic">
-                
                 <NavLink
-                
                   to="/auth/profile"
                   activeclassname="active"
                   className="nav-links "
                   onClick={handleClick}
                 >
                   {name}
-                  
                 </NavLink>
                 <div className="nav-url">
-                  <img src={url ? url : missing} alt="" className="navbar-url"/>
-                  </div>
+                  <img
+                    src={url ? url : missing}
+                    alt=""
+                    className="navbar-url"
+                  />
+                </div>
               </li>
             ) : null}
           </ul>

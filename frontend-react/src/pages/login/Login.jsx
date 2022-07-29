@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import "./login.css";
-import axios from '../../api/axios';
+import axios from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
 import { useCookies } from "react-cookie";
 import Google from "../../components/google/Google";

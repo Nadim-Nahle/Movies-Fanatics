@@ -1,9 +1,9 @@
-import axios from '../../api/axios';
+import axios from "../../api/axios";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import useAuth from "../../hooks/useAuth";
 import "./profile.css";
-import missing from '../../img/noAvatar.png';
+import missing from "../../img/noAvatar.png";
 
 const Profile = () => {
   const { auth, setAuth } = useAuth();
@@ -16,25 +16,25 @@ const Profile = () => {
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
-  
-  
 
   const [response, setResponse] = useState("");
   const user = auth?.user;
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.patch(
-        `/user/update/${user._id}`,
-        { name, email, username, country, city, phoneNumber }
-      );
+      const response = await axios.patch(`/user/update/${user._id}`, {
+        name,
+        email,
+        username,
+        country,
+        city,
+        phoneNumber,
+      });
       const newUser = response.data.user;
       setCookie("user", newUser);
       setResponse("Profile Updated");
-      
     } catch (error) {
       setResponse("Network Error");
     }
@@ -49,7 +49,6 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <div className="profile">
-        
         <div className="left-profile">
           <div className="left-content">
             <div className="pic-content">
@@ -68,13 +67,9 @@ const Profile = () => {
             <h3>{name}</h3>
             <h3 className="profile-email">{email}</h3>
             <h3>{username}</h3>
-            
           </div>
-          
-          
-       
         </div>
-        
+
         <div className="right-profile">
           <>
             <div className="bg_img"></div>
@@ -192,7 +187,9 @@ const Profile = () => {
                     <p className="res">{response}</p>
                   </div>
                 </form>
-                <button className="logout-btn" onClick={handleLogout}>Logout</button>
+                <button className="logout-btn" onClick={handleLogout}>
+                  Logout
+                </button>
               </div>
             </div>
           </>

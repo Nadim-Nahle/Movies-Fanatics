@@ -54,13 +54,12 @@ body {
   background-color: #5c5656;
   background-blend-mode: multiply;
 }
-.search-nav{
+.search-nav {
   display: flex;
   flex-direction: row;
 }
-.fa-search{
+.fa-search {
   cursor: pointer;
-  
 }
 .hero-title {
   font-size: 4vw;
@@ -128,7 +127,7 @@ body {
     display: flex;
     align-items: flex-end;
   }
-  .watch-movie{
+  .watch-movie {
     display: none;
   }
 

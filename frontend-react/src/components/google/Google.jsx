@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import jwt_decode from "jwt-decode";
-import axios from '../../api/axios';
+import axios from "../../api/axios";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router";
 import { useCookies } from "react-cookie";

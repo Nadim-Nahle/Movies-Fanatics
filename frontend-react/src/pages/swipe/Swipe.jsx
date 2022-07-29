@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TinderCard from "react-tinder-card";
 import "./swipe.css";
-import axios from '../../api/axios';
+import axios from "../../api/axios";
 import { useCookies } from "react-cookie";
 
 const Swipe = () => {
@@ -42,15 +42,13 @@ const Swipe = () => {
 
   const followUser = async (followedUserId) => {
     try {
-      const response = await axios.put(
-        `/user/${followedUserId}/follow`,
-        { userId }
-      );
-      
+      const response = await axios.put(`/user/${followedUserId}/follow`, {
+        userId,
+      });
 
       getUser();
     } catch (error) {
-      console.log(error.response)
+      console.log(error.response);
     }
   };
 
@@ -77,7 +75,6 @@ const Swipe = () => {
 
   return (
     <div className="swipe-page">
-
       <div className="dashboard">
         <div className="following">
           <div className="user-name">
@@ -90,7 +87,9 @@ const Swipe = () => {
             <div className="user-matches-content">
               {followedUsers?.map((user) => (
                 <>
-                  <h4 className="followed-users" key={user._id}>{user?.name}</h4>
+                  <h4 className="followed-users" key={user._id}>
+                    {user?.name}
+                  </h4>
                 </>
               ))}
             </div>
@@ -113,17 +112,13 @@ const Swipe = () => {
                   <h3>{user.name}</h3>
                 </div>
               </TinderCard>
-              
             ))}
             <h1 className="no-users">No Users Available</h1>
             <div className="swipe-info">
               {lastDirection ? <p> You swiped {lastDirection}</p> : <p />}
             </div>
-            
           </div>
-          
         </div>
-        
       </div>
     </div>
   );

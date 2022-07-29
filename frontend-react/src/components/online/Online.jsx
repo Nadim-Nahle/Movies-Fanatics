@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./online.css";
-import persona1 from '../../img/persona1.jpg';
-import nadim from '../../img/nadim.jpg'
+import persona1 from "../../img/persona1.jpg";
+import nadim from "../../img/nadim.jpg";
 
 const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
   const [friends, setFriends] = useState([]);
@@ -23,19 +23,13 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
 
   return (
     <div className="online">
-    
       <div className="onlineFriend">
         <div className="onlineImgContainer">
-          <img
-            className="onlineImg"
-            src={persona1}
-            alt=""
-          />
+          <img className="onlineImg" src={persona1} alt="" />
           <div className="onlineBadge"></div>
         </div>
         <span className="onlineName">jane</span>
       </div>
-     
     </div>
   );
 };

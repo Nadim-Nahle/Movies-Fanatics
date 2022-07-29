@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./conversation.css";
-import axios from '../../api/axios';
+import axios from "../../api/axios";
 
 const Conversations = ({ conversation, currentUser }) => {
   const [user, setUser] = useState(null);
@@ -30,7 +30,9 @@ const Conversations = ({ conversation, currentUser }) => {
             : "https://upload.wikimedia.org/wikipedia/commons/2/24/Missing_avatar.svg"
         }
       />
-      <span key={conversation?._id} className="conversationName">{user?.name}</span>
+      <span key={conversation?._id} className="conversationName">
+        {user?.name}
+      </span>
     </div>
   );
 };

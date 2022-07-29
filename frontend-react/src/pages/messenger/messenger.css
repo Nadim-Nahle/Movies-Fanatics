@@ -4,7 +4,7 @@
   background-color: white;
   color: black;
 }
-.color{
+.color {
   background-color: white;
 }
 
@@ -22,7 +22,6 @@
 
 .chatBox {
   flex: 5.5;
-
 }
 
 .chatBoxWrapper {
@@ -30,7 +29,6 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  
 }
 
 .chatBoxTop {
@@ -100,7 +98,7 @@
     flex: 1px;
   }
 
-  .chatOnline{
+  .chatOnline {
     display: none;
   }
 }

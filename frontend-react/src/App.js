@@ -21,11 +21,10 @@ function App() {
   const { setAuth } = useAuth();
   const [cookies] = useCookies(["user"]);
 
-  useEffect(()=>{
+  useEffect(() => {
     const user = cookies?.user;
     setAuth({ user });
-  },[])
-  
+  }, []);
 
   return (
     <div>

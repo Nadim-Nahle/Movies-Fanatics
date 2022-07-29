@@ -8,18 +8,13 @@ const Layout = () => {
   const Location = useLocation();
   return (
     <>
-    {Location.pathname.includes("movies") ? null :
-      <Navbar />
-    }
+      {Location.pathname.includes("movies") ? null : <Navbar />}
 
       <main className="App">
         <Outlet />
       </main>
-      
-      {Location.pathname.includes("movies") ? null : 
-      <FloatingBtn />
-      }
-     
+
+      {Location.pathname.includes("movies") ? null : <FloatingBtn />}
     </>
   );
 };
