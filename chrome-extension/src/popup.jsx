@@ -14,7 +14,7 @@ function Popup() {
     url: `https://youtube-downloader9.p.rapidapi.com/${key}/videoandaudio`,
     headers: {
       "X-RapidAPI-Key": "1f947199c7msh3bc6fd219522000p1bd19cjsn318d2499f463",
-      "X-RapidAPI-Host": "youtube-downloader9.p.rapidapi.com",
+      "X-RapidAPI-Host": process.env.REACT_APP_RapidAPI_Key,
     },
   };
 
