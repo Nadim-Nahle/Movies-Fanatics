@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from '../../api/axios';
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import Cards from "react-credit-cards";
@@ -15,7 +15,7 @@ const Payment = () => {
   const AuthToken = localStorage.getItem("AuthToken");
   const handlePremium = async () => {
     try {
-      const response = await axios.get("/api/v1/auth/user/premium", {
+      const response = await axios.get("/user/premium", {
         headers: { Authorization: "Bearer " + AuthToken },
       });
       const user = response.data.user;

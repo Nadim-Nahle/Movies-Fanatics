@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import jwt_decode from "jwt-decode";
-import axios from "axios";
+import axios from '../../api/axios';
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router";
 import { useCookies } from "react-cookie";
 import "./google.css";
 
-const REGISTER_URL = "/api/v1/auth/register/google";
-const LOGIN_URL = "/api/v1/auth/login/google";
+const REGISTER_URL = "/register/google";
+const LOGIN_URL = "/login/google";
 
 const Google = () => {
   const { setAuth } = useAuth();

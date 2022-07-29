@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import "./login.css";
-import axios from "axios";
+import axios from '../../api/axios';
 import useAuth from "../../hooks/useAuth";
 import { useCookies } from "react-cookie";
 import Google from "../../components/google/Google";
 
-const LOGIN_URL = "/api/v1/auth/login";
+const LOGIN_URL = "/login";
 
 const Login = () => {
   const { setAuth } = useAuth();

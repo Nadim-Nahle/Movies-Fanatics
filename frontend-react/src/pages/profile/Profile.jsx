@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from '../../api/axios';
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import useAuth from "../../hooks/useAuth";
@@ -25,7 +25,7 @@ const Profile = () => {
 
     try {
       const response = await axios.patch(
-        `/api/v1/auth/user/update/${user._id}`,
+        `/user/update/${user._id}`,
         { name, email, username, country, city, phoneNumber }
       );
       localStorage.setItem('name',response.data.data.name)

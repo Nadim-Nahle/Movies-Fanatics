@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TinderCard from "react-tinder-card";
 import "./swipe.css";
-import axios from "axios";
+import axios from '../../api/axios';
 import { useCookies } from "react-cookie";
 
 const Swipe = () => {
@@ -15,14 +15,14 @@ const Swipe = () => {
 
   const getUser = async () => {
     try {
-      const response = await axios.get(`/api/v1/auth/user/id/${userId}`);
+      const response = await axios.get(`/user/id/${userId}`);
       setUser(response?.data);
       //console.log(response.data)
     } catch (err) {}
   };
   const getUsers = async () => {
     try {
-      const response = await axios.get(`/api/v1/auth/users`);
+      const response = await axios.get(`/users`);
       setUsers(response?.data);
       //console.log(response.data[0]._id)
     } catch (err) {}
@@ -43,7 +43,7 @@ const Swipe = () => {
   const followUser = async (followedUserId) => {
     try {
       const response = await axios.put(
-        `/api/v1/auth/user/${followedUserId}/follow`,
+        `/user/${followedUserId}/follow`,
         { userId }
       );
       

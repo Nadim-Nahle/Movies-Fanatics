@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+import axios from '../../api/axios';
 import "./register.css";
 import { useNavigate } from "react-router-dom";
 
-const REGISTER_URL = "/api/v1/auth/register";
+const REGISTER_URL = "/register";
 
 const Register = () => {
   const userRef = useRef();

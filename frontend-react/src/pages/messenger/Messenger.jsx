@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Conversation from "../../components/conversations/Conversation";
 import Message from "../../components/message/Message";
 import "./messenger.css";
-import axios from "axios";
+import axios from '../../api/axios';
 import { useCookies } from "react-cookie";
 import Online from "../../components/online/Online";
 import { io } from "socket.io-client";
@@ -49,7 +49,7 @@ const Messenger = () => {
   useEffect(() => {
     const getConversations = async () => {
       try {
-        const res = await axios.get(`/api/v1/auth/conv/${user._id}`);
+        const res = await axios.get(`/conv/${user._id}`);
         setConversations(res.data);
       } catch (error) {
         console.log(error);
@@ -61,7 +61,7 @@ const Messenger = () => {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get(`/api/v1/auth/msg/${currentChat?._id}`);
+        const res = await axios.get(`/msg/${currentChat?._id}`);
 
         setMessages(res.data);
       } catch (error) {
@@ -90,7 +90,7 @@ const Messenger = () => {
     });
 
     try {
-      const res = await axios.post("/api/v1/auth/newmsg", message);
+      const res = await axios.post("/newmsg", message);
       setMessages([...messages, res.data]);
       setNewMessage("");
     } catch (error) {
