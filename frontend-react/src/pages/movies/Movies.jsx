@@ -9,6 +9,7 @@ import { useNavigate } from "react-router";
 import Navbar from "../../components/navbar/Navbar";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import { Cookies } from "react-cookie";
 
 const Movies = () => {
   const [click, setClick] = useState(false);
@@ -18,7 +19,7 @@ const Movies = () => {
 
   const API_URL = "https://api.themoviedb.org/3";
   const IMAGE_URL = "https://image.tmdb.org/t/p/original";
-  const profileName = localStorage.getItem("name");
+  const profileName = auth?.user?.name;
   const [movies, setMovies] = useState([]);
   const [searchKey, setSearchKey] = useState("");
   const [selectedMovie, setSelectedMovie] = useState({});
@@ -31,7 +32,7 @@ const Movies = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [trailerkey, setTrailerKey] = useState("");
-  const AuthToken = localStorage.getItem("AuthToken");
+  const AuthToken = Cookies?.AuthToken;
   const [searchBar, setSearchBar] = useState(false);
 
   const navigate = useNavigate();

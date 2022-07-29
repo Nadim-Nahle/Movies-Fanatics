@@ -12,11 +12,12 @@ const Payment = () => {
   const navigate = useNavigate();
   const { setAuth } = useAuth();
   const { auth } = useAuth();
-  const AuthToken = localStorage.getItem("AuthToken");
+  const AuthToken = cookies?.AuthToken;
+
   const handlePremium = async () => {
     try {
       const response = await axios.get("/user/premium", {
-        headers: { Authorization: "Bearer " + AuthToken },
+        headers: { Authorization: `Bearer ${AuthToken}` },
       });
       const user = response.data.user;
 

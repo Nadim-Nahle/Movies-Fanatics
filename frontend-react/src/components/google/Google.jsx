@@ -69,12 +69,7 @@ const Google = () => {
       console.log(response.data);
       const user = response?.data?.user;
       const accessToken = response?.data?.secret_token;
-      localStorage.setItem("email", response.data.user.email);
-      localStorage.setItem("userId", response.data.user._id);
-      localStorage.setItem("name", response.data.user.name);
       localStorage.setItem("url", response.data.url);
-      localStorage.setItem("username", response.data.user.username);
-      localStorage.setItem("AuthToken", accessToken);
       setCookie("user", response.data.user);
       setCookie("Email", response.data.user.email);
       setCookie("userId", response.data.user._id);

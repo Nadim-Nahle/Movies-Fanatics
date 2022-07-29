@@ -6,19 +6,22 @@ import "./profile.css";
 import missing from '../../img/noAvatar.png';
 
 const Profile = () => {
-  const [name, setName] = useState(localStorage.getItem("name"));
-  const [username, setUserame] = useState(localStorage.getItem("username"));
-  const [email, setEmail] = useState(localStorage.getItem("email"));
+  const { auth, setAuth } = useAuth();
+
+  const [name, setName] = useState(auth?.user?.name);
+  const [username, setUserame] = useState(auth?.user?.username);
+  const [email, setEmail] = useState(auth?.user?.email);
   const [url, setUrl] = useState(localStorage.getItem("url"));
   const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
-  const { setAuth } = useAuth();
+  
+  
 
   const [response, setResponse] = useState("");
+  const user = auth?.user;
 
-  const user = cookies?.user;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,9 +31,8 @@ const Profile = () => {
         `/user/update/${user._id}`,
         { name, email, username, country, city, phoneNumber }
       );
-      localStorage.setItem('name',response.data.data.name)
-      localStorage.setItem('username',response.data.data.username)
-      localStorage.setItem('email',response.data.data.email)
+      const newUser = response.data.user;
+      setCookie("user", newUser);
       setResponse("Profile Updated");
       
     } catch (error) {

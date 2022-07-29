@@ -5,12 +5,14 @@ import useAuth from "../../hooks/useAuth";
 import "./navbar.css";
 import missing from '../../img/noAvatar.png';
 
-const name = localStorage.getItem("name");
 const url = localStorage.getItem("url");
 
 function Navbar() {
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const [click, setClick] = useState(false);
   const { auth } = useAuth();
+
+  const name = auth?.user?.name
 
   const handleClick = () => setClick(!click);
   
