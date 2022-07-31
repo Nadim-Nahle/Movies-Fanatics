@@ -34,7 +34,6 @@ const Login = () => {
     let video = videoRef.current;
     let photo = photoRef.current;
     setBase64(photo.toDataURL());
-    console.log(photo.toDataURL());
 
     photo.width = width;
     photo.height = height;
@@ -51,10 +50,10 @@ const Login = () => {
 
   const faceVerification = async () => {
     try {
-      const response = await axios.post("/api/v1/auth/login/admin", {
+      const { data } = await axios.post("/api/v1/auth/login/admin", {
         photo: base64,
       });
-      console.log("hii");
+      localStorage.setItem("jwt", data.secret_token);
       navigate("/adminpanel");
     } catch (err) {
       console.log(err);

@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 10px;
   padding: 1rem;
+  font-size: 2vw;
 }
 
 table {
@@ -15,7 +16,6 @@ td {
   border: 1px solid #ffffff;
   text-align: left;
   padding: 8px;
-  font-size: 5px;
 }
 
 th {
@@ -36,6 +36,10 @@ form td:last-child {
   justify-content: space-evenly;
 }
 
-form * {
-  font-size: 2vw;
+.delete-btn {
+  background-color: red;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10%;
 }
