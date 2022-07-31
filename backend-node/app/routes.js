@@ -14,6 +14,7 @@ const {
   getUserById,
   userFavMovie,
   googleRegister,
+  adminLogin,
 } = require("../controllers/UserController");
 const {
   getConv,
@@ -66,5 +67,8 @@ router.get("/auth/convs/:firstUserId/:secondUserId", getConvs);
 //MESSAGES ROUTES
 router.post("/auth/newmsg", newMsg);
 router.get("/auth/msg/:conversationId", getMsg);
+
+//ADMIN
+router.post("/auth/login/admin", adminLogin)
 
 module.exports = router;

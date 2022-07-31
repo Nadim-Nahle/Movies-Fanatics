@@ -91,6 +91,35 @@ async function login(req, res) {
 
   }
 }
+
+//ADMIN LOGIN
+async function adminLogin(req, res) {
+  const email = 'admin@gmail.com';
+  try {
+    const user = await getByEmail(email);
+    const token = jwt.sign(
+      { _id: user._id, name: user.name, email: user.email },
+      TOKEN_SECRET
+
+    );
+
+    return res.send({
+      user: {
+        name: user.name,
+        email: user.email, _id: user._id,
+        roles: user.roles,
+        username: user.username,
+        followings: user.followings
+      },
+      secret_token: token,
+      url: user.url
+    },
+    );
+
+  } catch (error) {
+
+  }
+}
 //GOOGLE LOGIN CONTROLLER
 async function googleLogin(req, res) {
   try {
@@ -322,6 +351,7 @@ async function userFavMovie(req, res) {
 }
 
 
+
 //EXPORTING MODULES
 module.exports = {
   register,
@@ -337,5 +367,6 @@ module.exports = {
   getUserById,
   userFavMovie,
   googleRegister,
-  googleLogin
+  googleLogin,
+  adminLogin
 };
