@@ -25,6 +25,9 @@ async function getAdmin(req, res, next) {
             console.log('hello');
             next();
         }
+        else {
+            throw new Error()
+        }
     } catch (err) {
         res.status(400).send({ error: "Not an Admin" });
     }

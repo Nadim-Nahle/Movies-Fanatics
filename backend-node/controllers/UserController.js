@@ -354,7 +354,7 @@ async function userFavMovie(req, res) {
 async function deleteUser(req, res) {
   try {
     const user = await User.findById(req.params.id);
-    if (!contact) {
+    if (!user) {
       return res.status(404).send()
     }
     await user.remove();
