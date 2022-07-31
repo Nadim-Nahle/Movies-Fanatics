@@ -71,7 +71,9 @@ const Login = () => {
       </div>
       <div className={"result" + (hasPhoto ? "hasPhoto" : "")}>
         <canvas ref={photoRef}></canvas>
-        <button onClick={faceVerification}>Verify</button>
+        <button className="photo-btn" onClick={faceVerification}>
+          Verify
+        </button>
       </div>
     </>
   );
