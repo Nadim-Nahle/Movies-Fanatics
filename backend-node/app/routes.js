@@ -25,6 +25,7 @@ const { newMsg, getMsg } = require("../controllers/MessageController");
 const { registerErrors } = require("../middlewares/ErrorsMiddleware");
 const router = express.Router();
 const auth = require("../middlewares/AuthMiddleware");
+const getAdmin = require("../middlewares/AdminMidlleware");
 const {
   addMovie,
   getMovie,
@@ -69,6 +70,6 @@ router.post("/auth/newmsg", newMsg);
 router.get("/auth/msg/:conversationId", getMsg);
 
 //ADMIN
-router.post("/auth/login/admin", adminLogin)
+router.post("/auth/login/admin", getAdmin, adminLogin)
 
 module.exports = router;
