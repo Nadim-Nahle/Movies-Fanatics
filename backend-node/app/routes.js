@@ -15,6 +15,7 @@ const {
   userFavMovie,
   googleRegister,
   adminLogin,
+  deleteUser,
 } = require("../controllers/UserController");
 const {
   getConv,
@@ -59,6 +60,7 @@ router.put("/auth/user/:id/unfollow", unfollowUser);
 router.post("/auth/user/profile", auth, updateProfile);
 router.get("/auth/user/premium", auth, premiumUser);
 router.post("/auth/user/fav", auth, userFavMovie);
+router.delete("/auth/user/delete/:id", auth, deleteUser);
 
 //CONV ROUTES
 router.post("/auth/newconv", newConv);
