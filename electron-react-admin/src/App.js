@@ -1,12 +1,20 @@
-import './App.css';
+import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import AdminPanel from './components/adminpanel/AdminPanel';
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>welcome</p>
-      </header>
-    </div>
+    <>
+      <div className="App">
+
+        <div className='AdminPanel'>
+          <AdminPanel />
+        </div>
+      </div>
+    </>
   );
 }
 
