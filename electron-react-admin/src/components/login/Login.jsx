@@ -38,11 +38,11 @@ const Login = () => {
 
     photo.width = width;
     photo.height = height;
-    setErrMsg("");
 
     let ctx = photo.getContext("2d");
     ctx.drawImage(video, 0, 0, width, height);
     setHasPhoto(true);
+    setErrMsg("");
   };
 
   useEffect(() => {
@@ -51,9 +51,10 @@ const Login = () => {
 
   const faceVerification = async () => {
     try {
-      const { data } = await axios.post("/api/v1/auth/login/admin", {
+      const response = await axios.post("/api/v1/auth/login/admin", {
         photo: base64,
       });
+      console.log("hii");
       navigate("/adminpanel");
     } catch (err) {
       console.log(err);
@@ -71,9 +72,7 @@ const Login = () => {
       </div>
       <div className={"result" + (hasPhoto ? "hasPhoto" : "")}>
         <canvas ref={photoRef}></canvas>
-        <button className="photo-btn" onClick={faceVerification}>
-          Verify
-        </button>
+        <button onClick={faceVerification}>Verify</button>
       </div>
     </>
   );

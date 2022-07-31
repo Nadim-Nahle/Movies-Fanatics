@@ -29,7 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "electron:serve": "concurrently -k \"cross-env BROWSER=none npm run start\" \"npm run electron:start\"",
+    "electron": "concurrently -k \"cross-env BROWSER=none npm run start\" \"npm run electron:start\"",
     "electron:build": "",
     "electron:start": "wait-on tcp:3000 && electron ."
   },
