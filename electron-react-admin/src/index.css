@@ -44,7 +44,7 @@ video {
   border: none;
   outline: none;
   padding: 8px 16px;
-  background-image: linear-gradient(to right, #ff0000 50%, #000000 50%);
+  background-image: linear-gradient(to right, blue 50%, #000000 50%);
   background-position: 0%;
   background-size: 200%;
   color: #fff;
@@ -55,4 +55,10 @@ video {
 
 .photo:hover {
   background-position: 100%;
+}
+h1 {
+  color: red;
+  padding-top: 0px;
+  position: absolute;
+  padding-left: 65px;
 }

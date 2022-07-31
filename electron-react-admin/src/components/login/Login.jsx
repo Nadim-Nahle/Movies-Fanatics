@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const videoRef = useRef(null);
   const photoRef = useRef(null);
 
   const [base64, setBase64] = useState("");
-
   const [hasPhoto, setHasPhoto] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
 
   const getCamera = () => {
     navigator.mediaDevices
@@ -35,6 +38,7 @@ const Login = () => {
 
     photo.width = width;
     photo.height = height;
+    setErrMsg("");
 
     let ctx = photo.getContext("2d");
     ctx.drawImage(video, 0, 0, width, height);
@@ -50,9 +54,10 @@ const Login = () => {
       const { data } = await axios.post("/api/v1/auth/login/admin", {
         photo: base64,
       });
-      console.log(data);
+      navigate("/adminpanel");
     } catch (err) {
       console.log(err);
+      setErrMsg("Not An Admin");
     }
   };
   return (
@@ -62,6 +67,7 @@ const Login = () => {
         <button className="photo-btn" onClick={takePhoto}>
           Take a Picture!
         </button>
+        <h1>{errMsg}</h1>
       </div>
       <div className={"result" + (hasPhoto ? "hasPhoto" : "")}>
         <canvas ref={photoRef}></canvas>
