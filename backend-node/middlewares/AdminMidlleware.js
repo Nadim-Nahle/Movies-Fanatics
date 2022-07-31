@@ -1,13 +1,11 @@
 const axios = require('axios');
 
-async function getAdmin(req, res) {
+async function getAdmin(req, res, next) {
 
-    const base64 = req.body.photo;
 
     const encodedParams = new URLSearchParams();
     encodedParams.append("image1Base64", process.env.REACT_APP_ADMIN_PHOTO);
-    encodedParams.append("image2Base64", base64);
-
+    encodedParams.append("image2Base64", req.body.photo);
     const options = {
         method: 'POST',
         url: 'https://face-verification2.p.rapidapi.com/faceverification',
@@ -19,16 +17,16 @@ async function getAdmin(req, res) {
         data: encodedParams
     };
 
-
     try {
         const { data } = await axios.request(options);
         const result = data.data.resultMessage;
+        console.log(result)
         if (result === 'The two faces belong to the same person. ') {
+            console.log('hello');
             next();
         }
-        res.status(400).send({ error: "Not an Admin" });
     } catch (err) {
-        res.status(400).send({ error: "authentication X" });
+        res.status(400).send({ error: "Not an Admin" });
     }
 
 

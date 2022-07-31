@@ -117,7 +117,7 @@ async function adminLogin(req, res) {
     );
 
   } catch (error) {
-
+    res.status(400).send('error');
   }
 }
 //GOOGLE LOGIN CONTROLLER
