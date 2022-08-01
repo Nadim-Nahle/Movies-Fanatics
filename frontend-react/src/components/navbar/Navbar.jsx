@@ -61,7 +61,7 @@ function Navbar() {
                   className="nav-links"
                   onClick={handleClick}
                 >
-                  Premuim
+                  Premium
                 </NavLink>
               </li>
             ) : null}

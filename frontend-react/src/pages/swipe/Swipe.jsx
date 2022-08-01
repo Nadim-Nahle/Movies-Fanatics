@@ -107,7 +107,7 @@ const Swipe = () => {
             ))}
             <h1 className="no-users">No Users Available</h1>
             <div className="swipe-info">
-              {lastDirection ? <p> You swiped {lastDirection}</p> : <p />}
+              {/*lastDirection ? <p> You swiped {lastDirection}</p> : <p />*/}
             </div>
           </div>
         </div>

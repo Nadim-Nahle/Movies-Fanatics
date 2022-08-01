@@ -79,7 +79,7 @@ const ChatBot = () => {
       const status = document.querySelector(".chatbot-status");
       botMessage.innerHTML = "Typing...";
       setTimeout(() => {
-        botMessage.innerHTML = "Hello There how are you doing today?";
+        botMessage.innerHTML = "Hello there how are you doing today?";
         status.innerHTML = "Active";
         status.style.color = "green";
         document.querySelector("#input").value = "";
@@ -150,7 +150,7 @@ const ChatBot = () => {
       botMessage.innerHTML = "Typing...";
       setTimeout(() => {
         botMessage.innerHTML =
-          "please choose a movie from the list(minions, doctor strange, jurassic world, thor, sonic, spider-man, dog, the lost city, morbius";
+          "please choose a movie from the list (minions, doctor strange, jurassic world, thor, sonic, spider-man, dog, the lost city, morbius)";
         document.querySelector("#input").value = "";
       }, 2000);
     }
