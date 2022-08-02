@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./online.css";
-import persona1 from "../../img/persona1.jpg";
-import nadim from "../../img/nadim.jpg";
+import missing from "../../img/noAvatar.png";
 
 const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
   const [friends, setFriends] = useState([]);
@@ -23,15 +22,19 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
     getFriends();
   }, [currentId]);
 
+  useEffect(() => {
+    setOnlineFriends(friends.filter((f) => onlineUsers.includes(f?._id)));
+  }, [friends, onlineUsers]);
+
   return (
     <div className="online">
-      {friends.map((friend) =>
+      {onlineFriends?.map((friend) =>
         friend?.name ? (
-          <div className="onlineFriend" key={friend._id}>
+          <div className="onlineFriend" key={friend?._id}>
             <div className="onlineImgContainer">
               <img
                 className="onlineImg"
-                src={friend?.favMovieUrl ? friend?.favMovieUrl : null}
+                src={friend?.favMovieUrl ? friend?.favMovieUrl : missing}
                 alt=""
               />
               <div className="onlineBadge"></div>

@@ -103,11 +103,7 @@ const Messenger = () => {
       <div className="messenger">
         <div className="chatMenu">
           <div className="chatMenuWrapper">
-            <input
-              type="text"
-              placeholder="search for friends"
-              className="chatMenuInput"
-            />
+            <h1>Chats</h1>
             {conversations.map((c) => (
               <div onClick={() => setCurrentChat(c)} key={c?._id}>
                 <Conversation conversation={c} currentUser={user} />
@@ -148,7 +144,7 @@ const Messenger = () => {
         </div>
         <div className="chatOnline">
           <div className="chatOnlineWrapper">
-            <p className="online-friend">Followings</p>
+            <h2 className="online-friend">Online Followings</h2>
             <Online
               onlineUsers={onlineUsers}
               currentId={user._id}
