@@ -1,50 +1,150 @@
 <img src='./SEF Readme Template (3)/title1.svg'>
+
+<div align="center">
+
+> Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
+
+**[PROJECT PHILOSOPHY](https://github.com/Nadim-Nahle/Movies-Fanatics#-project-philosophy) • [WIREFRAMES](https://github.com/Nadim-Nahle/Movies-Fanatics#-wireframes) • [TECH STACK](https://github.com/Nadim-Nahle/Movies-Fanatics#-tech-stack) • [IMPLEMENTATION](https://github.com/Nadim-Nahle/Movies-Fanatics#-impplementation) • [HOW TO RUN?](https://github.com/Nadim-Nahle/Movies-Fanatics#-how-to-run)**
+
+</div>
+
+<br><br>
+
 <img src='./SEF Readme Template (3)/title2.svg'>
-<h2>A website where users can check trending movies or search for any movie and watch or download trailers</h2>
-<h2>Users can follow other users by swiping right based on their favorite movie</h2>
-<h2>Users that follow each others can connect via live chat to discuss movies or tv shows</h2>
+
+> A website where users can check trending movies or search for any movie and watch or download trailers<br/>
+> Users can follow other users by swiping right based on their favorite movie<br/>
+> Users that follow each others can connect via live chat to discuss movies or tv shows</h2>
+
+<br><br>
+
 <img src='./SEF Readme Template (3)/title3.svg'>
-<img src="https://i.ibb.co/MVCpNbZ/wireframes.png" alt="wireframes" border="0">
-<img src='./SEF Readme Template (3)/title4.svg'>
-<h1>React - Node.js - Express.js - MongoDB - Socket.io</h1>
+
+> This design was planned before on paper, then moved to Figma app for the fine details.
+Note that i didn't use any styling library or theme, all from scratch and using pure css modules
+
+| Landing  | Movies  |
+| -----------------| -----|
+| ![Landing](https://i.ibb.co/v4NdHHL/wireframes-5.png") | ![Movies](https://i.ibb.co/7GTfpXZ/wireframes-7.png") |
+
+|Sign up | Live chat  |
+| -----------------| -----|
+| ![Sign up](https://i.ibb.co/m5Qfx3h/wireframes-8.png) | ![Live chat](https://i.ibb.co/WF33gp2/wireframes-10.png) |
+
+
+<br><br>
+
+<img src="./SEF Readme Template (3)/title4.svg"/>
+
+Here's a brief high-level overview of the tech stack the Well app uses:
+<ul>
+<li>This project uses the [React js library](https://reactjs.org/). React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.</li>
+<br/>
+<li>The admin panel is created using the [React js Library](https://reactjs.org/) inside the [electron js Framework](https://www.electronjs.org).</li>
+<br/>
+<li>The server side of the project is build using the [Node js](https://nodejs.org/en/) and the [express js Framework](https://expressjs.com/).</li>
+<br/>
+<li>For database, the app uses the [mongodb](https://www.mongodb.com/). MongoDB is a source-available cross-platform document-oriented database program.</li>
+<br/>
+<li>For live chat, the app uses the [socket io](https://socket.io/). Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server.</li>
+<ul>
+
+
+<br><br>
+
 <img src='./SEF Readme Template (3)/title5.svg' alt='implementation'>
 
-<div align='center'>
-    <h1>Admin login using face recognition</h1>
-    <img src="https://media.giphy.com/media/ZwNBxi1A79As3zTX3g/giphy.gif"/>
-    <h1>Google Login</h1>
-    <img src="https://media.giphy.com/media/0u7z9mwbpxOAqz2wvq/giphy.gif"/>
-    <h1>Live chat</h1>
-    <img src="https://media.giphy.com/media/WCm8i3uQ6n52HYKdp7/giphy.gif"/>
-    <h1>Swipe right or left!</h1>
-    <img src="https://media.giphy.com/media/k1QCiYwsxeoWg0ND81/giphy.gif"/> 
-    <h1>Movies and chrome extension</h1>
-    <img src="https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif"/>
-    <h1>Chatbot for premium users</h1>
-    <img src="https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif"/>
-    <h1>Profile</h1>
-    <img src="https://media.giphy.com/media/qOfZDABXNQDs28A4xe/giphy.gif"/>
-</div>
+Using the above mentioned tech stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
+
+| Admin login using face recognition  | Google Login  |
+| -----------------| -----|
+| ![Admin login using face recognition](https://media.giphy.com/media/ZwNBxi1A79As3zTX3g/giphy.gif) | ![Google Login](https://media.giphy.com/media/0u7z9mwbpxOAqz2wvq/giphy.gif)
+
+| Live chat | Swipe right or left!  |
+| -----------------| -----|
+| ![Live chat](https://media.giphy.com/media/WCm8i3uQ6n52HYKdp7/giphy.gif) | ![Swipe right or left!](https://media.giphy.com/media/k1QCiYwsxeoWg0ND81/giphy.gif)
+
+| Movies and chrome extension | Chatbot for premium users  |
+| -----------------| -----|
+| ![Movies and chrome extension](https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif)
+
+| Profile | Chatbot for premium users  |
+| -----------------| -----|
+| ![Profile](https://media.giphy.com/media/qOfZDABXNQDs28A4xe/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/zdGcURnZXaEJ8Sedzw/giphy.gif)
+
+<br><br>
+
 
 <img src='./SEF Readme Template (3)/title6.svg' alt='how to run'>
-<div>
-    <ol>
-        <li>Clone or download this repository to your computer</li>
-        <li>Open backend-Node folder</li>
-        <li>Open your favourite code editor and type 'npm istall' in the terminal to install the required dependencies</li>
-        <li>Type 'npm start' in the terminal to run the server</li>
-        <li>Open socket folder</li>
-        <li>Open your favourite code editor and type 'npm install' in the terminal to install the required dependencies</li>
-        <li>Type 'npm start' in the terminal to run the socket</li>
-        <li>Open frontend-react folder</li>
-        <li>Open your favourite code editor and type 'npm i react-dom' in the terminal to install the required dependencies</li>
-        <li>Type 'npm start' in the terminal to run the frontend</li>
-        <li>Open electron-react-admin folder</li>
-        <li>Open your favourite code editor and type 'npm i react-dom' in the terminal to install the required dependencies</li>
-        <li>Type 'npm run rlrctron' in the terminal to run the electron admin panel</li>
-        <li>Please contact me for the .env files</li>
-        <li>Enjoy the project!</li>
-    </ol>
 
-</div>
+> This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Contact me for apis keys
+2. Clone the repo
+   ```sh
+   git clone https://github.com/Nadim-Nahle/Movies-Fanatics.git
+   ```
+3. Open `backend-Node` folder
+
+4. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `.env`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+5. run `npm start` to run the backend
+   ```sh
+   npm start';
+   ```
+6. Open `backend-Node` folder
+
+7. Install NPM packages
+   ```sh
+   npm install
+   ```
+8. run `npm run start` to run the socket
+   ```sh
+   npm run start';
+   ```
+9. Open `frontend-react` folder
+
+10. Install NPM packages
+   ```sh
+   npm install
+   ```
+11. Enter your API in `.env`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+12. run `npm start` to run the frontend
+   ```sh
+   npm start';
+   ```
+13. Open `electron-react-admin` folder
+
+14. Install NPM packages
+   ```sh
+   npm install
+   ```
+15. run `npm run electron` to run the electron admin dashboard
+   ```sh
+   npm run electron';
+   ```
+16. Enjoy the project!
+   
 
