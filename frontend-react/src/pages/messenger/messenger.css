@@ -1,5 +1,5 @@
 .messenger {
-  height: 105vh;
+  min-height: 105vh;
   display: flex;
   background-color: white;
   color: black;
@@ -69,7 +69,7 @@
 .chatBoxWrapper,
 .chatOnlineWrapper {
   padding: 10px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .noConversationText {

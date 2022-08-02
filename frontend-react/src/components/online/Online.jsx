@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../api/axios";
 import React, { useEffect, useState } from "react";
 import "./online.css";
 import missing from "../../img/noAvatar.png";
@@ -10,9 +10,8 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
   useEffect(() => {
     const getFriends = async () => {
       try {
-        const res = await axios.get(`/api/v1/auth/user/friends/${currentId}`);
+        const res = await axios.get(`/user/friends/${currentId}`);
         setFriends(res.data);
-        console.log("friends", res.data);
       } catch (error) {
         console.log(error.response);
         console.log(currentId);
@@ -26,12 +25,23 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
     setOnlineFriends(friends.filter((f) => onlineUsers.includes(f?._id)));
   }, [friends, onlineUsers]);
 
+  const newConv = async (onlineUser) => {
+    try {
+      const response = await axios.post(`/newconv`, {
+        senderId: currentId,
+        receiverId: onlineUser._id,
+      });
+    } catch (err) {}
+  };
+
   const handleClick = async (onlineUser) => {
     try {
-      const response = await axios.get(
-        `/api/v1/auth/convs/${currentId}/${onlineUser._id}`
-      );
-      setCurrentChat(response.data);
+      const response = await axios.get(`/convs/${currentId}/${onlineUser._id}`);
+      console.log(response);
+      if (!response.data) {
+        newConv(onlineUser);
+        handleClick(onlineUser);
+      } else setCurrentChat(response.data);
     } catch (err) {}
   };
 

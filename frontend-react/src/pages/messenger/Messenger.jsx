@@ -53,6 +53,7 @@ const Messenger = () => {
       try {
         const res = await axios.get(`/conv/${user._id}`);
         setConversations(res.data);
+        console.log(res.data);
       } catch (error) {}
     };
     getConversations();

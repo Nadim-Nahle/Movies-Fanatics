@@ -5,11 +5,17 @@ import noavatar from "../../img/noAvatar.png";
 
 const Message = ({ message, own }) => {
   const url = localStorage.getItem("url");
+  console.log(url);
 
   return (
     <div className={own ? "message own" : "message"}>
       <div className="messageTop">
-        <img className="messageImg" own src={own ? url : noavatar} alt="" />
+        <img
+          className="messageImg"
+          own
+          src={own ? (url ? url : noavatar) : noavatar}
+          alt=""
+        />
         <p className="messageText">{message.text}</p>
       </div>
       <div className="messageBottom">{format(message.createdAt)}</div>
