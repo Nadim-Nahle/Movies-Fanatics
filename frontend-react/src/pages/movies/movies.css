@@ -61,6 +61,11 @@ body {
 .fa-search {
   cursor: pointer;
 }
+.search-movie {
+  position: absolute;
+  top: 0;
+  padding-bottom: 100px;
+}
 .hero-title {
   font-size: 4vw;
   margin: 0;

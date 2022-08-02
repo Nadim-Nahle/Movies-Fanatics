@@ -151,132 +151,6 @@ const Movies = () => {
 
   return (
     <>
-      <>
-        <nav className="navbar">
-          <div className="nav-container">
-            <NavLink to="/" className="nav-logo">
-              <img
-                className="logo"
-                src={require("../../img/logo.png")}
-                alt="logo"
-              />
-            </NavLink>
-
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
-              <li className="new-nav-item">
-                {searchBar ? null : (
-                  <i
-                    class="fa fa-search"
-                    aria-hidden="true"
-                    onClick={() => setSearchBar(true)}
-                  ></i>
-                )}
-                {searchBar ? (
-                  <form onSubmit={searchMovies}>
-                    <input
-                      type="text"
-                      onChange={(e) => setSearchKey(e.target.value)}
-                      className="movie-search"
-                      placeholder="search for movies"
-                    />
-                    <button type="submit" className="movie-search-btn">
-                      {" "}
-                      Search...
-                    </button>
-                  </form>
-                ) : null}
-              </li>
-              {auth.user ? (
-                <li className="new-nav-item">
-                  <NavLink
-                    to="/auth/messenger"
-                    activeclassname="active"
-                    className="nav-links"
-                    onClick={handleClick}
-                  >
-                    Messenger
-                  </NavLink>
-                </li>
-              ) : null}
-              {auth.user ? (
-                <li className="new-nav-item">
-                  <NavLink
-                    to="/auth/swipe"
-                    activeclassname="active"
-                    className="nav-links"
-                    onClick={handleClick}
-                  >
-                    Connect
-                  </NavLink>
-                </li>
-              ) : null}
-              {auth.user ? (
-                <li className="new-nav-item">
-                  <NavLink
-                    to="/auth/premium"
-                    activeclassname="active"
-                    className="nav-links"
-                    onClick={handleClick}
-                  >
-                    Premium
-                  </NavLink>
-                </li>
-              ) : null}
-
-              <li className="new-nav-item">
-                <NavLink
-                  to="/movies"
-                  activeclassname="active"
-                  className="nav-links"
-                  onClick={handleClick}
-                >
-                  Movies
-                </NavLink>
-              </li>
-
-              {auth.user ? null : (
-                <li className="new-nav-item">
-                  <NavLink
-                    to="/register"
-                    activeclassname="active"
-                    className="nav-links"
-                    onClick={handleClick}
-                  >
-                    Sign up
-                  </NavLink>
-                </li>
-              )}
-              {auth.user ? null : (
-                <li className="new-nav-item">
-                  <NavLink
-                    to="/login"
-                    activeclassname="active"
-                    className="nav-links"
-                    onClick={handleClick}
-                  >
-                    Sign in
-                  </NavLink>
-                </li>
-              )}
-              {auth.user ? (
-                <li className="new-nav-item">
-                  <NavLink
-                    to="/auth/profile"
-                    activeclassname="active"
-                    className="nav-links"
-                    onClick={handleClick}
-                  >
-                    {profileName}
-                  </NavLink>
-                </li>
-              ) : null}
-            </ul>
-            <div className="nav-icon" onClick={handleClick}>
-              <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
-            </div>
-          </div>
-        </nav>
-      </>
       <div
         className="hero"
         ref={scrollRef}
@@ -284,6 +158,29 @@ const Movies = () => {
           backgroundImage: `url('${IMAGE_URL}${selectedMovie.backdrop_path}')`,
         }}
       >
+        <div className="search-movie">
+          {searchBar ? null : (
+            <i
+              class="fa fa-search"
+              aria-hidden="true"
+              onClick={() => setSearchBar(true)}
+            ></i>
+          )}
+          {searchBar ? (
+            <form onSubmit={searchMovies}>
+              <input
+                type="text"
+                onChange={(e) => setSearchKey(e.target.value)}
+                className="movie-search"
+                placeholder="search for movies"
+              />
+              <button type="submit" className="movie-search-btn">
+                {" "}
+                Search...
+              </button>
+            </form>
+          ) : null}
+        </div>
         <div className="hero-content max-center">
           {playTrailer ? (
             <button

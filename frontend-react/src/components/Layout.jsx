@@ -8,7 +8,7 @@ const Layout = () => {
   const Location = useLocation();
   return (
     <>
-      {Location.pathname.includes("movies") ? null : <Navbar />}
+      <Navbar />
 
       <main className="App">
         <Outlet />
