@@ -1,7 +1,11 @@
 <img src='./SEF Readme Template (3)/title1.svg'>
 <img src='./SEF Readme Template (3)/title2.svg'>
+<h2>A website where users can check trending movies or search for any movie and watch or download trailers</h2>
+<h2>Users can follow other users by swiping right based on their favorite movie</h2>
+<h2>Users that follow each others can connect via live chat to discuss movies or tv shows</h2>
 <img src='./SEF Readme Template (3)/title3.svg'>
-<img src='./SEF Readme Template (3)/title4.svg'>
+<img src='./SEF Readme Template (3)/title3.svg'>
+<img src='./SEF Readme Template (3)/wireframes.png'>
 <h1>React - Node.js - Express.js - MongoDB - Socket.io</h1>
 <img src='./SEF Readme Template (3)/title5.svg' alt='implementation'>
 
