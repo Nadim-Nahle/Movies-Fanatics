@@ -234,7 +234,7 @@ async function getUser(req, res) {
 };
 
 
-//GET FRIENDS
+//GET FOLLOWINGS
 async function getFriends(req, res) {
   try {
     const user = await User.findById(req.params.userId);
@@ -242,15 +242,14 @@ async function getFriends(req, res) {
       user.followings.map((friendId) => {
         return User.findById(friendId);
       })
+
     );
-    let friendList = [];
-    friends.map((friend) => {
-      const { _id, username, profilePicture } = friend;
-      friendList.push({ _id, username, url });
-    });
-    res.status(200).json(friendList)
+
+    res.status(200).json(friends)
+
+
   } catch (err) {
-    res.status(500).json(err);
+    res.status(505).json(err);
   }
 };
 
