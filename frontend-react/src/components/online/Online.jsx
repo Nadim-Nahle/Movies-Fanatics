@@ -26,11 +26,26 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
     setOnlineFriends(friends.filter((f) => onlineUsers.includes(f?._id)));
   }, [friends, onlineUsers]);
 
+  const handleClick = async (onlineUser) => {
+    try {
+      const response = await axios.get(
+        `/api/v1/auth/convs/${currentId}/${onlineUser._id}`
+      );
+      setCurrentChat(response.data);
+    } catch (err) {}
+  };
+
   return (
     <div className="online">
       {onlineFriends?.map((friend) =>
         friend?.name ? (
-          <div className="onlineFriend" key={friend?._id}>
+          <div
+            className="onlineFriend"
+            key={friend?._id}
+            onClick={() => {
+              handleClick(friend);
+            }}
+          >
             <div className="onlineImgContainer">
               <img
                 className="onlineImg"
