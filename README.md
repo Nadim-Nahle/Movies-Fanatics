@@ -103,48 +103,48 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-4. Enter your API in `.env`
+5. Enter your API in `.env`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
-5. run `npm start` to run the backend
+6. run `npm start` to run the backend
    ```sh
    npm start';
    ```
-6. Open `backend-Node` folder
+7. Open `backend-Node` folder
 
-7. Install NPM packages
+8. Install NPM packages
    ```sh
    npm install
    ```
-8. run `npm run start` to run the socket
+9. run `npm run start` to run the socket
    ```sh
    npm run start';
    ```
-9. Open `frontend-react` folder
+10. Open `frontend-react` folder
 
-10. Install NPM packages
+11. Install NPM packages
    ```sh
    npm install
    ```
-11. Enter your API in `.env`
+12. Enter your API in `.env`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
-12. run `npm start` to run the frontend
+13. run `npm start` to run the frontend
    ```sh
    npm start';
    ```
-13. Open `electron-react-admin` folder
+14. Open `electron-react-admin` folder
 
-14. Install NPM packages
+15. Install NPM packages
    ```sh
    npm install
    ```
-15. run `npm run electron` to run the electron admin dashboard
+16. run `npm run electron` to run the electron admin dashboard
    ```sh
    npm run electron';
    ```
-16. Enjoy the project!
+17. Enjoy the project!
    
 
