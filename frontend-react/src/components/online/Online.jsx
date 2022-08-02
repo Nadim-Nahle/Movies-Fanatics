@@ -10,28 +10,38 @@ const Online = ({ onlineUsers, currentId, setCurrentChat }) => {
 
   useEffect(() => {
     const getFriends = async () => {
-      const res = await axios.get(`/api/v1/auth/user/friends/${currentId}`);
-      setFriends(res.data);
+      try {
+        const res = await axios.get(`/api/v1/auth/user/friends/${currentId}`);
+        setFriends(res.data);
+        console.log("friends", res.data);
+      } catch (error) {
+        console.log(error.response);
+        console.log(currentId);
+      }
     };
 
     getFriends();
   }, [currentId]);
 
-  useEffect(() => {
-    setOnlineFriends(friends.filter((f) => onlineUsers.inculdes(f._id)));
-  }, [friends, onlineUsers]);
-
   return (
     <div className="online">
-      <div className="onlineFriend">
-        <div className="onlineImgContainer">
-          <img className="onlineImg" src={persona1} alt="" />
-          <div className="onlineBadge"></div>
-        </div>
-        {onlineFriends.map((friend) => (
-          <span className="onlineName">{friend.name}</span>
-        ))}
-      </div>
+      {friends.map((friend) =>
+        friend?.name ? (
+          <div className="onlineFriend" key={friend._id}>
+            <div className="onlineImgContainer">
+              <img
+                className="onlineImg"
+                src={friend?.favMovieUrl ? friend?.favMovieUrl : null}
+                alt=""
+              />
+              <div className="onlineBadge"></div>
+            </div>
+            <span className="onlineName">
+              {friend?.name ? friend?.name : "No Name"}
+            </span>
+          </div>
+        ) : null
+      )}
     </div>
   );
 };
