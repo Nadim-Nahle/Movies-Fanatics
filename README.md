@@ -27,14 +27,17 @@
     <ol>
         <li>Clone or download this repository to your computer</li>
         <li>Open backend-Node folder</li>
-        <li>Open your favourite code editor and type 'npm i express' in the terminal to install the required dependencies</li>
+        <li>Open your favourite code editor and type 'npm istall' in the terminal to install the required dependencies</li>
         <li>Type 'npm start' in the terminal to run the server</li>
         <li>Open socket folder</li>
-        <li>Open your favourite code editor and type 'npm i socket.io' in the terminal to install the required dependencies</li>
+        <li>Open your favourite code editor and type 'npm install' in the terminal to install the required dependencies</li>
         <li>Type 'npm start' in the terminal to run the socket</li>
         <li>Open frontend-react folder</li>
         <li>Open your favourite code editor and type 'npm i react-dom' in the terminal to install the required dependencies</li>
         <li>Type 'npm start' in the terminal to run the frontend</li>
+        <li>Open electron-react-admin folder</li>
+        <li>Open your favourite code editor and type 'npm i react-dom' in the terminal to install the required dependencies</li>
+        <li>Type 'npm run rlrctron' in the terminal to run the electron admin panel</li>
         <li>Please contact me for the .env files</li>
         <li>Enjoy the project!</li>
     </ol>
