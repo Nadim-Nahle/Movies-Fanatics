@@ -4,14 +4,24 @@
 <img src='./SEF Readme Template (3)/title4.svg'>
 <h1>React - Node.js - Express.js - MongoDB - Socket.io</h1>
 <img src='./SEF Readme Template (3)/title5.svg' alt='implementation'>
+
 <div align='center'>
+    <h1>Admin login using face recognition</h1>
+    <img src="https://media.giphy.com/media/ZwNBxi1A79As3zTX3g/giphy.gif"/>
     <h1>Google Login</h1>
     <img src="https://media.giphy.com/media/0u7z9mwbpxOAqz2wvq/giphy.gif"/>
     <h1>Live chat</h1>
     <img src="https://media.giphy.com/media/WCm8i3uQ6n52HYKdp7/giphy.gif"/>
     <h1>Swipe right or left!</h1>
-    <img src="https://media.giphy.com/media/CyeNhviK7luQTn04zu/giphy.gif"/>
+    <img src="https://media.giphy.com/media/k1QCiYwsxeoWg0ND81/giphy.gif"/> 
+    <h1>Movies and chrome extension</h1>
+    <img src="https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif"/>
+    <h1>Chatbot for premium users</h1>
+    <img src="https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif"/>
+    <h1>Profile</h1>
+    <img src="https://media.giphy.com/media/qOfZDABXNQDs28A4xe/giphy.gif"/>
 </div>
+
 <img src='./SEF Readme Template (3)/title6.svg' alt='how to run'>
 <div>
     <ol>
