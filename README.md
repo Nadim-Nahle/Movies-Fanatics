@@ -12,12 +12,19 @@
 
 <img src='./SEF Readme Template (3)/title2.svg'>
 
-> A website that connect users based on their movie taste.
-> Users can check trending movies or search for any movie and watch or download trailers.<br/>
-> Users can follow other users by swiping right based on their favorite movie.<br/>
-> Users that follow each others can connect via live chat to discuss movies or tv shows.</br>
-> Premium users get access to a chatbot that provides exclusive links to download movies.</br>
-> Admins can acess the admin panel using a face recognition login system.
+> Movie fanatics is a website for movie lovers, our philosophy is to connect users based on their movie taste in order to discuss these movies.<br/>
+
+### Normal user Stories
+- As a user, I can check trending movies or search for any movie and watch or download trailers.
+- As a user, I can follow other users by swiping right based on their favorite movie.
+- As a user, I can connect with my followings via live chat to discuss movies or tv shows.
+
+### Premium user Stories
+- As a premium user, I get access to a chatbot that provides exclusive links to download movies.
+
+### Premium user Stories
+- As an admin, I can acess the admin panel using a face recognition login system.
+- As an admin, I can track users and delete or edit any user.
 
 <br><br>
 
@@ -28,7 +35,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Landing  | Movies  |
 | -----------------| -----|
-| ![Landing](https://i.ibb.co/v4NdHHL/wireframes-5.png") | ![Movies](https://i.ibb.co/7GTfpXZ/wireframes-7.png") |
+| ![Landing](https://i.ibb.co/7GTfpXZ/wireframes-7.png") | ![Movies](https://i.ibb.co/v4NdHHL/wireframes-5.png") |
 
 |Sign up | Live chat  |
 | -----------------| -----|
