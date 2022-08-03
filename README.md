@@ -3,8 +3,7 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-
-**[PROJECT PHILOSOPHY](https://github.com/Nadim-Nahle/Movies-Fanatics#-project-philosophy) • [WIREFRAMES](https://github.com/Nadim-Nahle/Movies-Fanatics#-wireframes) • [TECH STACK](https://github.com/Nadim-Nahle/Movies-Fanatics#-tech-stack) • [IMPLEMENTATION](https://github.com/Nadim-Nahle/Movies-Fanatics#-impplementation) • [HOW TO RUN?](https://github.com/Nadim-Nahle/Movies-Fanatics#-how-to-run)**
+**[PROJECT PHILOSOPHY](#project-philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#tech-stack) • [IMPLEMENTATION](#implementation) • [HOW TO RUN?](#how-to-run)**
 
 </div>
 
