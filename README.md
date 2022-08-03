@@ -12,9 +12,12 @@
 
 <img src='./SEF Readme Template (3)/title2.svg'>
 
-> A website where users can check trending movies or search for any movie and watch or download trailers<br/>
-> Users can follow other users by swiping right based on their favorite movie<br/>
-> Users that follow each others can connect via live chat to discuss movies or tv shows</h2>
+> A website that connect users based on their movie taste.
+> Users can check trending movies or search for any movie and watch or download trailers.<br/>
+> Users can follow other users by swiping right based on their favorite movie.<br/>
+> Users that follow each others can connect via live chat to discuss movies or tv shows.</br>
+> Premium users get access to a chatbot that provides exclusive links to download movies.</br>
+> Admins can acess the admin panel using a face recognition login system.
 
 <br><br>
 
@@ -68,7 +71,7 @@ Using the above mentioned tech stacks and the wireframes build with figma from t
 | -----------------| -----|
 | ![Movies and chrome extension](https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif)
 
-| Profile | Chatbot for premium users  |
+| Profile | Responsiveness  |
 | -----------------| -----|
 | ![Profile](https://media.giphy.com/media/qOfZDABXNQDs28A4xe/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/zdGcURnZXaEJ8Sedzw/giphy.gif)
 
