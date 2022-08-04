@@ -39,7 +39,7 @@ async function googleRegister(req, res) {
   try {
     //ENCRYPT THE PASSWORD
     const salt = await bcrypt.genSalt(10);
-    const hashPassword = await bcrypt.hash(req.body.email, salt);
+    const hashPassword = await bcrypt.hash(req.body.email + TOKEN_SECRET, salt);
 
     //STORE THE NEW USER
     const addUserResult = await addGoogleUser(req.body, hashPassword);
@@ -127,7 +127,7 @@ async function googleLogin(req, res) {
     const user = await getByEmail(req.body.email);
     if (!user) return res.status(401).send('invalid email');
 
-    const validPassword = await bcrypt.compare(req.body.email, user.password);
+    const validPassword = await bcrypt.compare(req.body.email + TOKEN_SECRET, user.password);
     if (!validPassword) return res.status(400).send('invalid password');
 
     //CRETAE USER AND JWT TOKEN
