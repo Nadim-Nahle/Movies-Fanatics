@@ -47,17 +47,17 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 <img id='tech-stack' src="./readme/title4.svg"/>
 
 Here's a brief high-level overview of the tech stack the Well app uses:
-<ul>
-<li>This project uses the [React JS](www.reactjs.org). React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.</li>
-<br/>
-<li>The admin panel is created using the [React js Library](https://reactjs.org/) inside the [electron js Framework](https://www.electronjs.org).</li>
-<br/>
-<li>The server side of the project is build using the [Node js](https://nodejs.org/en/) and the [express js Framework](https://expressjs.com/).</li>
-<br/>
-<li>For database, the app uses the [mongodb](https://www.mongodb.com/). MongoDB is a source-available cross-platform document-oriented database program.</li>
-<br/>
-<li>For live chat, the app uses the [socket io](https://socket.io/). Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server.</li>
-<ul>
+
+- This project uses the [React JS Library](www.reactjs.org). React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.
+
+- The admin panel is created using the [React js Library](https://reactjs.org/) inside the [electron js Framework](https://www.electronjs.org).
+
+- The server side of the project is build using the [Node js](https://nodejs.org/en/) and the [express js Framework](https://expressjs.com/).
+
+- For database, the app uses the [mongodb](https://www.mongodb.com/). MongoDB is a source-available cross-platform document-oriented database program.
+
+- For live chat, the app uses the [socket io](https://socket.io/). Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server.
+
 
 
 <br><br>
