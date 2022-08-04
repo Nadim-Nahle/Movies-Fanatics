@@ -1,4 +1,4 @@
-<img src='./SEF Readme Template (3)/title1.svg'>
+<img src='./readme/title1.svg'>
 
 <div align="center">
 
@@ -10,7 +10,7 @@
 
 <br><br>
 
-<img id='project-philosoph' src='./SEF Readme Template (3)/title2.svg'>
+<img id='project-philosoph' src='./readme/title2.svg'>
 
 > Movie fanatics is a website for movie lovers, our philosophy is to connect users based on their movie taste in order to discuss these movies.<br/>
 
@@ -28,7 +28,7 @@
 
 <br><br>
 
-<img id='wireframes' src='./SEF Readme Template (3)/title3.svg'>
+<img id='wireframes' src='./readme/title3.svg'>
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
@@ -44,7 +44,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 <br><br>
 
-<img id='tech-stack' src="./SEF Readme Template (3)/title4.svg"/>
+<img id='tech-stack' src="./readme/title4.svg"/>
 
 Here's a brief high-level overview of the tech stack the Well app uses:
 <ul>
@@ -62,7 +62,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 <br><br>
 
-<img id='implementation' src='./SEF Readme Template (3)/title5.svg' alt='implementation'>
+<img id='implementation' src='./readme/title5.svg' alt='implementation'>
 
 Using the above mentioned tech stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
@@ -85,7 +85,7 @@ Using the above mentioned tech stacks and the wireframes build with figma from t
 <br><br>
 
 
-<img id='how-to-run' src='./SEF Readme Template (3)/title6.svg' alt='how to run'>
+<img id='how-to-run' src='./readme/title6.svg' alt='how to run'>
 
 > This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
