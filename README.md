@@ -48,7 +48,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 Here's a brief high-level overview of the tech stack the Well app uses:
 <ul>
-<li>This project uses the [React JS](https://reactjs.org/). React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.</li>
+<li>This project uses the [React JS](www.reactjs.org). React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.</li>
 <br/>
 <li>The admin panel is created using the [React js Library](https://reactjs.org/) inside the [electron js Framework](https://www.electronjs.org).</li>
 <br/>
