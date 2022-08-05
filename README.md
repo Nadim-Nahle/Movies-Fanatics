@@ -22,7 +22,7 @@
 ### Premium user Stories
 - As a premium user, I get access to a chatbot that provides exclusive links to download movies.
 
-### Premium user Stories
+### Admin user Stories
 - As an admin, I can acess the admin panel using a face recognition login system.
 - As an admin, I can track users and delete or edit any user.
 
