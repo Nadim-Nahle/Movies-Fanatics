@@ -48,15 +48,15 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 Here's a brief high-level overview of the tech stack the Well app uses:
 
-- This project uses the [React JS Library](www.reactjs.org). React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.
+- This project uses the [React Library](www.reactjs.org). React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.
 
-- The admin panel is created using the [React js Library](https://reactjs.org/) inside the [electron js Framework](https://www.electronjs.org).
+- The admin panel is created using the [React Library](https://reactjs.org/) inside the [Electron.js Framework](https://www.electronjs.org).
 
-- The server side of the project is build using the [Node js](https://nodejs.org/en/) and the [express js Framework](https://expressjs.com/).
+- The server side of the project is build using the [Node.js environment](https://nodejs.org/en/) and the [Express Framework](https://expressjs.com/).
 
-- For database, the app uses the [mongodb](https://www.mongodb.com/). MongoDB is a source-available cross-platform document-oriented database program.
+- For database, the app uses the [MongoDB database](https://www.mongodb.com/). MongoDB is a source-available cross-platform document-oriented database program.
 
-- For live chat, the app uses the [socket io](https://socket.io/). Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server.
+- For live chat, the app uses the [Socket io library](https://socket.io/). Socket io is a library that enables low-latency, bidirectional and event-based communication between a client and a server.
 
 
 
