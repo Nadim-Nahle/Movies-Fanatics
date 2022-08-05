@@ -35,7 +35,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Landing  | Movies  |
 | -----------------| -----|
-| ![Landing](https://i.ibb.co/dtp0zpW/Screenshot-154.png") | ![Movies](https://i.ibb.co/v4NdHHL/wireframes-5.png") |
+| ![Landing](https://i.ibb.co/y617xrJ/rsz-screenshot-156.png) | ![Movies](https://i.ibb.co/v4NdHHL/wireframes-5.png") |
 
 |Sign up | Live chat  |
 | -----------------| -----|
