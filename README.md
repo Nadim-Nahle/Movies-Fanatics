@@ -22,7 +22,7 @@
 ### Premium user Stories
 - As a premium user, I get access to a chatbot that provides exclusive links to download movies.
 
-### Premium user Stories
+### Admin user Stories
 - As an admin, I can acess the admin panel using a face recognition login system.
 - As an admin, I can track users and delete or edit any user.
 
@@ -35,7 +35,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Landing  | Movies  |
 | -----------------| -----|
-| ![Landing](https://i.ibb.co/7GTfpXZ/wireframes-7.png") | ![Movies](https://i.ibb.co/v4NdHHL/wireframes-5.png") |
+| ![Landing](https://i.ibb.co/y617xrJ/rsz-screenshot-156.png) | ![Movies](https://i.ibb.co/v4NdHHL/wireframes-5.png") |
 
 |Sign up | Live chat  |
 | -----------------| -----|
@@ -74,13 +74,17 @@ Using the above mentioned tech stacks and the wireframes build with figma from t
 | -----------------| -----|
 | ![Live chat](https://media.giphy.com/media/WCm8i3uQ6n52HYKdp7/giphy.gif) | ![Swipe right or left!](https://media.giphy.com/media/k1QCiYwsxeoWg0ND81/giphy.gif)
 
-| Movies and chrome extension | Chatbot for premium users  |
+| Movies | Chatbot for premium users  |
 | -----------------| -----|
-| ![Movies and chrome extension](https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif)
+| ![Movies](https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif)
 
 | Profile | Responsiveness  |
 | -----------------| -----|
 | ![Profile](https://media.giphy.com/media/qOfZDABXNQDs28A4xe/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/zdGcURnZXaEJ8Sedzw/giphy.gif)
+
+| Chrome extension | Download any trailer  |
+| -----------------| -----|
+| ![Chrome extension](https://media.giphy.com/media/19FFGGWtC9Dod5mOYA/giphy.gif) | ![Download any trailer](https://media.giphy.com/media/qQF61xlq0TGops7Brn/giphy.gif)
 
 <br><br>
 
