@@ -1,4 +1,4 @@
-const Message = require("../models/Message");
+const Message = require("../models/message");
 
 //ADD NEW MSG
 async function newMsg(req, res) {
