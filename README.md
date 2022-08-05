@@ -74,13 +74,17 @@ Using the above mentioned tech stacks and the wireframes build with figma from t
 | -----------------| -----|
 | ![Live chat](https://media.giphy.com/media/WCm8i3uQ6n52HYKdp7/giphy.gif) | ![Swipe right or left!](https://media.giphy.com/media/k1QCiYwsxeoWg0ND81/giphy.gif)
 
-| Movies and chrome extension | Chatbot for premium users  |
+| Movies | Chatbot for premium users  |
 | -----------------| -----|
-| ![Movies and chrome extension](https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif)
+| ![Movies](https://media.giphy.com/media/FGLGvDdIvheRtJxT3u/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/LI6eSRIaQN8E7gClm0/giphy.gif)
 
 | Profile | Responsiveness  |
 | -----------------| -----|
 | ![Profile](https://media.giphy.com/media/qOfZDABXNQDs28A4xe/giphy.gif) | ![Chatbot for premium users](https://media.giphy.com/media/zdGcURnZXaEJ8Sedzw/giphy.gif)
+
+| Chrome extension | Download any trailer  |
+| -----------------| -----|
+| ![Chrome extension](https://media.giphy.com/media/19FFGGWtC9Dod5mOYA/giphy.gif) | ![Download any trailer](https://media.giphy.com/media/qQF61xlq0TGops7Brn/giphy.gif)
 
 <br><br>
 
