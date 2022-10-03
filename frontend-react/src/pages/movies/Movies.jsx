@@ -136,7 +136,7 @@ const Movies = () => {
   const addToFav = async () => {
     try {
       const response = await axios.post(
-        "/api/v1/auth/user/fav",
+        "https://movies-fanatics-backend.vercel.app/api/v1/auth/user/fav",
         { favMovie: name, favMovieUrl: img },
         {
           headers: { Authorization: "Bearer " + AuthToken },
