@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "/api/v1/auth";
+const BASE_URL = "https://movies-fanatics-backend.vercel.app/api/v1/auth";
 
 export default axios.create({
   baseURL: BASE_URL,
